@@ -1,0 +1,911 @@
+\section{The intermediate rows}\label{sec:intermediate}
+
+Throughout this section abbreviate
+\[
+ e=\epsilon_0,\qquad k=k_0,\qquad l=l_0,\qquad
+ j=j_0,\qquad p=p_0,\qquad \mu_{\rm HP}=\frac{16}{25},\qquad
+ S_0=\frac{30869}{5000000}.
+\]
+The first five and $S_0$ are the fixed parameters from
+\eqref{eq:old:2_5}; $\mu_{\rm HP}=16/25$ is set here for the 4P grid.
+
+In this section the chart and all source predicates are those of
+Section~\ref{sec:partition}.  If the selected chart is the $u$-chart, then
+$(J,K;f,g;s)=(A,D;ac,bd;u)$.  If it is the $t$-chart, then
+$(J,K;f,g;s)=(B,C;ad,bc;t)$.  In either case
+\begin{equation}
+ gK^2-fJ^2=s>0,\qquad fg=M,\qquad ut=L.
+\AutoTag{eq:old:6_1}
+\end{equation}
+The chart choice is unique, including equality $u=t$.  Fix the residual
+factors, the chart, the shift and the two selected corners.  Then the
+inverse formulas in \eqref{eq:old:2_2} determine the original pair.  All
+counts below keep the positivity, integrality, gcd, mask, shell and
+first-match tests when a relaxed tuple is reconstructed.
+
+\subsection{The supported-part row $4E$}
+
+Let $f_J$ be the full prime-power part of $f$ supported on primes dividing
+$J$.  Let $g_K$ be the full prime-power part of $g$ supported on primes
+dividing $K$.  Write
+\[
+ \begin{aligned}
+ f&=d_fv,\qquad g=d_gw,\qquad d_f=f_J,\qquad d_g=g_K,\\[-2pt]
+ \operatorname{rad}(d_f)&\mid J,\qquad
+ \operatorname{rad}(d_g)\mid K.
+ \end{aligned}                                          \AutoTag{eq:old:6_2}
+\]
+Thus $d_f,d_g$ contain all powers of their supported primes.  For fixed
+\((f,J)\) and \((g,K)\), each is uniquely determined.
+
+Explicitly, \(d_f\) is the unique largest divisor of \(f\) all of whose
+prime divisors divide \(J\), and \(v=f/d_f\).  Similarly, \(d_g\) is the
+unique largest divisor of \(g\) supported on \(K\), and \(w=g/d_g\).  Once
+\(g\) and \(K\) are recovered in the \(v\)-tag, \(d_g\) is determined by
+\((g,K)\).  The same holds for \(d_f\) in the \(w\)-tag.  The mask assigns
+every supported prime power to these determined parts.
+
+In the \(u\)-chart, \(JK=AD=(n-m)/t\), so \(JK\le Yu/L\).  In the
+\(t\)-chart, \(JK=BC=(m+n+1)/u\), so \(JK\le2Yt/L\).  We have
+\(s=u\) in the first chart, \(s=t\) in the second, and \(ut=L\).  Hence
+both inequalities give \(JK\le2Ys/L\).  The failed \(Q1\) and
+selected-corner \(Q2\) tests give the weak lower bounds below.  Thus
+\[
+ JK\le \frac{2Ys}{L},\qquad
+ L\ge Y^{1/3-l},\qquad J,K\ge Y^{1/3-j}.
+\AutoTag{eq:old:6_3}
+\]
+Hence
+\[
+ J,K\le 2sY^{1/3+l+j}.                                  \AutoTag{eq:old:6_4}
+\]
+The row has $Y^{a_0}<s<Y^{b_0}$ and
+\[
+ \min(v,w)\le Y^p.
+\AutoTag{eq:old:6_5}
+\]
+It has at most four disjoint tags.  They are the selected chart and either
+$v\le Y^p$, or $v>Y^p$ and $w\le Y^p$.  By \eqref{eq:old:6_5}, the second
+alternative covers the complement of the first.
+
+Each tag uses a uniform supported-power bound.
+For fixed $C,D,\alpha>0$, if $J\le Y^C$, then
+\[
+ \#\{d\le Y^D:\operatorname{rad}(d)\mid J\}
+ \ll_{C,D,\alpha}Y^\alpha.                           \AutoTag{eq:old:6_6}
+\]
+To prove it, put $\sigma=\alpha/(2D)$.  Rankin's inequality gives
+\[
+ \#\{d\le Y^D:\operatorname{rad}(d)\mid J\}
+ \le Y^{D\sigma}\prod_{q\mid J}(1-q^{-\sigma})^{-1}.
+\]
+Fix any $\delta>0$.  All primes above a fixed threshold satisfy
+$-\log(1-q^{-\sigma})\le\delta\log q$.  The product over the finitely many
+smaller primes is a constant.  The remaining product is at most
+$J^\delta$.  Taking $\delta=\alpha/(2C)$ proves \eqref{eq:old:6_6},
+uniformly in the moving label $J$.
+
+In the tag $v\le Y^p$, enumerate $(s,v,J,d_f)$ and put
+\[
+ N=vd_fJ^2+s=fJ^2+s.
+\]
+For an actual source, $N=gK^2>0$.  Thus $K^2\mid N$, and each divisor
+choice for $K^2$ forces $g=N/K^2$.  There are at most $\tauDiv(N)$ choices.
+In the other tag enumerate $(s,w,K,d_g)$ and put
+\[
+ N=wd_gK^2-s=gK^2-s.
+\]
+Keep only \(N>0\).  On an actual source \(N=fJ^2\), so \(J^2\mid N\) and
+$f=N/J^2$ is forced.  Discarding \(N\le0\) is safe, since an actual source
+has \(N=fJ^2>0\).
+
+Once $f,g$ are known, the ordered residual splittings are
+\[
+ (a,c)\text{ with }ac=f,\quad (b,d)\text{ with }bd=g
+ \quad\text{or}\quad
+ (a,d)\text{ with }ad=f,\quad (b,c)\text{ with }bc=g,
+\]
+according to the chart.  Their total number is at most $\tauDiv(f)\tauDiv(g)$.
+Each splitting and $(s,J,K)$ determine the remaining corners, and then
+$(m,n)$ by \eqref{eq:old:2_2}.  Candidates failing an original-source
+predicate are discarded.  Once the ordered residuals are fixed, the
+reconstruction has multiplicity at most one.  Then $ut=L$ determines the
+opposite shift.
+
+Before the divisor estimates, discard formal candidates that violate the
+original source-height conditions.  Every retained source has
+$J,K\le Y+1$, $f,g,d_f,d_g\le(Y+1)^2$, and
+$1\le N\le(Y+1)^4$.  Apply \eqref{eq:old:6_6} to the one supported part.
+Apply the standard estimate $\tauDiv(q_0)\ll_\rho q_0^\rho$ to each of $N,f,g$.
+Fix a target loss $\eta>0$ and put $T=Y+1$. Apply \eqref{eq:old:6_6}
+with $T$ in place of its displayed base variable $Y$, and take
+$C=1$, $D=2$, and output exponent $\alpha=\eta/4$.  Its Rankin
+parameters may be $\sigma=\eta/16$ and $\delta=\eta/8$.  For the divisor
+bounds, take $\rho_N=\eta/16$ for $\tauDiv(N)$ and
+$\rho_f=\rho_g=\eta/8$ for $\tauDiv(f),\tauDiv(g)$.  Since
+$N\le T^4$ and $f,g\le T^2$, each of the four multiplicative factors is
+$O_\eta(T^{\eta/4})$.  Their product is
+$O_\eta(T^\eta)=O_\eta(Y^\eta)$, uniformly in the retained source
+labels.  Thus each fixed $(s,v,J)$, or its counterpart $(s,w,K)$,
+contributes at most $Y^\eta$ complete source records.  Sum over the small
+endpoint, then over the selected corner using \eqref{eq:old:6_4}, then over
+$s<Y^{b_0}$.  This gives
+\[
+ \#4E\ll_\eta
+ Y^{p+1/3+l+j+\eta}\sum_{1\le s<Y^{b_0}}s
+ \ll_\eta Y^{1/3+2b_0+l+j+p+\eta}.
+\AutoTag{eq:old:6_7}
+\]
+The direct sum satisfies $\sum_{s<Y^{b_0}}s\ll Y^{2b_0}$.  At the parameter
+values in \eqref{eq:old:2_5}
+\[
+ \frac13+2b_0+l+j+p=\frac{9907393}{15000000}=\frac23-S_0.
+\AutoTag{eq:old:6_8}
+\]
+This equality, with $\eta$ arbitrary, is the claimed $4E$ bound.
+\begin{rowproposition}[4E row estimate]\label{prop:row-4e}
+For every \(\eta>0\), the complete first-match row satisfies
+\[
+ \#4E\ll_\eta Y^{2/3-S_0+\eta}.
+\]
+\end{rowproposition}
+\begin{proof}
+The full count is \eqref{eq:old:6_7}, and \eqref{eq:old:6_8} gives its exponent.
+\end{proof}
+
+\subsection{The opposite-shift cubic row $4H$}
+
+For each prime dividing a residual, the radical mask places that prime in
+one of the four corners.  The adjacent coprimalities determine which
+corner.  Primes in \(a,b,c,d\) go respectively to one of
+\((A,B),(C,D),(A,C),(B,D)\).  These choices are unique, since the two
+corners in each listed pair are coprime.  Apply the same assignment to the
+full prime powers.  This gives four pairwise coprime parts, assigned to
+corners, whose product is \(M\):
+\[
+ (ac)_A,\quad (bd)_D,\quad (ad)_B,\quad (bc)_C.
+\]
+Set
+\[
+ G_u=\operatorname{rad}((ac)_A(bd)_D),\qquad
+ G_t=\operatorname{rad}((ad)_B(bc)_C).
+\]
+Then \(G_uG_t=\operatorname{rad}(M)\).  In the \(u\)-chart, the supported
+prime-power parts are \((ac)_A\) and \((bd)_D\).  Their radicals have
+product \(G_u\).  In the \(t\)-chart the corresponding parts are
+\((ad)_B\) and \((bc)_C\).  Their radicals have product \(G_t\).  Put
+\[
+ \Pi=\min(\operatorname{rad}(d_f),v_{\rm sel})
+      \min(\operatorname{rad}(d_g),w_{\rm sel}).
+\]
+In \(4H\), \(v_{\rm sel},w_{\rm sel}>Y^p\) and \(\Pi\le Y^p\).  Hence
+neither minimum can equal \(v_{\rm sel}\) or \(w_{\rm sel}\).  So
+\(\Pi=\operatorname{rad}(d_f)\operatorname{rad}(d_g)\le Y^p\).  This is the
+selected chart's assigned-corner radical product.  Since
+\(\operatorname{rad}(M)>Y^{2/3-k}\), the opposite assigned-corner product
+satisfies
+\[
+ G_{\rm opp}>R_0:=Y^{2/3-k-p}.                            \AutoTag{eq:old:6_9}
+\]
+The two-sided prime assignment in the mask makes \(G_{\rm opp}\) the
+complementary assigned-corner product.
+
+We use the following published theorem of Bombieri and Schmidt
+\cite{BS1987}.  Let \(F\in\mathbb Z[X,Z]\) be an irreducible binary form
+of degree \(r\ge3\), and let \(N\ge1\).  Then the number of primitive
+integer pairs \((x,z)\) with \(|F(x,z)|=N\) is at most
+\(C_{\rm BS} r^{1+\omega(N)}\), with an absolute \(C_{\rm BS}\).  Here
+primitive means \(\gcd(x,z)=1\).  This is the unnumbered theorem on
+pp.~69--70 of \emph{Inventiones Mathematicae} 88 (1987), 69--81, with the
+correction on p.~445 of \emph{Inventiones Mathematicae} 97 (1989)
+\cite{BS1989}. Its
+bound is uniform in the coefficients.  It has no discriminant-coprimality
+or coefficient-height hypothesis.
+
+Hence, for each fixed \(C_0>0\) and every \(\eta>0\), uniformly for
+positive integers \(c_1,c_2\le Y^{C_0}\) and
+\(0<|h|\le Y^{C_0}\),
+\[
+ \#\{x,z>0:c_1x^3-c_2z^3=h\}\ll_{C_0,\eta}Y^\eta,
+\AutoTag{eq:old:6_10}
+\]
+For the proof, let \(c=\gcd(c_1,c_2)\).  If \(c\nmid h\) there are no
+solutions.  Otherwise divide by \(c\).  This gives coprime positive
+coefficients \(c'_1,c'_2\) and \(h'=h/c\ne0\).  For each
+\(g=\gcd(x,z)\), write \(x=gx_0,z=gz_0\).  Then \(g^3\mid h'\),
+\((x_0,z_0)=1\), and
+\(c'_1x_0^3-c'_2z_0^3=h'/g^3\).  If this cubic form is irreducible,
+Bombieri--Schmidt gives at most
+\(C3^{1+\omega(|h'|/g^3)}\) primitive pairs for that \(g\).  There are at
+most \(\tauDiv(|h'|)\) choices of \(g\), and
+\(3^{\omega(n)}\le\tauDiv(n)^{\log_2 3}\).  The divisor bound
+\(\tauDiv(n)\ll_\rho n^\rho\), with \(\rho\) chosen after \(\eta\), makes
+their total \(O_{C_0,\eta}(Y^\eta)\).
+
+If the normalized cubic is reducible, \(c'_1/c'_2\) is a rational cube.
+Coprimality then forces \(c'_1=A_{\rm cube}^3,c'_2=B_{\rm cube}^3\) for
+coprime positive integers \(A_{\rm cube},B_{\rm cube}\).  Put
+\(X=A_{\rm cube}x,Z=B_{\rm cube}z\).  Then
+\[
+ (X-Z)(X^2+XZ+Z^2)=h'.
+\]
+The nonzero integer $X-Z$ is a signed divisor of $h'$.  For each such
+divisor the resulting quadratic has at most two integer roots.  The
+divisor bound absorbs the content, gcd and reducible branches into
+$Y^\eta$.  Here \(h'\ne0\), so the right side is nonzero.
+
+For the opposite-chart conic count, write
+\[
+\begin{aligned}
+ r_{\rm opp}&=\operatorname{rad}(d_{f,\rm opp}),&
+ q_{\rm opp}&=\operatorname{rad}(d_{g,\rm opp}),\\
+ d_{1,\rm opp}&=d_{f,\rm opp}/r_{\rm opp},&
+ d_{2,\rm opp}&=d_{g,\rm opp}/q_{\rm opp},\\
+ J_{\rm opp}&=r_{\rm opp}j_1,&K_{\rm opp}&=q_{\rm opp}z_1.
+\end{aligned}
+\]
+The actual conic becomes the integral equation
+\[
+ (w_{\rm opp}d_{2,\rm opp}z_1^2)q_{\rm opp}^3
+ -(v_{\rm opp}d_{1,\rm opp}j_1^2)r_{\rm opp}^3=s>0.
+\AutoTag{eq:old:6_11}
+\]
+Here \(s\) is the shift of the opposite, counted chart. The selected
+shift is then \(L/s\). The opposite chart has data
+\[
+(d_{f,\rm opp},d_{g,\rm opp},v_{\rm opp},w_{\rm opp})
+\]
+These are its supported parts and complementary factors from
+\eqref{eq:old:2_4}. They differ from \((v_{\rm sel},w_{\rm sel})\) in
+the \(4H\) predicate. Suppose the endpoint squares are at most
+\(H_{4H}\) and \(r_{\rm opp}q_{\rm opp}\ge R_0\).  Fix
+\(s,v_{\rm opp},w_{\rm opp},d_{1,\rm opp},d_{2,\rm opp},j_1,z_1\).
+Apply \eqref{eq:old:6_10} to dyadic boxes
+\(r_{\rm opp}\asymp R\), \(q_{\rm opp}\asymp Q\).  There are only
+\(O(\log^2Y)\) such boxes, and \(RQ\ge R_0/4\).  The endpoint conditions
+yield
+\[
+\begin{aligned}
+ j_1&\le\sqrt{H_{4H}/(v_{\rm opp}d_{1,\rm opp}R^3)},\qquad
+ z_1\le\sqrt{H_{4H}/(w_{\rm opp}d_{2,\rm opp}Q^3)},\\
+ v_{\rm opp}w_{\rm opp}d_{1,\rm opp}d_{2,\rm opp}
+ r_{\rm opp}q_{\rm opp}&<X_{\rm cap}.
+\end{aligned}
+\]
+The displayed coefficient product is
+\(v_{\rm opp}w_{\rm opp}d_{1,\rm opp}d_{2,\rm opp}r_{\rm opp}q_{\rm opp}=M\).
+Failure of the \(O_R\) cut and \eqref{eq:old:2_7} give
+\(M<\kappa_Y^2Y^{q_+}=\kappa_Y^2Y^{2/3+2e}\).  Define
+\(X_{4H}:=\kappa_Y^2Y^{2/3+2e}\) here and take \(X_{\rm cap}=X_{4H}\).
+If either upper bound is below one, that class is empty.  Otherwise put
+\(N_{\rm opp}=v_{\rm opp}w_{\rm opp}\).  Sum over its at most
+\(\tauDiv(N_{\rm opp})\) factorizations.  The number of \((j_1,z_1)\) is
+at most the product of their upper bounds, so
+\[
+ \frac{H_{4H}}{\sqrt{d_{1,\rm opp}d_{2,\rm opp}}(RQ)^{3/2}}
+ \sum_{N_{\rm opp}<X_{\rm cap}/(d_{1,\rm opp}d_{2,\rm opp}RQ)}
+ \frac{\tauDiv(N_{\rm opp})}{\sqrt {N_{\rm opp}}}
+ \ll \frac{H_{4H}\sqrt{X_{\rm cap}}\log(2X_{\rm cap})}
+ {d_{1,\rm opp}d_{2,\rm opp}(RQ)^2}.
+\]
+Here we use $\sum_{N\le Z}\tauDiv(N)N^{-1/2}\ll\sqrt Z\log(2Z)$.  It
+follows from $\tauDiv(N)=\sum_{ab=N}1$ by summing first over $b$.  Summing
+\((d_{1,\rm opp},d_{2,\rm opp})\) harmonically and over the dyadic radical
+boxes costs only \(Y^\eta\).  Since \(RQ\ge R_0/4\), the fixed-shift count
+is
+\[
+ N_s\ll_\eta H_{4H}\sqrt{X_{4H}}R_0^{-2}Y^\eta.\AutoTag{eq:old:6_12}
+\]
+Fix an outer tuple
+\(s,v_{\rm opp},w_{\rm opp},d_{1,\rm opp},d_{2,\rm opp},j_1,z_1\).
+Then the cubic coefficients in \eqref{eq:old:6_11} are the fixed positive
+integers \(c_1=w_{\rm opp}d_{2,\rm opp}z_1^2\) and
+\(c_2=v_{\rm opp}d_{1,\rm opp}j_1^2\).
+The cubic unknowns are \(q_{\rm opp}\) and \(r_{\rm opp}\).  So
+\eqref{eq:old:6_10} applies uniformly in every dyadic radical box.
+The coefficients may vary between outer tuples.  The uniformity of
+\eqref{eq:old:6_10} permits the preceding sum over those tuples and boxes.
+All canonical-source filters are kept on reconstruction.
+
+In the following displays, \(J,K,s\) denote the counted chart and its
+shift; this chart may be opposite to the first-match chart. The variables
+in \eqref{eq:old:6_11} come from the canonical source. In the
+$u$-chart they are
+\[
+ (f,g,J,K,s)=(ac,bd,A,D,u),
+ \qquad (d_{f,\rm opp},d_{g,\rm opp},v_{\rm opp},w_{\rm opp})
+ =(f_J,g_K,f/f_J,g/g_K),
+\]
+and in the $t$-chart they are
+\[
+ (f,g,J,K,s)=(ad,bc,B,C,t),
+ \qquad (d_{f,\rm opp},d_{g,\rm opp},v_{\rm opp},w_{\rm opp})
+ =(f_J,g_K,f/f_J,g/g_K).
+\]
+The two ordered residual factorizations are the only inverse choices.  In
+the $u$-chart, fix a solution of \eqref{eq:old:6_11} and choose $ac=f$ and
+$bd=g$.  Then
+\[
+ B=\frac{cA+bD}{u},\quad C=\frac{aA+dD}{u},\quad
+ t=\frac{cd-ab}{u},\quad m=ABa,\quad n=ACc.                 \AutoTag{eq:old:6_12a}
+\]
+In the $t$-chart choose $ad=f$ and $bc=g$.  Then
+\[
+ A=\frac{dB-bC}{t},\quad D=\frac{cC-aB}{t},\quad
+ u=\frac{cd-ab}{t},\quad m=ABa,\quad n=ACc.                 \AutoTag{eq:old:6_12b}
+\]
+Only positive integral reconstructions passing the original mask, gcd,
+shell and first-match predicates are kept.  Hence
+$\tauDiv(f)\tauDiv(g)$ bounds the inverse multiplicity, and $ut=L$
+determines the other shift.
+
+For the selected chart, $ut=L$ determines the opposite shift.
+The source height and $R>Y^{5/3-e}$ give
+\[
+U=\kappa_Y Y^{1/3+e-a_0},\qquad
+H_{4H}=12\kappa_Y^2Y^{4/3+e-a_0},\quad R_0=Y^{2/3-k-p},
+\]
+where \(\kappa_Y=1+Y^{-1}\le3/2\) for \(Y\ge2\).  If \(t<u\) is selected,
+count the opposite $u$ chart with $H=uY$.  Then sum the actual $u<U$ once.
+If $u\le t$ is selected, count the opposite $t$ chart with endpoint cap
+$H_{4H}$.  Then sum the actual $t<U$ once; the other shift is forced.  For
+the endpoint bound in the $t$-chart, the canonical identities give
+\[
+ (ad)B^2=\frac{m(n+1)}{ AD},\qquad
+ (bc)C^2=\frac{n(m+1)}{ AD},\qquad
+ (bc)C^2-(ad)B^2=t.                                      \AutoTag{eq:old:6_13a}
+\]
+The high-height condition \(ABCD>Y^{5/3-e}\) and
+\(n(n+1)\le\kappa_Y Y^2\) give
+\[
+ cd=\frac{n(n+1)}{ ABCD}<\kappa_Y Y^{1/3+e}.
+\]
+Now \(BC=(m+n+1)/u\) and \(ABCD\,cd=n(n+1)\).  Also
+\(n>Y/2\) and \(m+n+1\le3Y\).  Hence
+\[
+ AD=\frac{n(n+1)u}{ cd(m+n+1)}
+   >\frac{uY^{2/3-e}}{12\kappa_Y}.                            \AutoTag{eq:old:6_13b}
+\]
+Thus both \(t\)-chart endpoint squares in \eqref{eq:old:6_13a} are at most
+\(12\kappa_Y^2Y^{4/3+e}/u\).  On the subrow \(u>Y^{a_0}\) this is at most
+\(H_{4H}\).  So this endpoint estimate uses both the high-height cut and
+the subrow lower bound for \(u\).  The two counts are
+\[
+ \#4H_t\ll U^2Y\sqrt{X_{4H}}R_0^{-2}Y^\eta,\qquad
+ \#4H_u\ll U H_{4H}\sqrt{X_{4H}}R_0^{-2}Y^\eta.
+\AutoTag{eq:old:6_13}
+\]
+Here \(4H_t\) is the population selected in the \(t\)-chart
+(\(t<u\)) and counted through the opposite \(u\)-chart.  Similarly,
+\(4H_u\) is selected in the \(u\)-chart (\(u\le t\)) and counted through
+the opposite \(t\)-chart.  The factor
+\(\sqrt{X_{4H}}=\kappa_Y Y^{1/3+e}\) is the square-root factor in the
+fixed-shift cubic count \eqref{eq:old:6_12}.  Substitute \(U\),
+\(H_{4H}\) and \(R_0\) from above into either expression.  Both exponents
+equal
+\[
+ \frac{2}{3}-2a_0+3e+2k+2p,
+\]
+so the saving is
+\[
+ r_H=2a_0-3e-2k-2p=\frac{140441}{5000000}>S_0.             \AutoTag{eq:old:6_14}
+\]
+The content split, reducible cubic count, residual divisor factors and
+inverse formulas each take an arbitrary power loss.  Their number is fixed.
+Summation over the shifts is the factor displayed in \eqref{eq:old:6_13}.
+\begin{rowproposition}[4H row estimate]\label{prop:row-4h}
+For every \(\eta>0\), the complete opposite-shift row satisfies
+\[
+ \#4H\ll_\eta Y^{2/3-140441/5000000+\eta}.
+\]
+\end{rowproposition}
+\begin{proof}
+The two endpoint counts in \eqref{eq:old:6_13} have the common exponent of
+\eqref{eq:old:6_14}.  Their finite sum keeps that exponent.
+\end{proof}
+
+\subsection{The simultaneous-shift row $4P$}
+
+The count in this row is simultaneous in both shifts.  Its source keeps
+$v,w>Y^p$ and the strict defect bound $\Pi>Y^p$.  It also keeps the full
+canonical source and all three high cuts.  It keeps the mask, unit and gcd
+conditions and the selected-chart rule.  It keeps the outer and \(Q1/Q2\)
+complements and the open middle-shift interval.  The 4P estimate below applies to this source.
+Section~\ref{sec:long} counts the later $5W$ row separately.
+
+In a dyadic box write
+\[
+ \begin{aligned}
+ f&\asymp E,&g&\asymp F,&J&\asymp H_J,&K&\asymp H_K,\\
+ S_h\le s<2S_h,&H_{4P}=2S_h,&X_{4P}&=H_J^2E,&V_*&=X_{4P}/H_K^2,\\
+ N&=\lceil Y^{16/25}\rceil.
+ \end{aligned}
+\]
+Here \(E\) and \(F\) are integer powers of two.  So \(EF\) is an integer
+common denominator for the coefficient-lattice map below.  We also put
+\[
+ \begin{aligned}
+ q&=\frac{2}{3}+2e,\qquad h_{\rm HP}=\frac{2}{3}+l+b_0,\\
+ c&=1+e+l+b_0-2(1/3-j),\qquad
+ \tau=\tau_0-\frac{1}{10000},\qquad \tau_0=1-\frac{3e}{2}.
+ \end{aligned}                                          \AutoTag{eq:old:6_15}
+\]
+The same enlarged source gives $EF\ll Y^q$, $H_JH_K\ll Y^{h_{\rm HP}}$,
+$E,F\ll Y^c$, and thickness $Y^{-\tau_0}$.  For
+$z=J/K$, $w=g/f$, the conic is
+\[
+ gK^2-fJ^2=s.
+\]
+In particular \(H_{4P}/X_{4P}\ll Y^{-\tau_0}\), uniformly in the dyadic
+box.  This is the thickness estimate used below.
+For fixed nonnegative degrees \(A_{\rm det},B_{\rm det}\), use the
+bidegree-\((A_{\rm det},B_{\rm det})\) columns
+\[
+ \{x^r y^j:0\le r\le A_{\rm det},\ 0\le j\le B_{\rm det}\},\qquad
+ x=f/g,\quad y=K/J.                                      \AutoTag{eq:old:6_16}
+\]
+Clearing each row by \(g^{A_{\rm det}}J^{B_{\rm det}}\) gives the
+integer entries in \eqref{eq:old:6_17c}.
+The normalized determinant has the strict criterion
+\[
+\mu_{\rm HP}>\frac{9}{8}\frac{h_{\rm HP}q}{\tau},\qquad
+\mu_{\rm HP}=\frac{16}{25}.
+\AutoTag{eq:old:6_17}
+\]
+The statement of Lemma~\ref{lem:ratio-cell-determinant} fixes the 5W
+parameters in \eqref{eq:old:7_2}--\eqref{eq:old:7_6}.  For 4P we use the
+determinant calculation in its proof, with the separate 4P parameters.
+The 4P grid exponent is \(a=\mu_{\rm HP}=16/25\), and
+\[
+ \frac35<a<\min(q_{\min},\tau_0),\qquad
+ q_{\max}<\tau_0,\qquad b_0>\frac32e.
+\]
+The bounds \(H_J\le Y+1\) and \(E\le(Y+1)^2\) follow from the source
+identities \eqref{eq:old:2_2}.  The 4P row itself has
+\(H_{4P}>Y^{a_0}\).  The failed \(Q1\) and \(Q2\) cuts and the shell lower
+bound \eqref{eq:old:2_8} supply the remaining endpoint restrictions in the
+4P boxes.  In particular these source bounds give
+\(X_{4P}/H_{4P}\le Y^4\) for sufficiently large \(Y\).  The Taylor order
+is seven because \(8\mu_{\rm HP}=8(16/25)=128/25>4\).  With
+\[
+ p_1=\frac q{\mu_{\rm HP}}=\frac{5092607}{4800000}>1,
+ \qquad
+ p_2=\frac{h_{\rm HP}}\tau=\frac{24536965}{29719179},
+\]
+we have \(2/3<p_2<1\), \(p_1p_2<8/9\), and
+\(p_1-1<3(1-p_2)^2\).  These include the strict trapezoid-branch hypotheses in
+the proof of the general determinant lemma.  They give its 4P
+specialization
+\((a,p_1,p_2)=(16/25,5092607/4800000,24536965/29719179)\).
+The determinant criterion needs these strict range and strip-weight
+hypotheses as well as its displayed inequality.  The exact collared
+determinant margin is positive; it is recorded just below.
+Here \(\rho=p_2=h_{\rm HP}/\tau>2/3\), so 4P uses the trapezoid branch.
+The stronger sufficient condition \(\mu_{\rm HP}>(9/8)q\rho\)
+implies its criterion for \(2/3\le\rho<1\), because
+\[
+\frac98\rho\bigl(1+3(1-\rho)^2\bigr)-1
+=\frac{(1-3(1-\rho))^3}{8}\ge0.
+\]
+At \eqref{eq:old:2_5}, the collared gap
+\(\mu_{\rm HP}-(9/8)q\rho\) equals
+$368942136449/39625572000000>0$.  Fix half this strict gap, then choose
+the finite degree family.  All maximal-size integer minors have absolute
+value less than one.  Hence they vanish, and the integerized matrix
+\(\mathcal M\) has rank \(r<D\), where \(D\) is its number of columns.
+If an interval contains fewer than \(D\) source rows, count those rows
+directly; otherwise the vanishing \(D\)-minors imply rank below \(D\).
+If \(r=0\), a coordinate vector is in its kernel.  Otherwise choose \(r\)
+pivot columns and \(r\) rows giving a nonsingular minor \(A\), and one
+free column \(j\).  Set the \(j\)-coordinate to \(\det A\), the other
+free coordinates to zero, and the pivot coordinates to
+\(-\operatorname{adj}(A)\mathcal M_{I,j}\).  This nonzero integer vector
+annihilates the selected rows.  They span the row space, so it annihilates
+every row.  Its entries are minors of bounded order and have polynomial
+height.  The same argument covers the fixed anchor, the inverse monomials
+and every endpoint branch.
+
+For the normalization, use in each box the exact half-open ratio cells
+\[
+ r_i=\frac{i}{2N}\frac{H_J}{ H_K},\qquad
+ I_i=(r_i,r_{i+1}],\qquad i=N,\ldots,4N-1 .                 \AutoTag{eq:old:6_17a}
+\]
+For a point in \(I_i\), put \(x=f/g\), \(y=K/J\), \(y_0=r_i^{-1}\),
+\(\delta_{\rm cell}=s/(fJ^2)\), and \(\alpha_{\rm cell}=x/y_0^2-1\).
+The conic gives the exact
+identities
+\[
+ x=\frac{y^2}{1+\delta_{\rm cell}},\qquad
+ \frac{y}{ y_0}=\sqrt{1+\alpha_{\rm cell}}\sqrt{1+\delta_{\rm cell}}.
+\]
+The cell width and \(s\le H_{4P}\) give
+\[
+ |\alpha_{\rm cell}|\le \frac{3}{ N},\qquad
+ 0\le \frac{y}{y_0}-\sqrt{1+\alpha_{\rm cell}}\le \frac{H_{4P}}{2X_{4P}}.       \AutoTag{eq:old:6_17b}
+\]
+Here \(r_{i+1}/r_i=1+1/i\le1+1/N\) and
+\(1-(1+\delta_{\rm cell})^{-1/2}\le\delta_{\rm cell}/2\).  Since
+\(X_2=X_{4P}/(2H_{4P})\), the conic error in \eqref{eq:old:6_17b} is
+\(H_{4P}/(2X_{4P})=X_2^{-1}/4\).  Also
+\(NH_{4P}/X_{4P}\le Y^{\mu_{\rm HP}-\tau_0+o(1)}<1\).  Choose a fixed
+Taylor degree \(T\) and write
+\(\sqrt{1+\alpha_{\rm cell}}=1+P_T(\alpha_{\rm cell})+\varepsilon_T\).
+With \(X_1=N/3\), \eqref{eq:old:6_17b} gives
+\(|\alpha_{\rm cell}|\le X_1^{-1}\). Choose \(T\)
+large enough that the Taylor remainder is at most \(X_2^{-1}/2\), where
+\(X_2=X_{4P}/(2H_{4P})\). Then the combined remainder
+\(\beta=(y/y_0)-1-P_T(\alpha_{\rm cell})\) satisfies \(|\beta|\le X_2^{-1}\),
+uniformly over all boxes and shifts.
+
+Take columns \(x^r y^j\), \(0\le r\le A_{\rm det}\),
+\(0\le j\le B_{\rm det}\), and multiply each row by
+\(g^{A_{\rm det}}J^{B_{\rm det}}\).  The resulting entries are the integers
+\[
+ f^r g^{A_{\rm det}-r}K^jJ^{B_{\rm det}-j}.             \AutoTag{eq:old:6_17c}
+\]
+Write the polynomial in \eqref{eq:old:6_16} as
+\[
+C(x,y)=\sum_{r=0}^{A_{\rm det}}\sum_{j=0}^{B_{\rm det}}c_{rj}x^ry^j.
+\]
+With \(z=J/K=1/y\) and \(w=g/f=1/x\), its reciprocal is
+\[
+F(z,w)=z^{B_{\rm det}}w^{A_{\rm det}}C(1/w,1/z)
+ =\sum_{r,j}c_{rj}z^{B_{\rm det}-j}w^{A_{\rm det}-r}.
+\]
+It has degrees at most \((B_{\rm det},A_{\rm det})\) in \((z,w)\) and the
+same coefficient height.  Its coefficient vector permutes the full
+rectangular coefficient array.  The column map is
+\((r,j)\mapsto(a,b)=(B_{\rm det}-j,A_{\rm det}-r)\).  In particular,
+\[
+K^{B_{\rm det}}f^{A_{\rm det}}F(J/K,g/f)
+ =J^{B_{\rm det}}g^{A_{\rm det}}C(f/g,K/J),
+\]
+so the two integer matrices agree after clearing denominators, up to that
+column permutation.
+After extracting the common anchor, the normalized entries are
+\((1+\alpha_{\rm cell})^r(1+P_T(\alpha_{\rm cell})+\beta)^j\).  If
+\(D_c=(A_{\rm det}+1)(B_{\rm det}+1)\),
+the anchor and row-clearing factors have logarithmic cost at most
+\[
+ \frac{D_c}{2}\{A_{\rm det}\Lambda_1+B_{\rm det}\Lambda_2\},\qquad
+ \Lambda_1=\log(324EV_*),\quad\Lambda_2=\log(8H_JH_K),
+\AutoTag{eq:old:6_17d}
+\]
+The column-anchor factor is \(y_0^{2r+j}\).  Its exponent sum is
+\[
+\sum_{\substack{0\le r\le A_{\rm det}\\0\le j\le B_{\rm det}}}(2r+j)
+=D_c\left(A_{\rm det}+\frac{B_{\rm det}}2\right).
+\]
+The other anchor bound is
+\[
+J y_0^{1/2}<2H_J(2H_K/H_J)^{1/2}=(8H_JH_K)^{1/2}.
+\]
+Also \(V_*=E H_J^2/H_K^2\), so
+\[
+18V_*\frac{H_K}{H_J}=18\sqrt{EV_*},\qquad
+(18\sqrt{EV_*})^2=324EV_*.
+\]
+These inequalities give the constants \(8\) and \(324\) in the uniform
+anchor bounds.
+The conic and the thickness give \(EV_*\asymp EF\).  So replacing one by
+the other changes only an absolute logarithmic constant.  The displayed
+cost follows from \(g<9V_*\), \(y_0\le2H_K/H_J\), and \(J<2H_J\).
+It is independent of \(i\) and \(s\).
+
+The proof of Lemma~\ref{lem:ratio-cell-determinant} derives the finite
+Cauchy--Binet expansion, the strip-weight lower bound, the branch
+integrals and the integer-minor conclusion.  It does so for general
+logarithmic parameters satisfying its strict inequalities.  We apply that
+calculation with the 4P parameters and effective scales below.
+For this row put
+\[
+ X_1=N/3,\qquad X_2^{\rm eff}=Y^\tau,
+\]
+and choose fixed constants \(C_1,C_2\) such that, uniformly in every
+box,
+\[
+ \Lambda_1^{\rm eff}=q\log Y+C_1\ge\log(324EV_*),\qquad
+ \Lambda_2^{\rm eff}=h_{\rm HP}\log Y+C_2\ge\log(8H_JH_K).
+\]
+Such constants exist by the source bounds \(EV_*\ll EF\ll Y^q\) and
+\(H_JH_K\ll Y^{h_{\rm HP}}\).  Also \(H_{4P}/X_{4P}\ll Y^{-\tau_0}\), where
+\(\tau_0>\tau\).  So for all sufficiently large \(Y\),
+\(X_2=X_{4P}/(2H_{4P})\ge X_2^{\rm eff}\).  Thus the actual Taylor error
+\(|\beta|\le X_2^{-1}\) is at most \((X_2^{\rm eff})^{-1}\).  The
+arithmetic cost in \eqref{eq:old:6_17d} is bounded by the one obtained from
+\(\Lambda_1^{\rm eff},\Lambda_2^{\rm eff}\).  With
+\[
+ \ell_1=\log X_1,\quad \ell_2^{\rm eff}=\tau\log Y,\quad
+ P_{\rm eff}=\frac{\Lambda_1^{\rm eff}}{\ell_1},\quad
+ R_{\rm eff}=\frac{\Lambda_2^{\rm eff}}{\ell_2^{\rm eff}},\quad
+ \ell_{\rm det}=\frac{\ell_1}{\ell_2^{\rm eff}},
+\]
+we have
+\[
+ P_{\rm eff}=\frac q{\mu_{\rm HP}}+O(1/\log Y),\quad
+ R_{\rm eff}=\frac{h_{\rm HP}}\tau+O(1/\log Y),\quad
+ \ell_{\rm det}=\frac{\mu_{\rm HP}}\tau+O(1/\log Y).
+\]
+At the limiting 4P vector,
+\[
+ \mu_{\rm HP}=\frac{16}{25},\qquad
+ p_1=\frac{5092607}{4800000},\qquad
+ p_2=\frac{24536965}{29719179},\qquad
+ \ell_{\rm det}=\frac{6400000}{9906393}.
+\]
+The corresponding normalized determinant margins are
+\[
+ \frac89-p_1p_2=\frac{368942136449}{28530411840000}>0,\qquad
+ 3(1-p_2)^2-(p_1-1)
+ =\frac{14253084474184329457}{471055786898155200000}>0.
+\]
+Hence the strict margin in \eqref{eq:old:6_17}, with the fixed collar
+\(\tau=\tau_0-1/10000\), applies to these uniform majorants
+for all sufficiently large \(Y\).  The finite determinant calculation uses
+only the displayed upper bounds for the two errors and the arithmetic
+cost.  So it gives one degree choice and one polynomial-height bound,
+uniformly in the cell, shift and box.
+
+After bihomogenization and factorization, we count each factor.
+A factor that is not absolutely irreducible meets a distinct conjugate
+in only boundedly many rational projective points at fixed degree.  For
+corner-degree-zero factors, first fix the primitive coefficient pair,
+then its ordered residual factors.  These fix $L=cd-ab$.  Discard $L\le0$
+and enumerate the divisor choices $s\mid L$.  For each fixed
+$(f,g,s)$ apply Theorem~\ref{thm:fibre} with
+$(a,b,h,n,m)=(f,g,s,J,K)$, $x=2Y$, and fixed height exponent
+$A_{\rm ht}=2$.
+The residuals are at most $Y+1$, whence $f,g,s\le(Y+1)^2$ and
+$J,K\le Y+1$.  This costs $Y^\eta$ per coefficient label.  The selected
+shift is enumerated among the divisors of \(L\).  Explicitly, this cost
+consists of three parts.  They are the ordered residual splitting factors
+\(\tauDiv(f)\tauDiv(g)\), the selected-shift choices \(\tauDiv(L)\), and
+the uniform square-fibre bound for each fixed \((f,g,s)\).  Give each
+operation its own small enough internal exponent.  Then their product is
+\(Y^\eta\).
+
+For a coefficient-degree-zero factor, fix its primitive positive corner
+pair $(J,K)$.  For two source coefficient pairs the conic gives
+\[
+ K^2(g_1f_2-g_2f_1)=s_1f_2-s_2f_1,
+ \qquad |g_1f_2-g_2f_1|
+ \le \frac{4H_{4P}E}{H_K^2}
+ \ll EF\frac{H_{4P}}{X_{4P}}
+ \ll Y^{q-\tau_0}=o(1).
+\AutoTag{eq:old:6_18}
+\]
+Here $s_i<H_{4P}$, $f_i<2E$, $K\ge H_K$, $X_{4P}=H_J^2E$, and
+ $V_*=X_{4P}/H_K^2\ll F$ by the source box bounds.  The cross determinant
+is an integer.  It vanishes for all sufficiently large $Y$, since
+$\tau_0-q=9351751/30000000>0$.  Primitivity of $(f_i,g_i)$ then forces
+the coefficient pairs to agree, and the conic fixes the shift.  This
+branch contributes \(O(N)\) primitive conic-coordinate tuples across the
+primary cells.  To return to complete canonical source records, include
+the ordered residual factorizations.  They cost
+\(\tauDiv(f)\tauDiv(g)\ll_\eta Y^\eta\), so this branch is
+\(O_\eta(Y^\eta N)\).
+
+Let the coefficient degree be $b_q\ge1$ and the corner degree $a_c\ge2$.
+Then apply Heath--Brown's bihomogeneous Lemma~2~\cite{HB2012} to the
+factor after the unimodular coefficient-lattice change of basis.  Its
+bidegree is $(b_q,a_c)$.  The first pair is the primitive transformed
+coefficient pair of radius $O(T_1+1)$.  The second pair is the original
+primitive corner pair $(J,K)$, with no size hypothesis.  The factor height
+is $Y^C$ for a fixed $C$.  Thus the count is
+$O((T_1+1)^{2/a_c+\varepsilon}Y^{C\varepsilon})$.  Here $2/a_c\le1$ and
+$T_1+1\le Y^{C'}$ for a fixed $C'$.  Choose the theorem's internal
+$\varepsilon<\eta/(C+C'+1)$; this bounds the count by $Y^\eta(T_1+1)$.
+For corner degree one write the factor as
+$KP(f,g)+JQ(f,g)$ with coprime homogeneous $P,Q$.  Their nonzero resultant
+and homogeneous Bezout identities give
+$d_0=\gcd(P(f,g),Q(f,g))\mid\operatorname{Res}(P,Q)$, since
+$\gcd(f,g)=1$.  The factor equation forces
+$(J,K)=\pm(P(f,g)/d_0,-Q(f,g)/d_0)$, with at most one positive sign.
+Write $f_J=d_f$, $g_K=d_g$ for the supported parts and
+$v=f/d_f$, $w=g/d_g$.
+Write \(\ell_f,\ell_g\) for the endpoint labels in the four patterns
+\((P(0,1),Q(1,0))\):
+\[
+\begin{array}{c|c|c|c}
+P(0,1)&Q(1,0)&\ell_f&\ell_g\\ \hline
+\ne0&\ne0&\rad(d_f)&\rad(d_g)\\
+\ne0&=0&\rad(d_f)&w\\
+=0&\ne0&v&\rad(d_g)\\
+=0&=0&v&w .
+\end{array}
+\AutoTag{eq:old:6_18a}
+\]
+If $P(0,1)\ne0$, reducing $d_0J=P(f,g)$ modulo $\rad(d_f)$ gives
+$\rad(d_f)\mid P(0,1)$.  If $P(0,1)=0$, then $f\mid P(f,g)$, and
+$\gcd(v,J)=1$ gives $v\mid d_0\mid\operatorname{Res}(P,Q)$.  The same
+argument with $Q(1,0)$ proves the two $g$-side alternatives.  The chosen
+endpoint labels satisfy \(\ell_f\ell_g\ge\Pi>Y^p\), since each is at
+least the corresponding minimum in the definition of \(\Pi\).  Each label
+divides a fixed nonzero endpoint coefficient or resultant of polynomial
+height.  So there are \(\ll_\eta Y^\eta\) possible pairs of endpoint
+labels, for any prescribed $\eta>0$.  Also \(\gcd(\ell_f,\ell_g)=1\),
+since \(\gcd(f,g)=1\) and the labels are supported on the respective parts
+of \(f\) and \(g\).  Take two distinct primitive coefficient pairs with
+the same labels.  Their divisibilities combine, and the nonzero cross
+determinant is divisible by \(\ell_f\ell_g\).  Take a coefficient cell of
+width $O(F/(EN))$ in $g/f$.  There the ratios are separated by at least
+$\ell_f\ell_g/(4E^2)$, since $f_i<2E$.  Thus the number of pairs in one
+cell is
+\[
+ O\left(1+\frac{EF}{ N \ell_f\ell_g}\right).
+\]
+Summing over the $O(N)$ coefficient cells and the divisor labels gives
+\[
+ \ll_\eta Y^\eta\left(N+\frac{EF}{ \ell_f\ell_g}\right)
+ \ll_\eta Y^\eta\left(N+\frac{EF}{ Y^p}\right),
+\]
+including unit labels and endpoint equalities. A factor equal to a source
+coordinate vanishes only when that coordinate is zero, so it has no points
+in the positive source. This is separate from the lattice shortest-vector
+axes, which are retained.
+This branch counts the primitive coefficient and corner tuples.
+Recovering complete source pairs still needs the ordered residual
+splittings of \(f\) and \(g\), at most \(\tauDiv(f)\tauDiv(g)\).  That
+multiplicity is absorbed in the displayed \(Y^\eta\).
+
+For the high-degree factors use a second, coefficient-ratio grid.  Write
+\[
+ r_{i_c}=\frac FE\frac{i_c}{N},\qquad
+ C_{i_c}=(r_{i_c},r_{i_c+1}],\qquad
+ \lfloor N/2\rfloor\le i_c<2N.
+\AutoTag{eq:old:6_19a}
+\]
+The dyadic source has \(g/f>F/(2E)\), since \(g\ge F\) and \(f<2E\).
+Thus these \(O(N)\) cells cover its full range
+\(F/(2E)<g/f<2F/E\).  Now use
+\[
+ \frac{g}{ f}=\left(\frac{J}{ K}\right)^2+\frac{s}{ fK^2},
+ \qquad \frac{s}{gK^2}\ll \frac{H_{4P}}{X_{4P}}\ll Y^{-\tau_0},
+\AutoTag{eq:old:6_19b}
+\]
+and $\tau_0>\mu_{\rm HP}$.  The relative displacement from the square map is
+then $o(1/N)$.  Each grid has relative width $O(1/N)$, and squaring
+preserves relative widths on positive intervals.  Hence each coefficient
+cell meets $O(1)$ primary $J/K$ cells, and conversely.  Thus the cell
+polynomials from \eqref{eq:old:6_17a} give $O(1)$ factors per coefficient
+cell.
+
+For a coefficient cell define the rational linear map
+\[
+ \mathcal T_{i_c}(g,f)=
+ \left(\frac{N}{ F}(g-r_{i_c}f),\frac{f}{ E}\right).
+\AutoTag{eq:old:6_19c}
+\]
+For a point in this cell, $f/E\in[1,2)$ and
+\[
+0\le \frac{N}{ F}(g-r_{i_c}f)
+ <\frac{N}{ F}\,2E\,\frac{F}{ EN}=2,
+\]
+so its image lies in $[0,2]\times[1,2]$.  The matrix of
+$\mathcal T_{i_c}$ is
+\[
+\begin{pmatrix}N/F&-i_c/E\\0&1/E\end{pmatrix},\qquad
+\det\mathcal T_{i_c}=N/(EF).
+\]
+Let $\Lambda_{i_c}=\mathcal T_{i_c}\mathbb Z^2$.  Choose a
+Lagrange-reduced basis $v_1,v_2$ of this image lattice.  Its lengths are
+$\lambda_1\le\lambda_2$, and its angle is bounded away from zero.  Write
+$v_j=\mathcal T_{i_c}h_j$.  Since $v_1,v_2$ are a lattice basis,
+$h_1,h_2\in\mathbb Z^2$ form a unimodular basis of $\mathbb Z^2$.
+Hence every primitive coefficient pair has a primitive transformed
+pair $(x_1,x_2)$ in $(g,f)=x_1h_1+x_2h_2$.  Put
+$T_1=1/\lambda_1$, $T_2=1/\lambda_2$.  The determinant and reduction give
+\[
+ T_1\ge T_2,\qquad T_1T_2\asymp \frac{EF}{ N},\qquad
+ T_1\gg\sqrt{EF/N},\qquad
+ \max(|x_1|,|x_2|)\ll T_1
+\AutoTag{eq:old:6_19d}
+\]
+for the transformed coordinates $(x_1,x_2)$.  For the last bound, the
+bounded image rectangle and the angle bound imply
+$|x_j|\ll1/\lambda_j\le T_1$.  The source has
+$EF\gg Y^{2/3-e}$ and $N\asymp Y^{16/25}$, so $EF/N$ grows as a positive
+power.  A common denominator for the matrix of $\mathcal T_{i_c}$ is
+$EF$.  So every nonzero image lattice vector has length at least
+$(EF)^{-1}$.  Also $\lambda_1\ll\sqrt{N/(EF)}$ by the two-dimensional
+Minkowski bound, and $\lambda_1\lambda_2\asymp N/(EF)$ by reduction.
+Hence $\lambda_2\ll N$.  The inverse matrix is
+\[
+\mathcal T_{i_c}^{-1}(y_1,y_2)
+=\bigl((F/N)(y_1+i_cy_2),Ey_2\bigr).
+\]
+Since $i_c\asymp N$ and $E,F,N\le Y^C$ for a fixed $C$, both $v_j$
+and their integer preimages $h_j$ have polynomial height.  So substitution
+by the unimodular matrix $[h_1\ h_2]$ keeps every fixed-degree factor at
+polynomial coefficient height.  The unimodular change uses no moving
+denominator.
+
+The census below includes axes and first points.  At scale
+$D_{\rm lat}\le T_1<2D_{\rm lat}$, let $(g_{\rm lat},f_{\rm lat})$ be the
+primitive preimage of the shortest basis vector.  From
+\eqref{eq:old:6_19c},
+\[
+ |f_{\rm lat}|\ll E/D_{\rm lat},\quad |g_{\rm lat}|\ll F/D_{\rm lat},\quad
+ |i_cf_{\rm lat}-(NE/F)g_{\rm lat}|\ll E/D_{\rm lat}.
+\AutoTag{eq:old:6_19e}
+\]
+If $f_{\rm lat},g_{\rm lat}\ne0$, then $E/D_{\rm lat}$ and $F/D_{\rm lat}$
+are at least a fixed positive constant.  There are $O(F/D_{\rm lat})$
+choices for $g_{\rm lat}$.  For each, the integer product $i_cf_{\rm lat}$
+lies in an interval of length $O(E/D_{\rm lat})$.  This gives that many
+possible values.  Each nonzero value has at most
+$\tauDiv(|i_cf_{\rm lat}|)\ll_\eta Y^\eta$ factorizations into
+$i_c f_{\rm lat}$, since all factors have polynomial height.  Thus
+\[
+ \#\{i_c:T_1\asymp D_{\rm lat},\ f_{\rm lat}g_{\rm lat}\ne0\}
+ \ll_\eta Y^\eta \frac{EF}{D_{\rm lat}^2}.
+\AutoTag{eq:old:6_19f}
+\]
+If $f_{\rm lat}=0$, primitivity gives $g_{\rm lat}=\pm1$ and
+$T_1\asymp F/N$.  So the sum over $O(N)$ cells is $O(F+N)$.  If
+$g_{\rm lat}=0$, then $f_{\rm lat}=\pm1$, $i_c\asymp N$, and
+$T_1\asymp E/N$, giving $O(E+N)$.  Cells with $T_1<1$ contribute $O(N)$.
+These cells, both axes and every $+1$ are kept.  Weight
+\eqref{eq:old:6_19f} by $T_1\asymp D_{\rm lat}$ and sum geometrically
+from $D_{\rm lat}\gg\sqrt{EF/N}$.  This yields
+\[
+ \sum_{i_c}(T_1(i_c)+1)\ll_\eta
+ Y^\eta\{N+\sqrt{EFN}+E+F\}.
+\AutoTag{eq:old:6_19}
+\]
+This count factors the exact integer product \(i_cf_{\rm lat}\). The number
+of cells in this dyadic range is
+\(O_\eta(Y^\eta EF/D_{\rm lat}^2)\).
+
+For a factor with $b_q\ge1$ and $a_c\ge2$, the Heath--Brown bound above
+is $Y^\eta(T_1+1)$.  Summing over coefficient cells by \eqref{eq:old:6_19}
+gives $Y^\eta(N+\sqrt{EFN}+E+F)$.  Short matrices, nonabsolute factors and
+the two zero-degree branches contribute $Y^\eta N$.  The corner-linear
+branch contributes $Y^\eta(N+EF/Y^p)$, by the endpoint-label spacing
+argument above.  These cases exhaust the fixed-degree factorization.
+
+Combine the lattice census \eqref{eq:old:6_19} with the corner-linear
+count.  The complete bound then has the form
+\[
+ \#4P\ll_\eta Y^\eta\left(N+\sqrt{EFN}+E+F+\frac{EF}{Y^p}\right).
+\]
+These local bounds are summed over the \(O(\log^4Y)\) choices of dyadic
+scales and the \(O(\log Y)\) shift scales.  The resulting logarithmic
+factor is absorbed into the arbitrary \(Y^\eta\) loss.
+The four distinct exponent contributions, in the order
+\(EF/Y^p\), \(\sqrt{EFN}\), \(N\), and \(E+F\), are
+\[
+ q-p=\frac{9907393}{15000000},\quad
+ \frac{q+\mu}{2}=\frac{9892607}{15000000},\quad
+ \mu=\frac{16}{25},\quad
+ c=\frac{5277821}{10000000}.
+\AutoTag{eq:old:6_20}
+\]
+Their savings relative to $2/3$ are respectively
+\[
+S_0,\qquad \frac{107393}{15000000},\qquad \frac{2}{75},\qquad
+ \frac{4166537}{30000000}.
+\AutoTag{eq:old:6_21}
+\]
+The minimum is $S_0=30869/5000000$.  We combine the uniform lattice census
+\eqref{eq:old:6_19}, the finite factor family and the polynomial-height
+estimates.  With the divisor losses and the one simultaneous source
+inversion, this gives
+\[
+\#4P\ll_\eta Y^{2/3-S_0+\eta}.
+\AutoTag{eq:old:6_22}
+\]
+\begin{rowproposition}[4P row estimate]\label{prop:row-4p}
+For every \(\eta>0\), the complete simultaneous-shift row satisfies
+\[
+ \#4P\ll_\eta Y^{2/3-S_0+\eta}.
+\]
+\end{rowproposition}
+\begin{proof}
+Equations \eqref{eq:old:6_19}--\eqref{eq:old:6_21} bound every factor
+branch and its exponent.  Then \eqref{eq:old:6_22} sums them with the
+source-uniform lattice and inverse bounds.
+\end{proof}
+
+The $4P$ estimate applies to its enlarged source.  Section~\ref{sec:long}
+counts $5W$ from its original-cell source and geometric envelope.

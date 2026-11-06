@@ -1,0 +1,213 @@
+\section{Cited statements and their applications}\label{app:sources}
+
+This appendix lists the inputs from earlier work and the
+parameter substitutions at their applications. Results proved here are not
+attributed to these sources.
+
+For integers \(k,n\ge1\), define
+\[
+ P_k(n)=\prod_{j=0}^{k-1}(n+j),\qquad
+ q_k(n)=\frac{P_k(n)}{\operatorname{rad}(P_k(n))}.
+\]
+For real \(X\ge2\), define
+\[
+ F_{k,k}(X)=\#\{1\le m<n\le X:
+     \operatorname{rad}(P_k(m))=\operatorname{rad}(P_k(n))\}.
+\]
+
+\subsection*{The author's earlier papers}
+
+Theorem~1 of \cite{Paper1} states that for every fixed integer \(k\ge2\), every
+\(\varepsilon>0\), and \(X\ge2\),
+\[
+ F_{k,k}(X)\ll_{k,\varepsilon}X^{2/3+\varepsilon}.
+\]
+At \(k=2\), this is the earlier \(2/3\) baseline for \(F(X)\). It is
+given for comparison only. No row below uses it.
+
+Lemma~2.1 of \cite{Paper1} states that for squarefree \(Q\) and \(X\ge2\),
+\[
+ \#\{1\le z\le X:\operatorname{rad}(z(z+1))\mid Q\}
+ \ll 2^{\omega(Q)}\log(2X),
+\]
+with an absolute implied constant. For the \(O_R\) row take
+\(Q=\operatorname{rad}(n(n+1))\) and \(X=n\). The source equality of
+radicals gives the divisibility condition for every partner \(m\).
+Also \(Q\) is squarefree and \(Q\le Y(Y+1)\). Thus
+\(2^{\omega(Q)}\ll_\eta Y^{2\eta}\). Choose the exponents of the
+logarithm and divisor loss below the requested row loss. Then both are
+absorbed. No other uniformity in \(Q\) is needed.
+
+Lemma~2.3 of \cite{Paper1} gives, for fixed \(k\ge2\), \(X\ge2\),
+\(K\ge\max(k,2)\), and \(0<\eta<1\),
+\[
+ \#\{n\le X:q_k(n)>K\}
+ \ll_{k,\eta} XK^{-1+\eta}
+      +K^2(1+\log K)^{k-1}+X^{1/2}.
+\]
+Lemma~2.4 of \cite{Paper1} gives
+\[
+ \#\{1\le m<n\le X:q_k(m),q_k(n)\le K,
+       \operatorname{rad}(P_k(m))=\operatorname{rad}(P_k(n))\}
+ \ll_k K^2\log(2X).
+\]
+Here $X\ge2$ and $K\ge1$, and $k\ge2$ is fixed. The stronger lower
+restriction $K\ge\max(k,2)$ belongs only to Lemma~2.3 above.
+These quotient-tail and Farey-spacing estimates are stated for context
+only. Neither is a premise of the proof.
+
+Theorem~3 of \cite{Paper1} gives, for every \(\eta>0\), uniformly for real
+\(H\ge2\) and \(1\le V<H^2\),
+\[
+ \#\{H<t\le2H:\operatorname{rad}(t(t+1))\le V\}
+ \ll_\eta H^\eta\left(\frac VH+H^{7/12}\right).
+\]
+For the outer low-radical estimate put \(H=Y/2\) and
+\(V=Y^{5/3-S_0}\). For all sufficiently large \(Y\), \(H\ge2\),
+\(V\ge1\), and
+\(V/H^2=4Y^{-1/3-S_0}<1\). The right side becomes
+\[
+ (Y/2)^\eta\left(2Y^{2/3-S_0}+(Y/2)^{7/12}\right).
+\]
+The common factor \((Y/2)^\eta\) is kept. Fix a requested row
+loss \(\varepsilon>0\). Choose the theorem parameter below both
+\(\varepsilon/2\) and half the fixed gap \(2/3-S_0-7/12>0\). Then the
+display is \(O_\varepsilon(Y^{2/3-S_0+\varepsilon})\). These are
+the hypotheses and bound used in \eqref{eq:old:4_2} and
+Appendix~\ref{app:lowrad}.
+
+Theorems~1.1 and~1 of the author's earlier papers
+\cite{Zhang712,ZhangE20} state, respectively,
+\[
+ N_1(X)\ll_\varepsilon X^{7/12+\varepsilon},\qquad
+ N_1(X)\ll_\varepsilon X^{20/37+\varepsilon},
+\]
+where \(N_1(X)\) counts primitive positive triples \(x+y=z\) with
+\(\operatorname{rad}(xyz)<z\) and \(\max(x,y,z)\le X\). These theorems
+are cited for context only. The source rows below count equal-radical
+pairs of consecutive-product arguments. They do not count primitive
+\(abc\) triples. So neither theorem enters a row estimate.
+
+The four-corner parametrization and the identities of
+Section~\ref{sec:notation} follow
+from the four gcd definitions. They give the coordinates used below. Their
+derivation uses no further cited result.
+
+\subsection*{External results}
+
+We use Heath--Brown's published \cite[Lemma~2, p.~8]{HB2012}.
+Let \(G\) be an absolutely irreducible
+bihomogeneous integer form of bidegree \((a,b)\), with \(a,b\ge1\), and
+let \(X\ge1\). Then the number of primitive pairs \((x_1,x_2)\),
+\((y_1,y_2)\) with \(G=0\) and \(\max_i|x_i|\le X\) is
+\[
+ O_{a,b,\varepsilon}\bigl(X^{2/b+\varepsilon}\|G\|^\varepsilon\bigr).
+\]
+There is no size condition on the \(y\)-pair. Section~\ref{sec:intermediate} treats a factor
+with corner degree \(a_c\ge2\) and coefficient degree \(b_q\ge1\).
+There the coefficient-lattice pair is first and the primitive corner pair is
+second. The reductions in Section~\ref{sec:intermediate} make both pairs primitive. The
+first has radius \(O(T_1+1)\). The transformed factor height is at
+most \(Y^C\) for a fixed \(C\). The source also gives \(T_1+1\le Y^{C'}\)
+for a fixed \(C'\). The lemma with bidegree \((b_q,a_c)\) gives
+\[
+ O((T_1+1)^{2/a_c+\varepsilon}Y^{C\varepsilon}).
+\]
+Fix a requested total loss \(\eta>0\). Choose a fixed exponent
+\(A_{\rm HB}\ge\max(C,C',1)\). Apply Heath--Brown with
+\(0<\varepsilon<\eta/(4A_{\rm HB})\). Then its per-cell loss is at most
+\(Y^{\eta/2}(T_1+1)\). Use the lattice census with its own loss
+parameter \(\eta/2\). As \(2/a_c\le1\),
+\[
+ (T_1+1)^{2/a_c+\varepsilon}Y^{C\varepsilon}
+ \le Y^{2A_{\rm HB}\varepsilon}(T_1+1)
+\le Y^{\eta/2}(T_1+1).
+\]
+Summation by \eqref{eq:old:6_19} then gives the requested total
+factor \(Y^\eta\). Section~\ref{sec:joint} uses the same pair order and degree
+conditions. Its lattice census gets the separate \(\eta/2\) loss.
+Thus the hypotheses \(X\ge1\), \(a,b\ge1\), primitivity and one-sided
+size hold in Sections~\ref{sec:joint} and \ref{sec:intermediate}.
+
+Section~\ref{sec:long} uses the same theorem for each absolutely irreducible factor
+there with \(a_c\ge2\) and \(b_q\ge1\). The pair order and the
+primitivity are the same. Let \(H_7\) be the fixed exponent in the factor-height
+bound \(\lVert F\rVert\le Y^{H_7}\). The source bounds give
+\(U_0,V_*,N\le Y\) for sufficiently large \(Y\), since
+\(U_0\le f\le M\), \(V_*\le4g\le4M\),
+\(M\ll Y^{q_{\max}}\), \(q_{\max}<1\), and \(N=\lceil Y^{a_{\rm grid}}\rceil\)
+with \(a_{\rm grid}<1\). Set the temporary census loss parameter
+\(\eta_{\rm census}=1\) in \eqref{eq:old:7_12}. This choice serves only
+the coarse height bound below. It differs from the later allocated
+loss \(\eta\). It yields
+\(\sum_i(T_{1,i}+1)\ll Y^{5/2}\). After raising the fixed lower
+threshold, every \(T_{1,i}+1\le Y^3\). This coarse bound serves only to
+give this pointwise height cap. Set
+\(A_{\rm HB}=H_7+3\). For a
+requested total loss \(\eta>0\), take
+\(0<\varepsilon<\eta/(2A_{\rm HB})\) in the Heath--Brown estimate. Then
+\[
+ (T_{1,i}+1)^{2/a_c+\varepsilon}\lVert F\rVert^\varepsilon
+ \le Y^{(H_7+3)\varepsilon}(T_{1,i}+1)
+ \le Y^{\eta/2}(T_{1,i}+1),
+\]
+and \eqref{eq:old:7_12} with loss parameter \(\eta/2\) pays for
+the cell sum. The combined loss is \(Y^\eta\). Section~\ref{sec:long} treats the
+cases \(a_c=0\), \(a_c=1\), and \(b_q=0\) separately. The same result
+applies there.
+
+The unnumbered theorem of Bombieri--Schmidt \cite[pp.~69--70]{BS1987} reads as follows. Let
+\(F\in\mathbb Z[x,y]\) be an irreducible binary form of degree
+\(r\ge3\) and let \(h\ge1\). Then the number of primitive integer solutions of
+\(|F(x,y)|=h\) is at most \(C_{\rm BS}r^{1+\omega(h)}\), with absolute
+\(C_{\rm BS}\). The 1989 correction to their proof of Lemma~7
+\cite{BS1989} changes no
+hypothesis of this theorem. In Section~\ref{sec:intermediate} the form is the irreducible
+binary cubic \(c_1x^3-c_2z^3\). Its content and the
+common divisor of \(x,z\) are removed first. The right side is nonzero. The theorem gives
+\(O(3^{1+\omega(|h|)})\) primitive solutions. The reducible case
+occurs when both coprime coefficients are cubes. Section~\ref{sec:intermediate} counts it
+separately by factoring the difference of cubes.
+
+Tao's Lemma~2.10 \cite[Lemma~2.10]{Tao} reads as follows. Let \(x\) be large. Let \(a,b\) be
+positive integers and \(h\) a nonzero integer, all of polynomial size in
+\(x\). Then
+\[
+ \#\{(n,m)\in\mathbb Z_{>0}^2:an^2+h=bm^2,\ n\le x\}
+ \ll x^{o(1)}.
+\]
+Sections~\ref{sec:outer}--\ref{sec:long} use the fixed-height Theorem~\ref{thm:fibre},
+proved in Appendix~\ref{app:fibre}. Tao's statement is cited as the
+precedent. The applications are as follows. In Section~\ref{sec:outer}, the
+outer fibre \eqref{eq:old:4_5} uses
+\[
+(a,b,h,n,m)=(P,Q_{\rm prod},Q_{\rm prod}-P,2n+1,2m+1),
+\qquad x=2Y+1,\qquad A_{\rm ht}=4.
+\]
+Here \(P,Q_{\rm prod},|Q_{\rm prod}-P|\le4Y^4\),
+\(2n+1\le2Y+1\), and the shift is nonzero.
+In Section~\ref{sec:joint}, the two applications use, respectively,
+\[
+(a,b,h,n,m)=(\alpha,\beta,u,A,D),\qquad
+(a,b,h,n,m)=(\gamma,\delta,t,B,C),\qquad x=2Y,\quad A_{\rm ht}=2.
+\]
+The equations are \(\alpha A^2+u=\beta D^2\) and
+\(\gamma B^2+t=\delta C^2\). Section~\ref{sec:joint} gives
+\(\alpha,\beta,u,\gamma,\delta,t\le(Y+1)^{21/20}\le(2Y)^2\) and
+\(A,B\le Y+1\le2Y\) for \(Y\ge2\). Thus the fixed height exponent is
+\(A_{\rm ht}=2\). The bounded variables are \(A\) and \(B\).
+In Sections~\ref{sec:intermediate}--\ref{sec:long}, every corner-degree-zero use takes
+\[
+(a,b,h,n,m)=(f,g,s,J,K),\qquad x=2Y,\qquad A_{\rm ht}=2.
+\]
+The source gives positive \(f,g,s\), nonzero \(s\),
+\(f,g,s\le(Y+1)^2\), and \(J,K\le Y+1\). In the corner-degree-zero
+branches the ordered residual factors first fix \(L\). The selected
+shift is then counted among \(s\mid L\). As \(L\) has polynomial
+height in \(Y\), for every \(\eta>0\) the divisor bound gives the
+uniform estimate \(\tauDiv(L)\ll_\eta Y^\eta\). The proof here uses the self-contained
+Theorem~\ref{thm:fibre}.
+
+Reuss's Theorem~1 is the determinant-method input behind this low-radical
+estimate; we use the consequence stated in Theorem~3 of \cite{Paper1},
+as applied in Appendix~\ref{app:lowrad}.

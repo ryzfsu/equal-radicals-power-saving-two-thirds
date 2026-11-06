@@ -1,0 +1,93 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\toprule}{\hline}
+\newcommand{\midrule}{\hline}
+\newcommand{\bottomrule}{\hline}
+\raggedbottom
+\numberwithin{equation}{section}
+\newcommand{\AutoTag}[1]{\refstepcounter{equation}\tag{\theequation}\label{#1}}
+\newcommand{\unnumtable}{\addtocounter{table}{-1}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{rowproposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\tauDiv}{\tau_{\mathrm{div}}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\Om}{\Omega}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\lls}{\ll_{\!\e}}
+\newcommand{\1}{\mathbf 1}
+\title{A power saving below two-thirds for equal radicals of consecutive products}
+\author{Ruiyi Zhang}
+\address{Independent Researcher, Columbia, Maryland, USA}
+\email{ryzfsu@gmail.com}
+\subjclass[2020]{Primary 11A25; Secondary 11D25, 11N37}
+\keywords{radicals, consecutive integers, quadratic fibres, determinant method}
+\hypersetup{pdftitle={A power saving below two-thirds for equal radicals of consecutive products},pdfauthor={Ruiyi Zhang}}
+\begin{document}
+\input{sections/00-abstract}
+\maketitle
+\input{sections/01-intro}
+\input{sections/02-notation}
+\input{sections/03-partition}
+\input{sections/04-outer}
+\input{sections/05-joint}
+\input{sections/05-short-shifts}
+\input{sections/06-intermediate}
+\input{sections/07-long}
+\input{sections/08-ledger}
+\input{sections/09-epsilon}
+\input{sections/10-conclusion}
+\appendix
+\input{sections/A-equality}
+\input{sections/B-square-fibre}
+\input{sections/C-reuss}
+\input{sections/D-arithmetic}
+\input{sections/E-source-map}
+\section*{Use of AI tools}
+
+The author devised the main argument. Codex (OpenAI, GPT-6 Astra) carried
+out numerical checks of identities and of the cubic family, and searched
+the literature. Claude Code (Anthropic, Claude Opus 5.5) reviewed the
+arguments and references. The author takes responsibility for the proof
+and references.
+
+\section*{Statements and declarations}
+\textbf{Competing interests.} The author has no competing interests.
+
+\textbf{Funding.} No funding was received for this work.
+
+\begin{thebibliography}{20}
+\bibitem{Paper1} R.~Zhang, \emph{Equal radicals of consecutive products}
+(2026), \url{https://doi.org/10.5281/zenodo.23758120}.
+\bibitem{Zhang712} R.~Zhang, \emph{A primitive-ratio cut and a $7/12$
+bound for the abc exceptional set}, preprint (2026),
+\url{https://doi.org/10.5281/zenodo.23247752}.
+\bibitem{ZhangE20} R.~Zhang, \emph{Cubic sieves, a primitive-ratio cut
+and a $20/37$ bound for the abc exceptional set}, preprint (2026),
+\url{https://doi.org/10.5281/zenodo.23266656}.
+\bibitem{HB2012} D.~R. Heath-Brown, \emph{Square-free values of $n^2+1$},
+Acta Arith. \textbf{155} (2012), no.~1, 1--13,
+\url{https://doi.org/10.4064/aa155-1-1}.
+\bibitem{BS1987} E.~Bombieri and W.~M. Schmidt, \emph{On Thue's equation},
+Invent. Math. \textbf{88} (1987), no.~1, 69--81,
+\url{https://doi.org/10.1007/BF01405092}.
+\bibitem{BS1989} E.~Bombieri and W.~M. Schmidt, \emph{Correction to
+On Thue's equation}, Invent. Math. \textbf{97} (1989), no.~2, 445,
+\url{https://doi.org/10.1007/BF01389050}.
+\bibitem{Reuss} T.~Reuss, \emph{Pairs of $k$-free numbers, consecutive square-full
+numbers}, preprint (2014), arXiv:1212.3150v2.
+\bibitem{Tao} T.~Tao, \emph{Products of consecutive integers with unusual anatomy},
+preprint (2026), arXiv:2603.27990v3.
+\end{thebibliography}
+\end{document}

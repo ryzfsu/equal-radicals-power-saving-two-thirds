@@ -1,0 +1,124 @@
+\section{Exact exponent summary}\label{sec:ledger}
+
+Put
+\[
+\begin{gathered}
+S_0=\epsilon_0=k_0=\frac{30869}{5000000},\quad
+l_0=2S_0,\quad j_0=p_0=3S_0,\quad \xi=\frac1{10000},\\
+a_0=\frac6{125},\quad
+b_0=\frac{4166537}{30000000},\quad
+\Delta_{\rm exp}=3S_0.
+\end{gathered}\AutoTag{eq:old:8_1}
+\]
+All entries below are limiting savings from \(2/3\) at this fixed
+rational parameter vector. Sections~\ref{sec:long} and
+\ref{sec:epsilon} handle the finite source collars and the arbitrary
+analytic losses. The row estimates in Sections~\ref{sec:outer}--\ref{sec:long}
+give the exact values in the second column. The symbolic counting exponents
+and their evaluations are displayed in Sections~\ref{sec:joint}--\ref{sec:intermediate}
+(for \(3u\), \(3t\), \(4H\), and \(4P\)). Appendix~\ref{app:arithmetic}
+collects the parameter vector, exact savings, and margins above \(S_0\).
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\renewcommand{\arraystretch}{1.35}
+\footnotesize
+\unnumtable
+The table expands the savings used in the preceding row estimates. The
+minimum row and its margin are read from the exact fractions. The rounded
+decimals are annotations only.
+\begin{longtable}{@{}p{0.30\textwidth}p{0.53\textwidth}p{0.12\textwidth}@{}}
+\toprule
+Contribution & Limiting saving & Decimal\\
+\midrule
+\endfirsthead
+\toprule
+Contribution & Limiting saving & Decimal\\
+\midrule
+\endhead
+\(O_R\) & \(30869/5000000\) & --\\
+\(O_M\) & \(30869/5000000\) & --\\
+\(O_{\operatorname{rad}M}\) & \(30869/5000000\) & --\\
+\(Q0\) & \(2/3\) & --\\
+\(Q1\) & \(30869/5000000\) & --\\
+\(Q2t_{\rm int}\) & \(972179/7500000\) & --\\
+\(Q2t_{\rm harm}\) & \(30869/5000000\) & --\\
+\(Q2u_{\rm int}\) & \(2222179/15000000\) & --\\
+\(Q2u_{\rm harm}\) & \(30869/1250000\) & --\\
+\(3u_{\rm sqrt}\) & \(5102312049347/600000000000000\) & --\\
+\(3u_{\rm int}\) & \(23206592049347/300000000000000\) & --\\
+\(3u_{\rm core}\) & \(2473/12000\) & --\\
+\(3u_{\rm small,1}\) & \(1619393/6000000\) & --\\
+\(3u_{\rm small,2}\) & \(8003/500000\) & --\\
+\(3t_{\rm sqrt}\) & \(388751/60000000\) & --\\
+\(3t_{\rm int}\) & \(2199179/30000000\) & --\\
+\(3t_{\rm axes}\) & \(2726537/15000000\) & --\\
+\(4E\) & \(30869/5000000\) & --\\
+\(4H\) & \(140441/5000000\) & --\\
+\(4P_{\rm graph}\) & \(30869/5000000\) & --\\
+\(4P_{\rm HD}\) & \(107393/15000000\) & --\\
+\(4P_{\rm cover}\) & \(2/75\) & --\\
+\(4P_{\rm axes}\) & \(4166537/30000000\) & --\\
+\(5W_{\rm HD}\) & \(\dfrac{29390272487700347267}{4760400458585535000000}\) & \(0.006174\)\\[4pt]
+\(5W_{\rm int}\) & \(\dfrac{235120131355662893}{9520800917171070000}\) & \(0.024695\)\\[4pt]
+\(L_{5W}\) & \(1203113/90000000\) & \(0.013368\)\\
+\bottomrule
+\end{longtable}
+\renewcommand{\arraystretch}{1}
+\normalsize
+
+Some entries add up within one row estimate. These are the five \(3u\)
+entries, the three \(3t\) entries, the four \(4P\) entries, the two
+\(Q2\) terms per chart and the three \(5W\) entries. In each row the
+largest exponent controls the sum. Equivalently, the smallest saving does.
+In each \(5W\) source box, Section~\ref{sec:long} selects the best chart
+and assigned-corner route. The three displayed terms are the geometric,
+interval and high-degree contributions that follow.
+In the \(Q2\) entries, \(Q2t_{\rm int},Q2t_{\rm harm}\) are the first and
+second terms of the \(Q2t\) estimate \eqref{eq:old:5_3}. Likewise,
+\(Q2u_{\rm int},Q2u_{\rm harm}\) are the terms of the \(Q2u\) estimate.
+Each pair is summed within its own first-match
+population.
+The table has 26 scalar terms. After grouping the three \(5W\)
+contributions, 24 effective terms remain.
+
+The minimum row saving is \(S_0\). It is attained by
+\(O_R,O_M,O_{\operatorname{rad}M},Q1,Q2t_{\rm harm},4E\), and
+\(4P_{\rm graph}\).
+In the final row the smallest of the three savings is \(5W_{\rm HD}\), and
+\[
+5W_{\rm HD}-S_0=
+\frac{128034121242821}{1190100114646383750000}
+\quad\text{(about }1.076\times10^{-7}\text{)}>0.
+\AutoTag{eq:old:8_2}
+\]
+The 72-branch minimum used for the geometric cap is
+\[
+L_{5W}=\frac{1203113}{90000000},\qquad
+L_{5W}-S_0=\frac{647471}{90000000}>0.
+\AutoTag{eq:old:8_3}
+\]
+Section~\ref{sec:long} proves the branch construction and the
+comparison needed for \(5W\). No LP value is used as a count by itself.
+
+\begin{proposition}[Reserve]\label{prop:reserve}
+Put
+\[
+g_0=S_0-\frac1{165}=\frac{18677}{165000000},\qquad
+\beta_0=\frac{g_0}{16}=\frac{18677}{2640000000}.
+\]
+Then
+\[
+S_0-\beta_0-\frac{g_0}{4}
+=\frac1{165}+\frac{11g_0}{16}
+=\frac{16205447}{2640000000}>\frac1{165}.
+\AutoTag{eq:old:8_4}
+\]
+\end{proposition}
+
+\begin{proof}
+Put the displayed fractions over the common denominator
+\(2640000000\). The loss \(\beta_0\) is charged once to each complete
+analytic row estimate. In the last row, the \(g_0/4\) term covers the maximum of the
+geometric, interval, and high-degree corrections.
+\end{proof}

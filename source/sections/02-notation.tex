@@ -1,0 +1,194 @@
+\section{Canonical source and parameters}\label{sec:notation}
+
+For an integer \(Y\ge2\), let
+\[
+ \Omega_Y=\{(m,n)\in\mathbb Z_{>0}^2:
+       m<n\le Y,\ Y/2<n,\
+       \operatorname{rad}(m(m+1))=\operatorname{rad}(n(n+1))\}.
+\]
+An element of \(\Omega_Y\) is called a source pair.
+For each source pair define its four corner gcds by
+\[
+A=\gcd(m,n),\quad B=\gcd(m,n+1),\quad
+C=\gcd(m+1,n),\quad D=\gcd(m+1,n+1).
+\]
+These four integers are pairwise coprime. For example, a prime dividing
+\(A\) and \(B\) would divide both \(n\) and \(n+1\). A prime
+dividing \(A\) and \(C\) would divide both \(m\) and \(m+1\). The
+same two consecutive pairs settle the other four pairs. Each corner
+divides the two entries in its definition. Hence, by pairwise
+coprimality, \(AB\mid m\), \(CD\mid m+1\), \(AC\mid n\), and \(BD\mid n+1\).
+Define the positive integer residuals
+\[
+a=\frac m{AB},\qquad b=\frac{m+1}{CD},\qquad
+c=\frac n{AC},\qquad d=\frac{n+1}{BD}.
+\]
+\begin{samepage}
+The residuals are pairwise coprime. First, \(\gcd(a,b)=\gcd(c,d)=1\),
+since each pair divides consecutive integers. For the four cross pairs,
+divide the defining corner gcds. This gives
+\[
+\gcd(Ba,Cc)=\gcd(Aa,Dd)=\gcd(Db,Ac)=\gcd(Cb,Bd)=1,
+\]
+so \(\gcd(a,c)=\gcd(a,d)=\gcd(b,c)=\gcd(b,d)=1\) as well.
+\end{samepage}
+The coordinates and mask are
+\[
+\begin{gathered}
+m=ABa,\quad m+1=CDb,\quad n=ACc,\quad n+1=BDd,\\
+Z=ABCD,\quad R=\operatorname{rad}(Z),\quad M=abcd,\\
+K_{\rm res}=M/\operatorname{rad}(M),\quad L=cd-ab,\\
+\alpha=ac,\quad\beta=bd,\quad\gamma=ad,\quad\delta=bc,\\
+u=(m+n+1)/(BC),\qquad t=(n-m)/(AD),\\
+CDb-ABa=1,\qquad BDd-ACc=1.
+\end{gathered}\AutoTag{eq:old:2_1}
+\]
+The four cross-gcd identities above will be used below. The radical
+condition is exactly \(\operatorname{rad}(M)\mid Z\). If \(p\mid a\), then
+\(p\mid m\). Equality of the original radicals forces \(p\mid n\) or
+\(p\mid n+1\). Hence \(p\mid A\) or \(p\mid B\). The other residuals give
+the corresponding corner. Conversely, every prime of \(Z\) divides both
+consecutive products. The mask ensures that no residual introduces a
+prime outside \(Z\).
+Thus the common radical is
+\[
+\operatorname{rad}(m(m+1))=\operatorname{rad}(n(n+1))=R.
+\]
+The identities
+\[
+Z^2M=m(m+1)n(n+1),\quad ZL=(n-m)(m+n+1)
+\]
+give \(ut=L>0\) once the shifts are integral. Their integrality follows
+from the corner identities
+\[
+m+n+1=C(Ac+Db)=B(Aa+Dd),\qquad
+n-m=A(Cc-Ba)=D(Bd-Cb).
+\]
+Since \(\gcd(B,C)=\gcd(A,D)=1\), the first numerator is divisible by
+\(BC\) and the second by \(AD\). Thus \(u,t\) are positive integers
+with product \(L\).
+The shifts are units at the opposite corner pairs:
+\[
+\gcd(u,AD)=\gcd(t,BC)=1.
+\]
+Modulo a prime dividing \(A\), the integer \(m+n+1\) is
+congruent to \(1\). Modulo a prime dividing \(D\), it is congruent to
+\(-1\). Modulo a prime dividing \(B\), \(n-m\) is congruent to
+\(-1\). Modulo a prime dividing \(C\), it is congruent to \(1\).
+The denominator factors \(BC\) and \(AD\) are
+coprime to these opposite corner pairs.
+
+The two conics, scale identities, and inverse maps from the same
+parametrization are
+\[
+\begin{aligned}
+\beta D^2-\alpha A^2&=u,&
+\delta C^2-\gamma B^2&=t,\\
+\alpha A^2&=u\frac{mn}{m+n+1},&
+\beta D^2&=u\frac{(m+1)(n+1)}{m+n+1},\\
+\gamma B^2&=t\frac{m(n+1)}{n-m},&
+\delta C^2&=t\frac{n(m+1)}{n-m},\\
+B&=(cA+bD)/u,& C&=(aA+dD)/u,\\
+A&=(dB-bC)/t,& D&=(cC-aB)/t.
+\end{aligned}\AutoTag{eq:old:2_2}
+\]
+We use only source points. They satisfy positivity, integrality, the
+four corner gcds and the cross gcds. They also satisfy the shell
+condition and the radical mask. We assert no converse for arbitrary
+positive solutions of either conic.
+
+The selected chart is deterministic:
+\[
+(J,K;s)=
+\begin{cases}(A,D;u),&u\le t,\\(B,C;t),&t<u.\end{cases}\AutoTag{eq:old:2_3}
+\]
+Thus \(u=t\) belongs to the first chart. Write \((f,g)=(\alpha,\beta)\)
+in the first chart and \((f,g)=(\gamma,\delta)\) in the second. For a
+positive integer \(x\), let \(v_p(x)\) be the exponent of \(p\) in its
+prime factorization. For a finite set of primes \(\mathcal P\), put
+\[
+x_{\mathcal P}=\prod_{p\in\mathcal P}p^{v_p(x)},\qquad
+x_{\varnothing}=1.
+\]
+Then
+\[
+f_J=f_{\{p:p\mid J\}},\quad g_K=g_{\{p:p\mid K\}},\quad
+v=f/f_J,\quad w=g/g_K,\quad
+r_J=\operatorname{rad}(f_J),\quad r_K=\operatorname{rad}(g_K),
+\]
+\[
+\Pi=\min(r_J,v)\min(r_K,w).\AutoTag{eq:old:2_4}
+\]
+These supported parts are functions of the canonical source. They are
+not extra summation variables.
+
+Set
+\[
+\begin{gathered}
+S_0=\frac{30869}{5000000},\quad
+\epsilon_0=k_0=S_0,\quad l_0=2S_0,\quad j_0=p_0=3S_0,\\
+a_0=\frac6{125},\quad b_0=\frac{4166537}{30000000},\quad
+\Delta_{\rm exp}=3S_0,\\
+q_{\min}=\frac{9907393}{15000000}=\frac23-S_0,\quad
+q_{\max}=\frac{5092607}{7500000}=\frac23+2S_0,\quad
+\tau_0=1-\frac32S_0 .
+\end{gathered}\AutoTag{eq:old:2_5}
+\]
+\begin{samepage}
+We use the following notation.
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+Symbol & Meaning\\
+\hline
+\(Y\) & dyadic shell endpoint; \(Y/2<n\le Y\)\\
+\(A,B,C,D\) & four corner gcds\\
+\(a,b,c,d\) & positive residual factors\\
+\(Z,R,M,L\) & \(ABCD,\ \operatorname{rad}(Z),\ abcd,\ cd-ab\)\\
+\(\alpha,\beta,\gamma,\delta\) & \(ac,\ bd,\ ad,\ bc\)\\
+\(u,t\) & positive shifts, with \(ut=L\)\\
+\(J,K;s\) & selected corner pair and its smaller shift\\
+\(f_J,g_K,v,w,\Pi\) & supported coefficients, complements, and their mask\\
+\(S_0,g_0,\beta_0\) & minimum saving, reserve, and allocated loss (values in the Introduction)\\
+\end{tabular}
+\end{center}
+\end{samepage}
+Define the high sector
+\[
+\mathcal C_{\rm hi}=\{(m,n)\in\Omega_Y:
+R>Y^{5/3-\epsilon_0},\
+M>Y^{q_{\min}},\
+\operatorname{rad}(M)>Y^{2/3-k_0}\}.
+\AutoTag{eq:old:2_6}
+\]
+The high sector is the complement of the first three predicates in
+\eqref{eq:old:3_1}. Those rows test the complementary inequalities.
+For sources with \(R>Y^{5/3-\epsilon_0}\), the source identities give
+\[
+M<\kappa_Y^2Y^{q_{\max}},\qquad
+L<\kappa_YY^{1/3+\epsilon_0},\qquad \kappa_Y=1+Y^{-1}.
+\AutoTag{eq:old:2_7}
+\]
+We have \(m(m+1)n(n+1)\le\kappa_Y^2Y^4\) and
+\(ZL=(n-m)(m+n+1)<\kappa_YY^2\). Also
+\(Z>Y^{5/3-\epsilon_0}\). On \(\mathcal C_{\rm hi}\), the strict lower
+cuts on \(R\) and \(M\) also give
+\[
+Y^{4-3\epsilon_0}<Z^2M=m(m+1)n(n+1)
+                       \le2\kappa_Ym^2Y^2,
+\]
+so \(m^2>Y^{2-3\epsilon_0}/(2\kappa_Y)
+\ge Y^{2-3\epsilon_0}/3\). Therefore
+\[
+m>Y^{\tau_0}/\sqrt3.\AutoTag{eq:old:2_8}
+\]
+Here \(2\kappa_Y\le3\) for \(Y\ge2\). This last inequality does not
+use the radical cut in \(\mathcal C_{\rm hi}\).
+
+After the \(Q0\) row of \eqref{eq:old:3_1} has failed,
+\(K_{\rm res}=M/\operatorname{rad}(M)
+\le Y^{\Delta_{\rm exp}}\). After \(Q1\) has failed,
+\(L\ge Y^{1/3-l_0}\). After both \(Q2\) chart tests have failed, the
+selected corners satisfy \(J,K\ge Y^{1/3-j_0}\). These are the
+non-strict complements used in the following partition.
+Display~\eqref{eq:old:3_1} states the predicates and their order.

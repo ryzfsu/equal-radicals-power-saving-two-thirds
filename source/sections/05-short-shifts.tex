@@ -1,0 +1,918 @@
+\subsection*{A determinant estimate for the short-shift rows}
+
+Write
+\[
+ e=S_0=\epsilon_0=k_0=\frac{30869}{5000000},\quad
+ a_0=\frac6{125},\quad \nu=\frac1{64},\quad \xi=\frac1{10000},
+\]
+\[
+ q_-=\frac23-e,\quad q_+=\frac23+2e,\quad
+ \tau_0=1-\frac32e .
+\AutoTag{eq:old:5_10}
+\]
+Thus \(q_-=9907393/15000000\), \(q_+=5092607/7500000\), and
+\(\tau_0=9907393/10000000\). The high-source inequalities give
+\[
+ m>\frac{Y^{\tau_0}}{\sqrt3},\qquad
+ Y^{q_-}<M<\kappa_Y^2Y^{q_+},\qquad \kappa_Y=1+Y^{-1}.
+\AutoTag{eq:old:5_11}
+\]
+The first inequality follows from \eqref{eq:old:2_8}. The lower bound for \(M\) follows
+from failure of the \(O_M\) predicate in the first-match partition
+\eqref{eq:old:3_1}. Its upper bound follows from failure of \(O_R\) and
+\eqref{eq:old:2_7}.
+
+We first give the determinant estimate for each fixed shift and
+coefficient box. Suppose \(r_0,s_0\ge1\),
+\(K_{\rm det}=(r_0+1)(s_0+1)\), and
+\(K_{\rm det}\) source points lie in one cell. In both applications below, scale
+the two projective coordinates by the dyadic box centers. Then a determinant
+of the \(K_{\rm det}\) monomial rows has the form
+\[
+ |\Delta_{\rm det}|\le C_{r_0,s_0}(H_1H_2)^{r_0K_{\rm det}/2}(EF)^{s_0K_{\rm det}/2}
+ \max_{\substack{n_\ell\ge0\\\sum_\ell n_\ell=K_{\rm det}}}
+ \vartheta^{\sum_\ell \ell n_\ell}
+ \lambda^{\sum_\ell n_\ell(n_\ell-1)/2}.
+\AutoTag{eq:old:5_12}
+\]
+Here \(E,F\) are coefficient scales and \(H_1,H_2\) are corner scales.
+The cell width in normalized coordinates is
+\(\lambda\), and \(\vartheta\) bounds the thickness of the source curve.
+In the \(u\)-chart, the remaining functions in a level-\(\ell\) minor are
+\(x^{i-2j}\), \(x\in[1/2,2]\). Here
+\(\vartheta\) bounds \(\theta\) in \((1-\theta)^j\). In the \(t\)-chart,
+put
+\[
+ \sigma_t=H_B/H_C,\qquad x=(B/C)/\sigma_t,\qquad
+ \kappa_t=\sigma_t^2E/F,\qquad y=(E/F)t/(\gamma C^2).
+\]
+Then \(x\in[1/2,2]\), \(1/16<\kappa_t<8\), and the normalized
+coefficient ratio is
+\[
+ (E/F)(\delta/\gamma)=\kappa_t x^2+y.
+\]
+The level-\(\ell\) functions are therefore
+\[
+ x^i(\kappa_t x^2+y)^j
+ =\sum_{\ell=0}^j\binom j\ell\kappa_t^{j-\ell}y^\ell
+     x^{i+2j-2\ell}.
+\]
+Fix the determinant degree. The derivatives in \(x\) of these
+finitely many monomials are then uniformly bounded, since \(x\in[1/2,2]\)
+and \(\kappa_t\in[1/16,8]\). The thickness is the normalized term \(y\).
+It is comparable to \(\Xi_t^{-1}\) in the \(3t\) application below.
+This normalization gives the same level and cell-width gains in \eqref{eq:old:5_12}.
+To verify \eqref{eq:old:5_12}, expand each monomial column as a sum of
+level columns and use determinant multilinearity in the columns. In each
+resulting determinant, group columns with the same level and apply Laplace
+expansion over row subsets of the corresponding sizes. In a level-\(\ell\)
+minor, factor the \(\ell\)-th power of the thickness coordinate from each
+evaluation row. The resulting thickness exponent is \(\sum_\ell \ell n_\ell\).
+If two evaluation points or two powers agree,
+its remaining determinant is zero. Otherwise take \(n\) evaluation points
+in an interval of length \(\lambda\). Take \(n\) functions with bounded
+derivatives through order \(n-1\). Successive divided differences factor
+out the Vandermonde product. The remaining determinant is at most a
+constant times the derivative bounds. This gives
+\(O(\lambda^{n(n-1)/2})\). Thus this group contributes
+\(C_{r_0,s_0}\lambda^{n_\ell(n_\ell-1)/2}\). Here all derivatives of
+the finitely many powers are bounded on the fixed compact interval. Row
+and column scaling gives the first factor in \eqref{eq:old:5_12}.
+
+Put \(b_{\rm cell}=\log_Y(1/\lambda)\) and
+\(\mu_{\rm th}=\log_Y(1/\vartheta)\). In the source boxes these exact
+quantities equal their limiting exponents up to \(O(1/\log Y)\). Then
+\[
+\sum_{\ell\ge0}\left(\mu_{\rm th}\ell n_\ell+
+ \frac {b_{\rm cell}}2 n_\ell(n_\ell-1)\right)
+\ge \frac{2\sqrt2}{3}\sqrt{b_{\rm cell}\mu_{\rm th}}\,K_{\rm det}^{3/2}
+-\left(\mu_{\rm th}+\frac {b_{\rm cell}}2\right)K_{\rm det}.
+\AutoTag{eq:old:5_13}
+\]
+For every \(\Lambda>0\), termwise completion of the square gives
+\[
+\sum_\ell\left(\mu_{\rm th}\ell n_\ell+\frac {b_{\rm cell}}2n_\ell^2\right)
+\ge \Lambda K_{\rm det}-\frac1{2b_{\rm cell}}\sum_{\ell\ge0}(\Lambda-\mu_{\rm th}\ell)_+^2
+\ge \Lambda K_{\rm det}-\frac{\Lambda^2}{2b_{\rm cell}}-\frac{\Lambda^3}{6b_{\rm cell}\mu_{\rm th}}.
+\]
+Taking \(\Lambda=(2b_{\rm cell}\mu_{\rm th}K_{\rm det})^{1/2}\) gives the leading
+term in \eqref{eq:old:5_13}. The square-completion loss is
+\(\Lambda^2/(2b_{\rm cell})=\mu_{\rm th}K_{\rm det}\). Replacing \(n_\ell^2\) by
+\(n_\ell(n_\ell-1)\) costs a separate \((b_{\rm cell}/2)K_{\rm det}\).
+For \(r_0=\lceil s_0 q/p\rceil\) or \(r_0=\lfloor s_0 q/p\rfloor\),
+\[
+\frac{r_0p+s_0q}{2}\le s_0q+\frac p2,\qquad
+K_{\rm det}^{1/2}\ge (r_0s_0)^{1/2}.
+\]
+Here \(p\) and \(q\) are the logarithmic scale exponents of the corner
+product and coefficient product in the chosen chart. The \(3u\) and \(3t\)
+applications below specify their normalizations. Hence a fixed
+positive margin in
+\[
+b_{\rm cell}\mu_{\rm th}>\frac98pq
+\AutoTag{eq:old:5_14}
+\]
+makes every integerized determinant have absolute value less than \(1\).
+Here \(p,q,\mu_{\rm th}\) range over fixed compact intervals in both
+applications. The strict margin is uniform over the full source boxes.
+Fix that margin and those compact intervals, and then choose \(s_0\).
+The degree-rounding and lower-order terms are then smaller than the margin.
+This one fixed degree works for every sufficiently large \(Y\).
+The integerized matrix has rank below \(K_{\rm det}\). Let \(r<K_{\rm det}\)
+be the largest order of a nonzero minor. If \(r=0\), a coordinate vector
+is a kernel vector. If \(r>0\), choose a maximal nonzero \(r\times r\)
+minor and one additional column. Cramer's rule gives a nonzero integral
+kernel vector. Its coordinates are minors of order at most \(r\). The selected rows
+span the row space, so this vector annihilates every row. Thus the kernel
+vector has polynomially bounded height and gives a nonzero integral
+auxiliary polynomial.
+If a cell contains fewer than \(K_{\rm det}\) points, those points are counted
+directly. The degrees are fixed. The coefficient height of the
+polynomial is a fixed power of \(Y\). This holds because it is a minor of
+a matrix whose entries have fixed polynomial height.
+
+Heath--Brown's Lemma~2~\cite[Lemma~2, p.~8]{HB2012}, stated in
+Appendix~\ref{app:sources}, has no size restriction on the second pair.
+In \(3u\) and \(3t\), the
+primitive coefficient pair is the first pair and the primitive corner
+pair is the second. For an irreducible factor, let \(a_c\) be its
+degree in the corner pair. Let \(b_q\) be its degree in the coefficient
+pair. In the theorem's notation this is \((a,b)=(b_q,a_c)\). Thus a
+factor with \(a_c\ge2\) has second-pair degree at least two.
+Any application of Heath--Brown below has \(b_q\ge1\). So both
+bidegrees are positive. The theorem's exponent is \(2/a_c\le1\). Here
+\(T_1+1\) and the factor height are bounded by fixed
+powers of \(Y\). Choose the theorem's \(\varepsilon\) after those height
+exponents. This gives \(O_\eta(Y^\eta(T_1+1))\).
+
+Let a bounded-degree integer polynomial have height \(Y^C\). Then each
+primitive integer factor has height \(Y^{O_C(1)}\). For the proof, apply
+a fixed Kronecker substitution with base larger than the total degree.
+Then use Gauss's lemma and the univariate Landau--Mignotte factor bound. The
+substitution has no collisions among the bounded-degree monomials.
+
+\subsection*{The short-\(u\) row \(3u\)}
+
+In the \(u\)-chart put \(\alpha=ac\), \(\beta=bd\). The source identities
+\eqref{eq:old:2_2} give
+\[
+ \beta D^2-\alpha A^2=u,\qquad
+ \alpha A^2=(1-\theta)\beta D^2,\qquad
+ \theta=\frac{m+n+1}{(m+1)(n+1)}<\frac2{m+1}.
+\AutoTag{eq:old:5_15}
+\]
+The residual factors are pairwise coprime, and so are the corner
+factors. Hence
+\[
+ \gcd(\alpha,\beta)=\gcd(A,D)=1.
+\AutoTag{eq:old:5_16}
+\]
+Also
+\[
+ \frac{um}{3}\le\alpha A^2<um,\qquad
+ \frac{um}{3}\le\beta D^2\le u(m+1),
+\AutoTag{eq:old:5_17}
+\]
+because \(n/(m+n+1)\ge1/3\). Multiply these two scale identities
+and use \(\alpha\beta=M\). This gives
+\[
+ AD\ge \frac{um}{3\sqrt M}
+ \gg uY^{2/3-5e/2}.
+\AutoTag{eq:old:5_18}
+\]
+The implied constant is absolute for sufficiently large \(Y\). The unit
+conditions needed below are also source consequences. If a prime divides
+\(A\), it divides \(m,n\). So it divides neither \(b\mid m+1\) nor
+\(d\mid n+1\). Hence \(\gcd(\beta,A)=1\). Also \(uBC=m+n+1\) and
+\(\gcd(A,BC)=1\), so \(\gcd(u,A)=1\). Therefore
+\(\gcd(\beta u,A)=1\). Every corner is at most \(Y+1\), and
+\(\alpha,\beta\le u(Y+1)\).
+
+Fix a positive shift \(u\) and a dyadic sector. The counted tuple
+is \((\alpha,A,D)\), with \(A,D\) in that sector. The conic determines
+the second coefficient \(\beta\), subject to the integrality filter.
+Fix \(u\le Y^{a_0}\) and dyadic scales
+\[
+ A\asymp H_A,\quad D\asymp H_D,\quad
+ \alpha\asymp E,\quad\beta\asymp F.
+\]
+There are \(O((\log Y)^4)\) such boxes. Put
+\[
+ \chi=\frac{A H_D}{D H_A},\quad
+ \mu_b=\log_Y\frac{E H_A^2}{u},\quad
+ p=\log_Y(H_AH_D),\quad q=\log_Y(EF),\quad z=\log_Yu.
+\]
+The box and \eqref{eq:old:5_17} imply, uniformly,
+\[
+ \tau_0-O(1/\log Y)\le\mu_b\le1+O(1/\log Y),\quad
+ q_--O(1/\log Y)\le q\le q_++O(1/\log Y),
+\]
+\[
+ p\le z+\mu_b-\frac q2+O(1/\log Y),\qquad 0\le z\le a_0.
+\AutoTag{eq:old:5_19}
+\]
+They also give
+\[
+ \frac{q_-}{a_0+2/3+e/2}-O(1/\log Y)
+ \le \frac qp \le
+ \frac{q_+}{2/3-5e/2}+O(1/\log Y).
+\AutoTag{eq:old:5_20}
+\]
+The exact endpoints in \eqref{eq:old:5_20} are
+\(19814786/21532607\) and \(20370428/19536965\), both strictly between
+\(0.9\) and \(1.1\).
+
+Set
+\[
+ B_u=\frac98q_+\left(1+a_0-\frac{q_+}{2}\right)
+ =\frac{54121135983551}{100000000000000},\qquad
+ N_u=\left\lceil Y^{B_u+\xi}\right\rceil .
+\AutoTag{eq:old:5_21}
+\]
+Let \(f(q,z,\mu)=q(1+(z-q/2)/\mu)\). Its derivatives in \(z,\mu,q\)
+have signs \(+,+,+\) on \eqref{eq:old:5_19}: for the last sign,
+\[
+ 1+\frac{z-q}{\mu}\ge
+ \frac{9351751}{29722179}+O(1/\log Y)>0,
+\]
+and for the \(\mu\)-derivative use \(q_-/2-a_0>0\). Hence
+\[
+ \frac98\frac{pq}{\mu_b}\le B_u+O(1/\log Y).
+\AutoTag{eq:old:5_22}
+\]
+Put \(\delta_0=\xi/4\). From \eqref{eq:old:5_19}, \(\mu_b\ge\tau_0-O(1/\log Y)\),
+and \(p,q<1+O(1/\log Y)\). Therefore \eqref{eq:old:5_22} gives the direct margin
+\[
+(B_u+\xi)\mu_b-\frac98(1+\delta_0)pq
+\ge \xi\tau_0-\frac{9\xi}{32}-O(1/\log Y)>\frac{\xi}{2}
+\]
+for all sufficiently large \(Y\).
+The thickness in \eqref{eq:old:5_15} satisfies
+\(\theta\le2Y^{-\mu_b}\). The strict margin absorbs the factor
+\(2\).
+
+Split \(\chi\in(1/2,2)\) into \(N_u\) half-open intervals of length
+\(3/(2N_u)\). For \(K_{\rm det}=(r_0+1)(s_0+1)\) source points in one interval,
+form the integer matrix whose \(k,(i,j)\)-entry is
+\[
+ A_k^iD_k^{\,r_0-i}\alpha_k^j\beta_k^{\,s_0-j},
+\]
+where \(0\le i\le r_0\) and \(0\le j\le s_0\). Choose a fixed
+integer \(s_0\) sufficiently large in terms of \(\delta_0\) and the
+compact ranges in \eqref{eq:old:5_20}. Put \(r_0=\lceil s_0 q/p\rceil\).
+By \eqref{eq:old:5_20}, the possible \(r_0\) form a finite set and
+\(r_0/s_0=q/p+O(1/s_0)+O(1/\log Y)\) uniformly. The leading terms
+in \eqref{eq:old:5_13} have a uniform positive margin by \eqref{eq:old:5_22}. The ceiling and all
+remaining terms in \eqref{eq:old:5_13} are uniformly \(O(1/s_0)+O(1/\log Y)\)
+relative to those leading terms. First choose \(s_0\), then the common
+threshold for \(Y\). Then these errors use less than half the margin.
+Apply the level estimate \eqref{eq:old:5_12}--\eqref{eq:old:5_14} with
+\(b_{\rm cell}=B_u+\xi+O(1/\log Y)\) and
+\(\mu_{\rm th}=\mu_b+O(1/\log Y)\). It makes every
+\(K_{\rm det}\)-row determinant zero for one common sufficiently large \(Y\).
+Each entry is an integer of size at most
+\[
+ (Y+1)^{r_0+(21/20)s_0},
+\]
+since \(u\le Y^{a_0}<Y^{1/20}\). Hence cofactors give a nonzero
+integer polynomial of degree at most \((r_0,s_0)\). Its coefficient
+height is \(Y^{C_\xi}\) with fixed \(C_\xi\). This gives the required
+integer auxiliary polynomial.
+
+We next count the lattice radii over the moving intervals. Write
+\[
+\rho=\frac{\alpha/E}{\beta/F},\qquad
+\rho=\kappa(1-\theta)\chi^{-2},\qquad
+\kappa=\frac{F H_D^2}{E H_A^2}.
+\]
+Since each normalized coefficient lies in \([1,2)\), actual \(\rho\)
+lies in \([1/2,2]\). For each interval, crop its image in \(\rho\) to
+\((1/2,2)\). Empty intervals contain no source. The map
+\(\chi\mapsto\kappa\chi^{-2}\) has derivative bounded above and below on
+\([1/2,2]\), uniformly in every nonempty box. We have
+\(1/8\le\kappa\le16\) by the dyadic box inequalities and \eqref{eq:old:5_15}.
+Also \(\theta\le2Y^{-\mu_b}<1/N_u\). Hence the retained coefficient directions
+have angular width \(O(1/N_u)\). Any angular window of width \(w\)
+meets \(O(1+N_uw)\) of them.
+
+For a retained direction with unit vector \(\ell\) and unit normal \(n\),
+define
+\[
+\mathcal A(\alpha,\beta)=
+ \left(\ell\cdot(\alpha/E,\beta/F),
+       \frac{N_u}{c_0}n\cdot(\alpha/E,\beta/F)\right),
+\]
+where the fixed \(c_0\) makes the images under \(\mathcal A\)
+of the source coefficient vectors lie in the disk of radius
+\(5\). This linear map has determinant \(N_u/(c_0EF)\). Its image of the
+integer coefficient lattice has a
+Euclidean reduced basis \(b_1,b_2\), with angle at least \(60^\circ\).
+The inverse images form a unimodular integer basis. For each source pair,
+write \((v_1,v_2)\) for its coordinates in this reduced basis. These are
+distinct from the original coefficient coordinates \((\alpha,\beta)\). Put
+\(T_i=5\sqrt2/|b_i|\). Then \(T_2\le T_1\), every source coefficient
+pair has lattice coordinates \(|v_i|\le T_i\), where
+\(\mathbf v=(v_1,v_2)\), and
+\[
+ T_1T_2\gg \frac{EF}{N_u},\qquad T_1^2\gg\frac{EF}{N_u}.
+\AutoTag{eq:old:5_23}
+\]
+The determinant of the lattice and the operator norms of \(\mathcal A\)
+and \(\mathcal A^{-1}\) are bounded by fixed powers of \(Y\). Every
+nonzero integer preimage has image length at least
+\(\|\mathcal A^{-1}\|^{-1}\). Minkowski's theorem bounds the
+shortest image vector by a constant times the square root of the
+covolume. The reduced-basis angle and determinant then bound the second
+basis vector by a fixed power of \(Y\) as well. Apply
+\(\mathcal A^{-1}\). Then both unimodular preimage vectors have
+polynomially bounded coordinates. Thus the coefficient-lattice change
+keeps the auxiliary polynomial's height at \(Y^{O_\xi(1)}\).
+
+We now bound the complete interval sum. Put
+\(L_*=\max(1,(EF/N_u)^{1/2})\). Intervals with \(T_1\le2L_*\) contribute
+\(O(N_u+(EFN_u)^{1/2})\). For larger \(T_1\), place it in a dyadic range
+\((T,2T]\). Let \(\mathbf x_{\min}=(x_1,x_2)\) be the primitive
+shortest integer preimage. The definition of \(\mathcal A\) gives
+\[
+ |(x_1/E,x_2/F)|\ll T^{-1},\qquad
+ \operatorname{dist}((x_1/E,x_2/F),\ell)\ll (N_uT)^{-1}.
+\]
+A nonaxis dyadic annulus of normalized radius \(r\) contains
+\(O(r^2EF)\) integer vectors, with
+\(r\ge\max(E^{-1},F^{-1})\). A fixed vector is compatible with
+\(O(1+(Tr)^{-1})\) interval directions. Sum
+\(EF(r^2+r/T)\) over the annuli up to \(r\ll T^{-1}\). This gives
+\(O(EF/T^2)\) intervals in this \(T\)-range.
+Their contribution to \(\sum(T_1+1)\) is \(O(EF/T)\). The vertical and
+horizontal primitive vectors are the two axes. The retained source
+directions have coordinate ratio \(\rho\in[1/2,2]\). So they stay a fixed
+positive angle from both axes. The corresponding vertical and horizontal
+cases cost \(O(F+N_u)\) and \(O(E+N_u)\), respectively. Finally
+\(T_1\gg(EF/N_u)^{1/2}\) by \eqref{eq:old:5_23}. Summing the dyadic ranges gives
+\[
+ \sum_{\text{intervals}}(T_1+1)
+ \ll_\eta Y^\eta\{N_u+\sqrt{EFN_u}\log Y+E+F\}.
+\AutoTag{eq:old:5_24}
+\]
+
+For each interval, factor its auxiliary polynomial over \(\mathbb Q\).
+There are \(O_\xi(1)\) factors, each of fixed degree and height \(Y^{O_\xi(1)}\).
+Make the unimodular coefficient-lattice change. Then let an irreducible
+factor have degree \(a_c\) in the corner pair and \(b_q\) in the
+coefficient pair. Write the original coefficients \(\alpha(\mathbf v),\beta(\mathbf v)\)
+as homogeneous linear forms in the primitive
+lattice coordinates \(\mathbf v=(v_1,v_2)\). The following cases account for
+every factor.
+
+\begin{enumerate}
+\item If it is not absolutely irreducible, its distinct conjugate
+components have no common curve component. By bihomogeneous Bezout they have \(O_\xi(1)\)
+rational common points. Each rational point gives at
+most four signed primitive pairs.
+\item If \(a_c=0\), the factor fixes \(O_\xi(1)\) primitive coefficient
+ratios. For each, \eqref{eq:old:5_15} is a square-fibre equation. It has positive
+coefficients \(\alpha,\beta\) and nonzero shift \(u\). The coefficients and
+shift are at most \((Y+1)^{21/20}\), and \(A\le Y+1\). Theorem~\ref{thm:fibre}
+with \(x=2Y\) and fixed height exponent \(A_{\rm ht}=2\) gives \(Y^\eta\)
+solutions uniformly.
+\item If \(b_q=0\), the factor fixes \(O_\xi(1)\) primitive corner pairs.
+The solutions in \((\alpha,\beta)\) to
+\(\beta D^2-\alpha A^2=u\) form a progression with step
+\((D^2,A^2)\). Its length in the \(\alpha\)-box is at most
+\[
+ 1+\frac{E}{D^2}\ll 1+\frac{uY}{A^2D^2}
+ \ll 1+\frac{Y^{-1/3+5e}}u=O(1)
+\]
+uniformly for \(u\ge1\), by \eqref{eq:old:5_17}--\eqref{eq:old:5_18}.
+\item If \(a_c\ge2\) and \(b_q\ge1\), apply Heath--Brown's
+Lemma~2. The first pair is the primitive coefficient-lattice pair,
+bounded by \(T_1+1\). The second is the primitive corner pair. Its degree
+in the second pair is \(a_c\ge2\). Choose the theorem's epsilon after
+the fixed polynomial height exponent. Hence the count is
+\(O_\eta(Y^\eta(T_1+1))\).
+\item If \(a_c=1\) and \(b_q\ge1\), write the factor as
+\(A Q(\mathbf v)+D P(\mathbf v)\), with coprime nonzero homogeneous forms
+\(P,Q\). The source equation forces \(P(\mathbf v)=-A\zeta\),
+\(Q(\mathbf v)=D\zeta\) for a nonzero integer \(\zeta\). The Sylvester
+identities put
+\(\operatorname{Res}(P,Q)v_i^{2b_q-1}\) in the ideal \((P,Q)\).
+Primitivity of \(\mathbf v\) therefore gives
+\(\zeta\mid\operatorname{Res}(P,Q)\).
+The resultant has fixed polynomial height, so its divisors cost
+\(Y^\eta\). Fix a divisor \(\zeta\mid\operatorname{Res}(P,Q)\). Then the
+source conic gives the nonzero homogeneous
+level equation
+\[
+\beta(\mathbf v) Q(\mathbf v)^2-\alpha(\mathbf v) P(\mathbf v)^2=u\zeta^2.
+\]
+The left side is a nonzero binary form of degree \(d_\Phi=2b_q+1\). If it
+vanished identically, coprimality of \(P,Q\) would force \(P^2\) to
+divide the linear form \(\beta(\mathbf v)\). This is impossible for \(b_q\ge1\).
+Denote this form by \(\Phi\). Its level is \(h=u\zeta^2\ne0\). Define
+\(\mathcal E=\{v_1\in\mathbb Z:\Phi(v_1,v_2)-h\text{ is identically zero in }v_2\}\).
+Writing \(\Phi(v_1,0)=a_\Phi v_1^{d_\Phi}\), every \(v_1\in\mathcal E\) satisfies
+\(a_\Phi v_1^{d_\Phi}=h\), so \(|\mathcal E|\le d_\Phi\). If \(a_\Phi=0\), then \(\mathcal E=\varnothing\).
+This includes the pure-power case. There every slice is constant, and at most
+\(d_\Phi\) slices equal the nonzero target \(h\). There are at most
+\(2\lfloor T_1\rfloor+1\) other first coordinates. For each, the nonzero
+polynomial in \(v_2\) has degree at most \(d_\Phi\). Hence it has at most \(d_\Phi\)
+integer roots. Each exceptional coordinate contributes at most
+\(2\lfloor T_2\rfloor+1\) points. Thus
+\[
+\begin{aligned}
+\#\{(v_1,v_2)\in\mathbb Z^2:|v_i|\le T_i,\ \Phi(v_1,v_2)=h\}
+&\le d_\Phi(2\lfloor T_1\rfloor+1)+d_\Phi(2\lfloor T_2\rfloor+1)\\
+&\le4d_\Phi(T_1+1),\qquad T_2\le T_1.
+\end{aligned}
+\]
+The corners are then forced.
+\end{enumerate}
+
+Thus every full interval contributes \(Y^\eta(T_1+1)\). The underfull
+intervals cost \(O_\xi(N_u)\). Fix the ordered residual factorizations
+\(\alpha=ac,\ \beta=bd\). The inverse formulas \eqref{eq:old:2_2} determine \(B,C\),
+then \(m=ABa,n=ACc\). The positivity, integrality, gcd, mask, shell and
+first-match filters only discard candidates. The inverse multiplicity is
+at most \(\tauDiv(\alpha)\tauDiv(\beta)\ll_\eta Y^\eta\), since
+\(\alpha,\beta\le(Y+1)^{21/20}\). The opposite shift is recovered from
+\(ut=L\).
+Combine this with \eqref{eq:old:5_24}. For one fixed \(u\) and one box the count is
+\[
+ \ll_\eta Y^\eta\{N_u+\sqrt{EFN_u}\log Y+E+F\}.
+\AutoTag{eq:old:5_25}
+\]
+
+Split the \(3u\) population counted by \eqref{eq:old:5_25} into
+\(\min(A,D)\ge Y^{1/3-\nu}\) and its complement. In the first part,
+\eqref{eq:old:5_17} gives
+\[
+ E+F\ll uY^{1/3+2\nu}.
+\AutoTag{eq:old:5_26}
+\]
+In the second part, suppose \(H_A\le H_D\). The other case is symmetric.
+For fixed \(A,\beta\), the congruence
+\(\beta D^2\equiv u\pmod{A^2}\) has
+\(O(2^{\omega(A)})=Y^\eta\) roots modulo \(A^2\), since
+\(\gcd(\beta u,A)=1\). Each root class contributes
+\(O(H_D/A^2+1)\) values of \(D\). Also
+\(\beta\ll uY/H_D^2\). Summing over \(A,\beta\) gives
+\[
+    \ll_\eta Y^\eta\left\{\frac{uY}{H_AH_D}
+                 +\frac{uYH_A}{H_D^2}\right\}.
+\AutoTag{eq:old:5_27}
+\]
+For odd prime powers the unit-square congruence has at most two roots.
+At powers of \(2\) it has at most four. The absolute factor \(4\) is
+absorbed in \(O(2^{\omega(A)})\).
+By \eqref{eq:old:5_18} and \(H_A\le Y^{1/3-\nu}\), the two terms in \eqref{eq:old:5_27} are at
+most
+\[
+ Y^{1/3+5e/2+o(1)},\qquad
+ \frac{Y^{2/3+5e-3\nu+o(1)}}u.
+\AutoTag{eq:old:5_28}
+\]
+The second term sums harmonically over \(u\). The first costs
+\(\sum_{u\le Y^{a_0}}1\ll Y^{a_0}\).
+
+Finally \(EF\le M<\kappa_Y^2Y^{q_+}\). Sum \eqref{eq:old:5_25}--\eqref{eq:old:5_28} over
+\(u\le Y^{a_0}\), all boxes and the logarithmic factors. Before the final
+loss allocation, this gives five exponents and their savings from $2/3$
+\[
+\begin{array}{@{}ll@{}}
+\text{term and exponent} & \text{saving from }2/3\\[8pt]
+\text{square-root term: }a_0+(q_++B_u+\xi)/2 &
+  \dfrac{5102312049347}{600000000000000}\ (0.00850385\ldots)\\[7pt]
+\text{interval term: }a_0+B_u+\xi &
+  \dfrac{23206592049347}{300000000000000}\\[7pt]
+\text{core axes: }1/3+2\nu+2a_0 & \dfrac{2473}{12000}\\[7pt]
+\text{small corner, first: }a_0+1/3+5e/2 & \dfrac{1619393}{6000000}\\[7pt]
+\text{small corner, second: }2/3+5e-3\nu & \dfrac{8003}{500000}
+\end{array}\AutoTag{eq:old:5_29}
+\]
+The smallest saving is \(5102312049347/600000000000000>S_0\).
+Fix the degree and height constants. Then all fixed-height, divisor,
+dyadic and logarithmic losses can be assigned arbitrarily small
+exponents. Therefore, for every \(\varepsilon>0\),
+\[
+ \#3u\ll_\varepsilon
+ Y^{2/3-5102312049347/600000000000000+\varepsilon}.
+\AutoTag{eq:old:5_30}
+\]
+The next proposition records this display as the complete first-match row
+estimate.
+\begin{rowproposition}[\(3u\) row estimate]\label{prop:row-3u}
+For every \(\varepsilon>0\), the complete first-match row satisfies
+\[
+ \#3u\ll_\varepsilon
+ Y^{2/3-5102312049347/600000000000000+\varepsilon}.
+\]
+\end{rowproposition}
+\begin{proof}
+The full row count is \eqref{eq:old:5_30}. Its five additive terms are bounded in
+\eqref{eq:old:5_25}--\eqref{eq:old:5_29}. The least saving is the one displayed there.
+\end{proof}
+
+\subsection*{The short-\(t\) row \(3t\)}
+
+In the \(t\)-chart use \(\gamma=ad,\delta=bc\). The exact source equations
+are
+\[
+ \delta C^2-\gamma B^2=t,\qquad
+ \frac{\delta}{\gamma}=\left(\frac BC\right)^2(1+\beta_{\rm rem}),\qquad
+ \beta_{\rm rem}=\frac{n-m}{m(n+1)}\in(0,1/m).
+\AutoTag{eq:old:5_31}
+\]
+By \eqref{eq:old:5_11}, \(\beta_{\rm rem}\ll Y^{-\tau_0}\). The source heights and the
+\(O_R\), \(O_M\), \(Q1\) and \(Q2t\) complements give
+\[
+ \frac t4Y^{q_-}<BC\le3tY^{c_t},\quad
+ \gamma,\delta\ll tY^{g_t},\quad
+ \frac{\gamma}{C^2}\le \frac{6Y^{-d_0}}t<1
+ \quad\text{for all sufficiently large }Y,
+\AutoTag{eq:old:5_32}
+\]
+where
+\[
+ c_t=\frac23+l_0=q_+,\quad
+ g_t=\frac13+e+l_0+2j_0=\frac{5833463}{15000000},\quad
+ d_0=\frac13-2e>0.
+\]
+For the \(\gamma/C^2\) bound, start from the exact source identity
+\[
+ n-m=\frac{ZL}{m+n+1}.
+\]
+Then use
+\(BC=(m+n+1)t/L\), \(m+n+1>Y/2\), and
+\(L<\kappa_Y Y^{1/3+e}\). Since \(2\kappa_Y\le3\), this gives
+\(BC>(t/3)Y^{2/3-e}>(t/4)Y^{q_-}\). For the upper bound use
+\(L\ge Y^{1/3-l_0}\) and \(m+n+1\le2Y+1\le3Y\). This gives
+\(BC\le3tY^{2/3+l_0}\). Also
+\[
+ \gamma B^2=\frac{t\,m(n+1)}{n-m},\qquad
+ \gamma/C^2=\frac{m(n+1)}{ZBC};
+\]
+using \(Z>Y^{5/3-e}\) and the lower bound for \(BC\) proves the last
+inequality in \eqref{eq:old:5_32}. The bound for \(\delta\) is symmetric. It uses
+\(\delta C^2=t\,n(m+1)/(n-m)\) and \(B,C\ge Y^{1/3-j_0}\).
+
+Fix \(t\le Y^{a_0}\) and a dyadic box
+\[
+ B\asymp H_B,\quad C\asymp H_C,\quad
+ \gamma\asymp E,\quad\delta\asymp F.
+\]
+Put \(\mathcal L=\ln Y\), \(p=\log_Y(8H_BH_C)\),
+\(q=\log_Y(128EF)\), \(z=\log_Yt\), and
+\[
+ \Xi_t=\frac{H_BH_C\sqrt{EF}}{8t},\quad
+ \mu_0=\log_Y \Xi_t,\quad
+ \ell_1=\ln(8H_BH_C),\quad \ell_2=\ln(128EF).
+\]
+From \eqref{eq:old:5_11}--\eqref{eq:old:5_32}, with \(\kappa_Y\le3/2\),
+\[
+ q_-\mathcal L-\ln2<\ell_1\le(c_t+a_0)\mathcal L+\ln24,\quad
+ q_-\mathcal L+\ln32<\ell_2<q_+\mathcal L+\ln288,
+\]
+\[
+ \tau_0\mathcal L-\ln256<\ln \Xi_t<(1+e+l_0)\mathcal L,\qquad
+ p-z\ge q_--O(1/\mathcal L).
+\AutoTag{eq:old:5_33}
+\]
+Dyadicity gives \(BC/4<H_BH_C\le BC\) and
+\(EF\le M<4EF\). With \eqref{eq:old:5_32} these imply
+\(8H_BH_C>tY^{q_-}/2\),
+\(8H_BH_C\le24tY^{c_t}\),
+\(128EF>32Y^{q_-}\), and \(128EF<288Y^{q_+}\).
+They also give
+\[
+ \frac{Y^{\tau_0}}{256}<\Xi_t
+ \le\frac{3\kappa_Y}{8}Y^{3q_+/2}
+ \le\frac9{16}Y^{1+e+l_0},
+\]
+which proves the two \(\Xi_t\) bounds in \eqref{eq:old:5_33}.
+In particular \(\ell_1,\ell_2,\ln \Xi_t\) lie in
+\([\mathcal L/5,2\mathcal L]\) for \(Y\ge2048\).
+
+Set \(\sigma_t=H_B/H_C\) and \(x=(B/C)/\sigma_t\). The source has
+\(x\in(1/2,2)\). Partition \(x\in(1/2,2)\) into
+\[
+ I_k=\left(\frac{k}{N},\frac{k+1}{N}\right].
+\]
+Equivalently, these are the intervals
+\((k\sigma_t/N,(k+1)\sigma_t/N]\) for \(B/C\). Here
+\(N/2-1\le k\le2N-1\), with \(N\ge40\) to be fixed below. Let
+\(x_4=\lfloor k^2/N\rfloor\) and
+\(r_k=x_4\sigma_t^2/N\). For \(x\in I_k\), the width of the interval
+and \eqref{eq:old:5_31} give
+\[
+ |\delta-r_k\gamma|\le18\sigma_t^2E/N,\qquad 0<\gamma<2E.
+\AutoTag{eq:old:5_34}
+\]
+The square of \(B/C\) differs from \(r_k\) by at most
+\(5\sigma_t^2/N\). The additional term
+\((B/C)^2\beta_{\rm rem}\) is at most \(4\sigma_t^2/m\), and the choice below has
+\(N<m\). The endpoint \(k\le2N-1\) follows from \(x<2\). This is the
+range used in the \(5\sigma_t^2/N\) bound. A nonempty box also gives
+\[
+ F/16<\sigma_t^2E<8F.
+\AutoTag{eq:old:5_35}
+\]
+Define the linear map
+\[
+ \mathcal A_k(y_1,y_2)=
+ \left(\frac{N}{\sigma_t^2E}(y_1-r_ky_2),\frac{y_2}{E}\right).
+\]
+Its image of \(\mathbb Z^2\) has covolume
+\(N/(\sigma_t^2E^2)\asymp N/(EF)\). By \eqref{eq:old:5_34}, coefficient pairs
+\((\delta,\gamma)\) in the box map into the disk of radius \(19\).
+Choose a Euclidean reduced basis \(b_1,b_2\) for this lattice. Let
+\(h_1,h_2\) be its unimodular integer preimages. Put
+\(T_i=19\sqrt2/|b_i|\). The reduced-basis angle is at least \(60^\circ\).
+Hence \(T_2\le T_1\), every source pair has coordinates
+\(|v_i|\le T_i\), where \(\mathbf v=(v_1,v_2)\), and \eqref{eq:old:5_35} gives
+\[
+ T_1T_2
+ =\frac{722}{|b_1||b_2|}
+ \ge\frac{361\sqrt3}{\operatorname{covol}(\mathcal A_k(\mathbb Z^2))}
+ =\frac{361\sqrt3\,\sigma_t^2E^2}{N}
+ >\frac{361\sqrt3}{16}\frac{EF}{N}
+ >39\frac{EF}{N},\qquad T_1^2\ge T_1T_2.
+\AutoTag{eq:old:5_36}
+\]
+The matrix \(\mathcal A_k\), its inverse, and the covolume have polynomial
+height. Every nonzero integer preimage has image length at least
+\(\|\mathcal A_k^{-1}\|^{-1}\). Minkowski's theorem bounds the shortest
+image vector by a constant times the square root of the covolume. The
+reduced-basis angle and determinant then give a polynomial upper bound
+for the second vector. Apply \(\mathcal A_k^{-1}\). Then both
+unimodular integer preimages have polynomially bounded coordinates.
+
+\begin{samepage}
+We now count the moving grid. The integer \(x_4\) lies in
+\([N/5,4N]\). Each \(x_4\) comes from at most two \(k\), since
+\[
+ \sqrt{Nx_4}\le k<\sqrt{N(x_4+1)}
+\]
+has length at most \(\sqrt5/2<2\) for \(x_4\ge N/5\). Therefore it
+contains at most two integers. Take a dyadic range \(T_1\in(T,2T]\). Write
+\(\mathcal A_k(y)=b_1\) for the primitive shortest vector
+\(y=(y_1,y_2)\). Then
+\[
+ |y_1-r_ky_2|\ll \sigma_t^2E/(NT),\qquad
+ |y_2|\ll E/T.
+\AutoTag{eq:old:5_37}
+\]
+If \(y_2=0\), primitivity gives \(y_1=\pm1\). The contribution
+over all \(k\) is then \(O(F+N)\). If \(y_1=0\), then \(y_2=\pm1\).
+Since \(x_4\ge N/5\), \eqref{eq:old:5_37} bounds its total contribution by
+\(O(E+N)\). For \(y_1y_2\ne0\), \eqref{eq:old:5_37} gives
+\(T\ll E\) and \(|y_1|\ll F/T\). Multiply the first inequality in
+\eqref{eq:old:5_37} by \(N/\sigma_t^2\). Then, for each fixed \(y_1\), the nonzero
+integer \(y_2x_4\) lies in an interval of length \(O(E/T)\). Since
+\(E/T\gg1\), there
+are \(O(E/T)\) such integer values. Their absolute values satisfy
+\(|y_2x_4|\ll NE/T\), a fixed power of \(Y\). So each has \(Y^\eta\) factorizations
+as \(y_2x_4\). Each \(x_4\) has at most two \(k\). Thus the number of
+intervals in this \(T\)-range is
+\(O_\eta(Y^\eta EF/T^2)\). This includes the endpoint cases
+\(|y_1|\le C F/T\) and \(E/T\ge c>0\). Their contribution to
+\(\sum_k(T_1(k)+1)\) is \(O_\eta(Y^\eta EF/T)\). By \eqref{eq:old:5_36},
+\(T\gg(EF/N)^{1/2}\). Sum the dyadic \(T\)-ranges and pay the
+\(+1\) terms. This gives
+\[
+ \sum_k(T_1(k)+1)\ll_\eta
+ Y^\eta\{N+\sqrt{EFN}\log Y+E+F\}.
+\AutoTag{eq:old:5_38}
+\]
+\end{samepage}
+
+For each interval \(I_k\), apply the determinant construction \eqref{eq:old:5_12}
+to the normalized monomials \(x^i\zeta^j\), where
+\(\zeta=(E/F)(\delta/\gamma)=\kappa_t x^2+y\). Scaling rows and columns
+back to the integer monomials gives \eqref{eq:old:5_42}. We choose the grid
+size \(N\) used above as follows. Put
+\[
+B_t=\frac34(q_++a_0)
+ =\frac{5452607}{10000000},\quad
+ \nu_t=B_t+\xi=\frac{5453607}{10000000},\quad
+ N_t=\lceil Y^{\nu_t}\rceil .
+\AutoTag{eq:old:5_39}
+\]
+The exact gap
+\[
+ \tau_0-\nu_t=\frac{2226893}{5000000}>0
+\]
+shows that \(N_t<m\) for all sufficiently large \(Y\). Here
+\(m>Y^{\tau_0}/\sqrt3\) and \(N_t\le2Y^{\nu_t}\). In
+\eqref{eq:old:5_34}--\eqref{eq:old:5_38} take \(N=N_t\).
+Since \(EF>M/4>Y^{q_-}/4\), we have
+\[
+\frac{EF}{N_t}\gg Y^{q_- -\nu_t}
+=Y^{690793/6000000}.
+\]
+Thus \eqref{eq:old:5_36} puts every dyadic radius \(T\) above
+\(cY^{690793/12000000}>1\) for all sufficiently large \(Y\).
+The separately counted \(+1\) per grid interval is already included in
+the \(O(N_t)\) term of \eqref{eq:old:5_38}.
+
+The determinant thickness \(\vartheta\) in the normalized coefficient
+ratio is comparable to \(\Xi_t^{-1}\). The conic gives
+\[
+ \frac{\delta}{\gamma}
+ =\left(\frac BC\right)^2+\frac{t}{\gamma C^2}.
+\]
+Normalize the coefficient ratio by \(E/F\). Then the thickness is
+\((E/F)t/(\gamma C^2)\asymp t/(F H_C^2)\). From \eqref{eq:old:5_35},
+\(F H_C^2\asymp E H_B^2\asymp H_BH_C\sqrt{EF}\). Hence this thickness is
+\(\asymp \Xi_t^{-1}\). More precisely, the dyadic bounds
+\(E\le\gamma<2E\), \(H_C\le C<2H_C\), and
+\(1/16<\sigma_t^2E/F<8\) imply
+\[
+ \frac{\Xi_t^{-1}}{256}\le\vartheta\le\Xi_t^{-1}.
+\]
+Thus \(0\le\mu_{\rm th}-\mu_0\le\ln256/\mathcal L\). The normalized
+cell width is exactly \(1/N_t\), so
+\(\nu_t\le b_{\rm cell}=\log_Y N_t\le\nu_t+\ln2/\mathcal L\).
+
+The box bounds also give
+\[
+ \frac{q_-}{c_t+a_0}+O(1/\mathcal L)
+ \le\frac{\ell_2}{\ell_1}
+ \le\frac{q_+}{q_-}+O(1/\mathcal L).
+\]
+The limiting endpoints are \(9907393/10905214>0.9\) and
+\(10185214/9907393<1.1\). So this ratio belongs to \([0.9,1.1]\) for
+all sufficiently large \(Y\). Choose a fixed integer \(s_0\)
+sufficiently large in terms of the strict margin below and this compact
+range. Set
+\[
+ r_0=\left\lfloor s_0\frac{\ell_2}{\ell_1}\right\rfloor .
+\]
+The possible \(r_0\) form a finite set. The degree rounding and the
+lower-order terms in \eqref{eq:old:5_13} are uniformly \(O(1/s_0)\) relative to the
+leading terms. Choose \(s_0\) first. Then enlarge the threshold for \(Y\)
+to absorb the \(O(1/\mathcal L)\) errors.
+
+The normalized scale parameters in \eqref{eq:old:5_12} are
+\(p=\ell_1/\mathcal L\), \(q=\ell_2/\mathcal L\), and
+\(\mu_{\rm th}=p+q/2-z+O(1/\mathcal L)\). Precisely,
+\[
+ \mu_0=p+q/2-z-\frac{\log(64\sqrt{128})}{\mathcal L}.
+\]
+The displayed constant and the additional \(O(1/\mathcal L)\) from the
+thickness comparison are among the finite errors accounted for below.
+The limiting function
+\[
+ (p,q,z)\longmapsto \frac98\frac{pq}{p+q/2-z}
+\]
+is increasing in \(p,q,z\) on the source range. The relevant derivative
+numerators are \(q(q/2-z)\), \(p(p-z)\) and \(pq\). With
+\(D=p+q/2-z\), its three partial derivatives are
+\[
+\frac98\frac{q(q/2-z)}{D^2},\qquad
+\frac98\frac{p(p-z)}{D^2},\qquad
+\frac98\frac{pq}{D^2}.
+\]
+On the stated source domain each has absolute value at most
+\((9/8)\cdot4\cdot25=112.5<120\). Here
+\[
+ q_-/2-a_0=\frac{8467393}{30000000}>0,\qquad
+ q_--a_0=\frac{9187393}{15000000}>0.
+\]
+The bound \(BC\le3tY^{c_t}\) gives the one-sided endpoint estimates
+\[
+p\le c_t+z+\frac{\ln24}{\mathcal L},\qquad
+q\le q_++\frac{\ln288}{\mathcal L}.
+\]
+First put \(p=c_t+z+O(1/\mathcal L)\). Then the denominator is
+\(c_t+q/2+O(1/\mathcal L)\), and \(q/(c_t+q/2)\) increases. Thus the
+maximum is \(B_t+O(1/\mathcal L)\), attained at \(q=q_+\), \(z=a_0\).
+For \(\delta_0=\xi/4=1/40000\),
+\[
+ \nu_t-(1+\delta_0)B_t
+ =\xi-\delta_0B_t
+ =\frac{34547393}{400000000000}>0.
+\AutoTag{eq:old:5_40}
+\]
+Now the uniform error. The upper endpoints in \eqref{eq:old:5_33} change \(p,q\)
+from \(c_t+z,q_+\) by at most \(\ln24/\mathcal L,\ln288/\mathcal L\).
+The exact normalization of \(\mu_0\) contributes
+\(\ln(64\sqrt{128})/\mathcal L\). The thickness comparison contributes
+at most \(\ln256/\mathcal L\). Take the source range
+\(0\le p,q,z\le2\) and \(p+q/2-z\ge1/5\). There every first derivative of
+\(\Phi(p,q,z)=(9/8)pq/(p+q/2-z)\) has absolute value at most \(120\).
+Since \(\ln24<4\), \(\ln288<6\), \(\ln(64\sqrt{128})<7\), and
+\(\ln256<6\), the total perturbation is at most \(2760/\mathcal L\).
+We may therefore take \(C_t=4000\). Hence, whenever
+\[
+(\xi-\delta_0B_t)\ln Y>2C_t(1+\delta_0),
+\AutoTag{eq:old:5_41}
+\]
+the determinant condition has the strict surplus required in \eqref{eq:old:5_14}.
+Take one interval with \(K_{\rm det}=(r_0+1)(s_0+1)\) source rows. Use columns
+indexed by \(0\le i\le r_0,\ 0\le j\le s_0\), and multiply each row by
+\(C^{r_0}\gamma^{s_0}\). The resulting entry is
+\[
+ C^{r_0}\gamma^{s_0}(B/C)^i(\delta/\gamma)^j
+ =B^iC^{r_0-i}\delta^j\gamma^{s_0-j}\in\mathbb Z.
+\AutoTag{eq:old:5_42}
+\]
+We have \(B,C\le Y+1\) and \(\gamma,\delta\ll Y^{a_0+g_t}\), and the degrees are
+fixed. So every matrix entry and cofactor has height \(Y^{O(1)}\). By
+\eqref{eq:old:5_12}--\eqref{eq:old:5_14}, every integerized \(K_{\rm det}\times K_{\rm det}\) determinant has absolute
+value less than one. Hence it vanishes. If an interval has fewer than
+\(K_{\rm det}\) source rows, count those points directly. Otherwise the integer
+matrix has a nonzero rational kernel vector. Clearing its denominator
+gives a nonzero integral auxiliary polynomial on that interval. It has
+bounded bidegree and height \(Y^{O_\xi(1)}\).
+
+In this \(t\)-chart, \(\gcd(\gamma,\delta)=\gcd(B,C)=1\). The
+transformed auxiliary factors have height \(Y^{O_\xi(1)}\) by the
+fixed-degree factor-height argument above. These are the primitivity and
+height hypotheses used in the square-fibre and Heath--Brown counts.
+The coefficient-lattice coordinates \(\mathbf v=(v_1,v_2)\) are primitive,
+since \((\gamma,\delta)\) is primitive and the basis change is
+unimodular. The original coefficients \(\gamma(\mathbf v),\delta(\mathbf v)\)
+are homogeneous linear forms in these coordinates.
+Factor an auxiliary form over \(\mathbb Q\). Let \(a_c\)
+and \(b_q\) be its degrees in the corner and coefficient pairs. There are
+five branches. The conjugate-component Bezout argument above handles a
+factor that is not absolutely irreducible. If \(a_c=0\),
+it fixes \(O_\xi(1)\) primitive coefficient pairs. Then the
+square-fibre theorem (Theorem~\ref{thm:fibre} in
+Appendix~\ref{app:fibre}) applies to
+\(\delta C^2-\gamma B^2=t\), with \(x=2Y\) and fixed height exponent
+\(A_{\rm ht}=2\). If \(b_q=0\), it fixes a primitive corner pair
+\((B,C)\). Reducing the conic modulo \(C^2\) fixes \(\gamma\). Also
+\(0<\gamma<C^2\) by \eqref{eq:old:5_32}. So there is at most one coefficient pair.
+If \(a_c\ge2\) and \(b_q\ge1\), apply Heath--Brown's Lemma~2 with the
+primitive coefficient pair first. It gives \(O_\eta(Y^\eta(T_1+1))\).
+Finally, if \(a_c=1\) and \(b_q\ge1\), write the factor as
+\(B Q(\mathbf v)+C P(\mathbf v)\), with coprime nonzero homogeneous forms
+\(P,Q\). The conic forces \(P(\mathbf v)=-B\zeta\),
+\(Q(\mathbf v)=C\zeta\). The Sylvester
+identities and primitivity give \(\zeta\mid\operatorname{Res}(P,Q)\).
+There are \(Y^\eta\) choices for \(\zeta\). For each, the conic gives
+\[
+ \delta(\mathbf v) Q(\mathbf v)^2-\gamma(\mathbf v) P(\mathbf v)^2=t\zeta^2.
+\]
+  The left side is a nonzero binary form of degree \(2b_q+1\). An identity
+  would force \(P^2\) to divide the linear form \(\delta(\mathbf v)\), contrary
+  to \(b_q\ge1\). The preceding complete slice count applies with the
+  nonzero target \(h=t\zeta^2\). It counts \(O_\eta(T_1+1)\) coefficient
+  pairs. Then \(B,C\) are forced. Thus every full interval
+  contributes \(Y^\eta(T_1+1)\).
+
+Fix the ordered factorizations \(\gamma=ad,\delta=bc\). The inverse
+formulas \eqref{eq:old:2_2} determine
+\[
+ A=(dB-bC)/t,\qquad D=(cC-aB)/t,
+\]
+then \(m=ABa,n=ACc\). Also \(u=(cd-ab)/t\). These are forced, not
+summed. The factor multiplicity is
+\(\tauDiv(\gamma)\tauDiv(\delta)\ll_\eta Y^\eta\). Thus, for fixed \(t\) and
+box, \eqref{eq:old:5_38} gives
+\[
+ \ll_\eta Y^\eta\{N_t+\sqrt{EFN_t}\log Y+E+F\}.
+\AutoTag{eq:old:5_43}
+\]
+The row \(3t\) is contained in this larger population with
+\(1\le t\le Y^{a_0}\), \(L\ge Y^{1/3-l_0}\) and \(B,C\ge Y^{1/3-j_0}\).
+The restrictions \(t<u\) and \(K_{\rm res}\le Y^{\Delta_{\rm exp}}\) only reduce it.
+There are \(O((\log Y)^4)\) boxes. By \eqref{eq:old:5_32}, \(EF\le M\ll Y^{q_+}\)
+and \(E+F\ll tY^{g_t}\). Sum \eqref{eq:old:5_43} once over the positive shifts
+\(t\le Y^{a_0}\). This gives
+\[
+ \#3t\ll_\eta Y^\eta\left\{
+ Y^{a_0+\nu_t}
+ +Y^{a_0+(q_++\nu_t)/2}
+ +Y^{g_t+2a_0}\right\}.
+\AutoTag{eq:old:5_44}
+\]
+The three exponents and their savings are
+\[
+\begin{array}{c|c|c}
+\text{term}&\text{exponent}&\text{saving from }2/3\\ \hline
+\text{interval count}&5933607/10000000&2199179/30000000\\
+\text{square-root count}&39611249/60000000&388751/60000000\ (0.00647918\ldots)\\
+\text{coefficient axes}&7273463/15000000&2726537/15000000 .
+\end{array}\AutoTag{eq:old:5_45}
+\]
+The least saving is \(388751/60000000>S_0\). Fix the uniform degree and height constants. Then the fixed loss terms,
+divisor factors and logarithms fit within any prescribed
+\(\varepsilon>0\). Hence
+\[
+ \#3t\ll_\varepsilon
+ Y^{2/3-388751/60000000+\varepsilon}.
+\AutoTag{eq:old:5_46}
+\]
+\begin{rowproposition}[\(3t\) row estimate]\label{prop:row-3t}
+For every \(\varepsilon>0\), the complete first-match row satisfies
+\[
+ \#3t\ll_\varepsilon
+ Y^{2/3-388751/60000000+\varepsilon}.
+\]
+\end{rowproposition}
+\begin{proof}
+The complete row is bounded in \eqref{eq:old:5_44}. Its three contributions and
+their savings are listed in \eqref{eq:old:5_45}--\eqref{eq:old:5_46}.
+\end{proof}

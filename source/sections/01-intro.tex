@@ -1,0 +1,66 @@
+\section{Introduction}
+
+For a positive integer \(r\), let
+\(\operatorname{rad}(r)=\prod_{p\mid r}p\). We count ordered pairs
+\[
+ F(X)=\#\{(m,n)\in\mathbb Z_{>0}^2:m<n\le X,\
+       \operatorname{rad}(m(m+1))=\operatorname{rad}(n(n+1))\}.
+\]
+
+\begin{theorem}\label{thm:main}
+For every \(\varepsilon>0\) and \(X\ge2\),
+\[
+                         F(X)\ll_\varepsilon X^{109/165+\varepsilon}.
+\]
+\end{theorem}
+
+The exponent is \(1/165\) below \(2/3\). Section~\ref{sec:notation}
+introduces the four-corner gcd coordinates. It also records the
+source-specific identities used here. The new part has three pieces: a
+first-match partition into thirteen disjoint populations, uniform
+estimates for its new rows, and a finite optimization of the long-shift
+remainder.
+
+The minimum \(S_0\) below is the limiting minimum of the row savings.
+After the analytic loss \(\beta_0\) and a conservative long-row charge
+\(g_0/4\),
+the proof retains the smaller saving displayed below.
+
+The earlier result \cite[Theorem~1]{Paper1} gives exponent \(2/3\) for
+this counting function. Its support-fibre lemma and low-radical estimate
+are used below; Appendix~\ref{app:sources} states them and records the
+substitutions. The quotient-tail and Farey-spacing estimates in that paper
+are context only. They are not used. Two related papers by the author
+\cite{Zhang712,ZhangE20} count primitive \(abc\) triples, not the pairs
+counted here, and do not enter this proof.
+
+At the chosen rational point, the minimum row saving is
+\[
+ S_0=\frac{30869}{5000000},\qquad
+ g_0=S_0-\frac1{165}=\frac{18677}{165000000}.
+\]
+The source-uniform estimates spend a total analytic loss
+\(\beta_0=g_0/16\). The long row has three finite corrections: geometric,
+interval, and high-degree. Beyond the common threshold each is at most
+\(g_0/4\). We charge their maximum, not their sum. The remaining margin is
+\[
+ S_0-\beta_0-\frac{g_0}{4}
+ =\frac1{165}+\frac{11g_0}{16}>\frac1{165}.
+\]
+
+Sections~\ref{sec:notation}--\ref{sec:partition} give the canonical source
+and the exact row partition. Sections~\ref{sec:outer}--\ref{sec:intermediate}
+treat the outer, joint-corner, short-shift and intermediate rows.
+Section~\ref{sec:long} handles the long row. Sections~\ref{sec:ledger}--\ref{sec:conclusion}
+allocate losses and sum the dyadic shells. The appendices contain the
+self-contained square-fibre proof, the application of the cited estimates, and the
+branch arithmetic. The use of AI tools is described after the appendices.
+
+We use Heath--Brown's published Lemma~2 under its stated bihomogeneous
+hypotheses. The fixed cubic branch uses the unnumbered theorem of
+Bombieri--Schmidt with its 1989 correction \cite{BS1989}. Appendix~\ref{app:sources}
+states both inputs and records the applications.
+Reuss's Theorem~1 \cite{Reuss} is the determinant-method input behind the low-radical
+estimate in \cite{Paper1}. That estimate is used here. Tao's
+Lemma~2.10 gives a comparison with the square-fibre estimate of
+Appendix~\ref{app:fibre}. The proof uses that appendix theorem.

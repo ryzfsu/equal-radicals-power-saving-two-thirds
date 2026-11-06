@@ -1,0 +1,192 @@
+\section{One loss and one threshold}\label{sec:epsilon}
+
+Fix the rational vector in \eqref{eq:old:8_1} and the complete analytic loss
+\(\beta_0=g_0/16\) from \eqref{eq:old:8_4}. In every determinant application, the positive exponent gap is fixed
+first. The degree and the matrix dimensions are chosen after it. This
+gives a finite family of degrees and dimensions. A moving box may select
+one member of it. The coefficients, the polynomial and the resultant may
+vary with the box and with \(Y\). Only their degrees and height exponents
+are uniform. Nonvanishing comes from the source determinant, from
+coprimality, or from the endpoint alternative in the relevant row. The
+height bound plays no part in it.
+
+Fix a selected member. The cofactor solution and the explicit
+integerizer give a polynomial height \(Y^{C_i}\). Here \(C_i\) depends
+only on the fixed degree, the dimension and the allocated loss. Hence a
+nonzero resultant is an integer of size at most \(Y^{C_i'}\)
+for a fixed exponent \(C_i'\). The integer itself may change as the
+source labels move.
+
+We allocate the loss as follows. Suppose one complete row proof contains
+\(N_i\) divisor, Heath--Brown, square-fibre, or lattice estimates. Let
+the \(j\)-th estimate apply to a parameter bounded by \(Y^{h_{ij}}\).
+Here \(N_i\) is the fixed finite number of estimate stages in the complete
+row proof. A stage repeated over moving boxes keeps its one uniform
+exponent choice. It does not incur a new loss for each box.
+Choose \(h_{ij}\) at least as large as every polynomial-height exponent in
+that invocation. This covers the auxiliary form, its integerization, any
+nonzero resultant and the size exponent of the counted parameter.
+For a product of height factors, add their exponents when choosing
+\(h_{ij}\). Then it bounds the total contribution of the product.
+The degrees and height exponents are uniform over the complete moving
+source family in that row.
+Choose the internal exponent \(\rho_{ij}\) so that
+\[
+0<\rho_{ij}\le
+\frac{\beta_0}{8N_i(1+h_{ij})}.
+\AutoTag{eq:old:9_1}
+\]
+Then
+\[
+\sum_{j=1}^{N_i}h_{ij}\rho_{ij}\le\frac{\beta_0}{8}.
+\]
+Allocate the other fixed portions of \(\beta_0\) to the finitely many
+dyadic sums, logarithms and divisor multiplicities in the same complete
+row proof. This is one allocation for the whole row. After a row
+estimate is stated, no factor or inverse count is charged again.
+
+The thirteen first-match estimates are stated in
+Propositions~\ref{prop:outerrows} and~\ref{prop:q2}, and in the row
+Propositions~\ref{prop:row-3u}, \ref{prop:row-3t},
+\ref{prop:row-4e}, \ref{prop:row-4h}, \ref{prop:row-4p}, and
+\ref{prop:row-5w}. They use the finite cutoff data summarized below. Each cutoff is fixed
+by the corresponding proof and depends only on \(\beta_0\) and the
+rational vector. The table records conditions and the estimates that
+supply them; it does not give numerical values for all row thresholds
+or analytic implied constants. Equation \eqref{eq:old:9_5} takes the
+maximum of the thresholds used in those proofs, including all displayed
+row conditions.
+
+\begin{table}[!ht]
+\centering
+\caption{Threshold conditions for the thirteen row estimates.}
+\label{tab:threshold-conditions}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.79\textwidth}@{}}
+Row & Threshold conditions included in $Y_i(\beta_0)$\\ \hline
+$O_R$ & $Y\ge64$, $H=Y/2\ge2$, $V=Y^{5/3-\epsilon_0}<H^2$; fixed-height partner and low-radical estimates\\
+$O_M$ & Ordered residual-factor divisor bound and the fixed-height quadratic-fibre estimate\\
+$O_{\operatorname{rad}M}$ & One fixed positive Rankin parameter and the same quadratic-fibre estimate\\
+$Q0$ & $Y\ge256$ and $3Y^{q_{\max}-1}<1$\\
+$Q1$ & Fixed-height bound for all $(P,L)$ labels\\
+$Q2u$ & $1/3-5\epsilon_0>0$; unit-root count, one $u$-sum, and the dyadic sector count\\
+$Q2t$ & $1/3-6\epsilon_0-l_0>0$; corresponding $t$-chart count and one $t$-sum\\
+$3u$ & Positive determinant gap, finite factor family, all-aspect lattice count, axes, and inverse bounds\\
+$3t$ & Determinant cutoff, fixed grid condition $N\ge40$, and
+later lattice, factor, census, and inverse cutoffs\\
+$4E$ & Four supported-factor sums, their fixed-height bounds, and the single shift sum\\
+$4H$ & Reducible, content, and primitive cubic branches, including the primitive-form estimate\\
+$4P$ & Graph, high-degree, cover, and axis bounds, with simultaneous shifts counted once\\
+$5W$ & Lemma~\ref{lem:ratio-cell-determinant}, finite chart comparisons,
+original-grid census, factor branches, endpoint bounds, assigned-corner
+cases, and the geometric envelope; in particular $6E_Y<\xi/2$ and
+$576Y^{q_{\max}+2\lambda-\tau_0}<1$ in \eqref{eq:old:7_15}\\
+\end{tabular}
+\end{table}
+
+\begin{samepage}
+In the \(5W\) row, the geometric cutoff is
+\[
+T_{\rm geom}=\frac{252}{g_0}+1.
+\AutoTag{eq:old:9_3}
+\]
+\end{samepage}%
+For \(\log Y>T_{\rm geom}\), \(\log2<7/10\) gives
+\[
+\frac{90\log2}{\log Y}
+<\frac{63}{252/g_0}=\frac{g_0}{4}.
+\AutoTag{eq:old:9_4}
+\]
+The high-degree correction in \eqref{eq:old:7_25} is separate from the geometric
+correction. Since \(a_{\rm grid}>1/2\), for \(Y\ge2\),
+\[
+\lambda+\frac{c_N}{2}
+\le \frac{Y^{-1}+\tfrac12Y^{-1/2}}{\log Y}
+<\frac1{\log Y}.
+\]
+Also, \(c_N=\log_Y(1+Y^{-a_{\rm grid}})
+\le Y^{-a_{\rm grid}}/\log Y\), so the interval correction is smaller
+than \(1/\log Y\).
+Consequently
+\[
+\frac{E_q+c_N}{2}+12d_2
+\le\frac{\tfrac12\log18+12\log2+1}{\log Y}
+<\frac{90\log2}{\log Y}<\frac{g_0}{4}.
+\]
+Here \(\tfrac12\log18+12\log2=9.763\ldots\). Thus each of the geometric
+correction \(6\rho_Y\), the interval correction \(c_N\), and the high-degree
+correction \((E_q+c_N)/2+12d_2\) is at most \(g_0/4\). The final row estimate
+is charged their maximum, not their sum.
+We retain this conservative charge in the reserve \eqref{eq:old:8_4};
+it is unnecessary for the exponent in Proposition~\ref{prop:row-5w},
+where the three finite corrections are absorbed into the implied constant.
+The determinant, census and geometric-envelope thresholds in that row
+are the conditions used in Section~\ref{sec:long}. The
+contribution \(90\) is the source-mass \(5\) plus the one geometric
+collar mass \(1\), each times the coefficient \(15\) in the
+row margin.
+
+Let \(Y_i(\beta_0)\) be the maximum of the finitely many thresholds
+used in the proof of row \(i\), after applying \eqref{eq:old:9_1}.
+Define
+\[
+T_0=\max\{3,T_{\rm geom},\log Y_1(\beta_0),\ldots,
+                         \log Y_{13}(\beta_0)\},\qquad
+Y_{\rm final}=\lceil e^{T_0}\rceil+1.
+\AutoTag{eq:old:9_5}
+\]
+Since \(T_0\ge3\), \(Y_{\rm final}\ge\lceil e^3\rceil+1=22>4\).
+Thus the elementary conditions \(Y\ge4\) of the 5W accounting
+hold at the common cutoff.
+The maximum runs over the thirteen fixed row estimates and their fixed
+finite degree families. It does not run over moving source labels. It
+includes the separate post-determinant thresholds of the \(3t\) row.
+
+\begin{proposition}[Common-loss assembly]\label{prop:commonloss}
+For \(Y\ge Y_{\rm final}\), each row \(i\ne5W\) is
+\[
+\#\mathrm{row}_i\ll_{\beta_0}
+Y^{2/3-r_i+\beta_0},
+\qquad r_i\ge S_0,
+\]
+and the last row satisfies
+\[
+\#5W\ll_{\beta_0}
+Y^{2/3-S_0+\beta_0+g_0/4}.
+\]
+Consequently \(\#\Omega_Y\ll_\varepsilon
+Y^{109/165+\varepsilon}\).
+\end{proposition}
+
+\begin{proof}
+The first twelve row estimates are complete counts. They include the
+moving labels, shifts, coefficient factorizations and inverse
+multiplicities. By Section~\ref{sec:ledger}, their minimum saving is
+\(S_0\). By \eqref{eq:old:7_26}, the three limiting values
+\(L_{5W},s_{\rm int},s_{\rm HD}\) in the definition of \(\sigma_{5W}\)
+are each at least \(S_0\). Hence the corrected minimum satisfies
+\[
+ \sigma_{5W}\ge S_0-\max\!\left(6\rho_Y,\ c_N,\
+       \frac{E_q+c_N}{2}+12d_2\right).
+\]
+The three corresponding source-box contributions are added in
+\eqref{eq:old:7_25}, so this minimum controls their sum exponent.
+The corrections have separate sources. First, \(6\rho_Y\) is the finite
+source-to-lower-corner allowance in \eqref{eq:old:7_22}--\eqref{eq:old:7_23c}.
+Next, \(c_N\) is the ceiling correction from \(N=\lceil Y^{a_{\rm grid}}\rceil\)
+in \eqref{eq:old:7_6}. Last, \((E_q+c_N)/2+12d_2\) bounds the finite
+square-root term \(\sqrt{4MN}\). This uses the source-product and
+grid-ceiling bounds just before \eqref{eq:old:7_25}. The margins add no
+losses beyond these three terms.
+By \eqref{eq:old:9_4} and the correction bounds above, each of the three
+corrections is at most \(g_0/4\) for \(Y\ge Y_{\rm final}\). Hence
+\(\sigma_{5W}\ge S_0-g_0/4\). Apply \eqref{eq:old:7_25} with
+\(\eta=\beta_0\), using the remaining \(\beta_0/2\) for the box sum.
+Thus the total count is
+\[
+\ll_{\beta_0}
+Y^{2/3-S_0+\beta_0+g_0/4}
+=Y^{109/165-11g_0/16}\ll Y^{109/165}.
+\]
+There are thirteen rows. Their finite sum changes only the implied
+constant.
+\end{proof}

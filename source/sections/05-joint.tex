@@ -1,0 +1,188 @@
+\section{Joint-corner and short-shift rows}\label{sec:joint}
+
+The two \(Q2\) populations are disjoint. This is because the chart rule
+\eqref{eq:old:2_3} assigns each source to exactly one of \(u\le t\) or
+\(t<u\). In a dyadic sector for the selected corners, write
+\[
+J\asymp J_0,\qquad K\asymp K_0,\qquad
+ P_0=J_0K_0,\qquad \mu_{\rm sec}=\min(J_0,K_0).
+\]
+Here each dyadic sector means \(J_0\le J<2J_0\) and
+\(K_0\le K<2K_0\). These half-open sectors are disjoint. The \(Q2\) predicate gives
+\(\mu_{\rm sec}<Y^{1/3-j_0}\).
+
+\begin{lemma}[Sector count]\label{lem:q2-sector}
+Fix a positive selected shift \(s\) and a nonempty sector as above. Count
+the canonical-source coefficient-corner triples with
+\(\gcd(f,K)=\gcd(g,J)=\gcd(s,JK)=1\), with the second coefficient
+forced by the conic. Suppose that
+\[
+fJ^2\le H,\qquad gK^2\le H.
+\]
+Then their number is
+\[
+\ll_\eta Y^\eta H\left(\frac1{P_0}+\frac{\mu_{\rm sec}^3}{P_0^2}\right)
+\]
+for every \(\eta>0\), with an implied constant depending only on \(\eta\).
+In the \(Q2u\) application take \(H=uY\). In the \(Q2t\) application
+we assert the natural cutoff \(H\ll tY^{1+\epsilon_0+l_0}\) only on
+the first-match population. There the earlier \(O_R\) and \(Q1\) rows
+have failed. That source-uniform bound is proved in \eqref{eq:old:5_2}.
+\end{lemma}
+
+\begin{proof}
+In the \(u\) chart the conic is \(gK^2-fJ^2=u\). The imposed cutoff
+gives \(fJ^2,gK^2\le H\). For the \(Q2u\) application, the source scale
+identities permit the choice \(H=uY\).
+The full source filter gives \(\gcd(f,K)=\gcd(g,J)=1\) and
+\(\gcd(u,JK)=1\). These are the unit conditions for either orientation.
+Thus the quadratic congruence has at most \(2^{\omega(K)+2}\) roots
+modulo \(K^2\), or \(2^{\omega(J)+2}\) roots modulo \(J^2\).
+For odd prime powers each unit-square congruence has at most two roots.
+The prime \(2\) contributes at most four roots modulo a power of \(2\).
+So the factor \(2^{\omega(\cdot)+2}\) is a uniform
+overcount, including the even modulus.
+Suppose first \(J_0\ge K_0\). For fixed \(f\) and \(K\),
+\[
+fJ^2\equiv-u\pmod{K^2}.
+\]
+This congruence has at most \(2^{\omega(K)+2}\ll_\eta Y^\eta\)
+root classes modulo \(K^2\). Each class contains at most
+\(J_0/K^2+1\) integers \(J\) in the sector. There are
+\(O(K_0)\) choices of \(K\) and \(O(H/J_0^2)\) choices of \(f\).
+The resulting count is
+\[
+\ll_\eta Y^\eta H
+\left(\frac1{J_0K_0}+\frac{K_0}{J_0^2}\right)
+=Y^\eta H\left(\frac1{P_0}+\frac{\mu_{\rm sec}^3}{P_0^2}\right).
+\]
+If \(K_0\ge J_0\), reduce the conic modulo \(J^2\). This gives the
+same expression with \(J_0,K_0\) interchanged.
+
+For the \(t\) chart the full filter gives
+\(\gcd(g,J)=\gcd(f,K)=1\) and \(\gcd(t,JK)=1\). Use
+\(gK^2-fJ^2=t\), now with \((J,K)=(B,C)\).
+Combine the scale identities in \eqref{eq:old:2_2}, the source bounds
+\eqref{eq:old:2_7} and the failed \(Q1\) inequality. They give
+\[
+fJ^2,\ gK^2\ll tY^{1+\epsilon_0+l_0}.
+\AutoTag{eq:old:5_2}
+\]
+The source identity \(Zcd=n(n+1)\) and \(Z\ge R>Y^{5/3-\epsilon_0}\)
+give
+\[
+cd=\frac{n(n+1)}Z<\kappa_Y Y^{1/3+\epsilon_0}.
+\]
+The denominator satisfies
+\[
+cd=ab+L\ll Y^{1/3+\epsilon_0},\quad
+n-m=\frac{L\,n(n+1)}{cd(m+n+1)}
+\gg Y^{1-\epsilon_0-l_0}.
+\]
+The second estimate uses \(n>Y/2\), \(L\ge Y^{1/3-l_0}\),
+\(m+n+1\le2Y\), and the first estimate. Substitution in the last two
+scale identities of \eqref{eq:old:2_2} proves \eqref{eq:old:5_2}. The same
+congruence argument applies, using \(\delta C^2\equiv t\pmod{B^2}\) or
+\(\gamma B^2\equiv -t\pmod{C^2}\). It gives the asserted sector bound.
+\end{proof}
+
+\begin{proposition}[Joint-corner rows]\label{prop:q2}
+For every \(\varepsilon>0\),
+\[
+\begin{aligned}
+\#Q2u&\ll_\varepsilon
+Y^{2/3-2222179/15000000+\varepsilon}
++Y^{2/3-30869/1250000+\varepsilon},\\
+\#Q2t&\ll_\varepsilon
+Y^{2/3-972179/7500000+\varepsilon}
++Y^{2/3-S_0+\varepsilon}.
+\end{aligned}\AutoTag{eq:old:5_3}
+\]
+The terms in each line are additive contributions to one chart
+population. They are not separate first-match rows.
+\end{proposition}
+
+\begin{proof}
+On \(Q2u\) or \(Q2t\), \eqref{eq:old:2_7} and the failed earlier tests give
+\[
+\begin{gathered}
+Y^{q_{\min}}<M<\kappa_Y^2Y^{q_{\max}},\qquad
+Y^{1/3-l_0}\le L<\kappa_YY^{1/3+\epsilon_0},\\
+1\le s<\sqrt{\kappa_Y}\,Y^{1/6+\epsilon_0/2}.
+\end{gathered}\AutoTag{eq:old:5_4}
+\]
+The last inequality follows from \(ut=L\) and
+\(s=\min(u,t)\le\sqrt L\).
+
+We also need a lower bound for the product of the selected corners.
+Again \(Zcd=n(n+1)\) and \(Z\ge R>Y^{5/3-\epsilon_0}\), so
+\(cd<\kappa_Y Y^{1/3+\epsilon_0}\). The identity
+\[
+\frac{n-m}{L}=\frac{n(n+1)}{cd(m+n+1)}
+\]
+and \(n>Y/2\) imply
+\[
+AD=u\frac{n-m}{L}\gg uY^{2/3-\epsilon_0}.
+\]
+Reducing the exponent by \(\tfrac32\epsilon_0\) absorbs the fixed
+constant for all sufficiently large \(Y\). A sector has
+\(AD<4P_0\). So its nonemptiness implies
+\[
+P_0>\frac{uY^{2/3-5\epsilon_0/2}}{32}
+\quad\text{in the \(u\) chart.}\AutoTag{eq:old:5_5}
+\]
+In the \(t\) chart, \(BC=t(m+n+1)/L\), so \eqref{eq:old:5_4} gives
+\[
+BC\gg tY^{2/3-\epsilon_0},\qquad
+P_0>\frac{tY^{2/3-5\epsilon_0/2}}{32}.
+\AutoTag{eq:old:5_6}
+\]
+We reduce the exponent by \(3\epsilon_0/2\) from the scale bound
+\(BC\gg tY^{2/3-\epsilon_0}\). This absorbs fixed dyadic constants uniformly.
+This gives the exponent used in \eqref{eq:old:5_8}.
+
+Apply Lemma~\ref{lem:q2-sector} in each occupied sector. In the \(u\)
+chart, its two terms are bounded by \eqref{eq:old:5_5} and
+\(\mu_{\rm sec}<Y^{1/3-j_0}\) as
+\[
+Y^\eta\left(
+Y^{1/3+5\epsilon_0/2}
++\frac{Y^{2/3-3j_0+5\epsilon_0}}u
+\right).
+\AutoTag{eq:old:5_7}
+\]
+For the \(t\) chart, \eqref{eq:old:5_2}, \eqref{eq:old:5_6}, and the same corner bound give
+\[
+Y^\eta\left(
+Y^{1/3+7\epsilon_0/2+l_0}
++\frac{Y^{2/3-3j_0+6\epsilon_0+l_0}}t
+\right).
+\AutoTag{eq:old:5_8}
+\]
+The source has \(s\le\sqrt{\kappa_Y}Y^{1/6+\epsilon_0/2}\).
+Sum the first terms of \eqref{eq:old:5_7}--\eqref{eq:old:5_8} over this many
+shifts. This adds \(1/6+\epsilon_0/2\) to their exponents. The second terms are harmonic
+in the selected shift and add only \(O(\log Y)\). There are
+\(O(\log^2Y)\) corner sectors.
+
+Fix a coefficient \(f\), a sector corner pair and a shift. Then the
+conic forces the other coefficient \(g\). The number of ordered residual
+splits of \(f,g\) is at most \(\tauDiv(f)\tauDiv(g)\ll_\eta Y^\eta\).
+The inverse maps \eqref{eq:old:2_2} then determine the remaining corners. The full
+canonical filter is retained. Choose each internal exponent first. Then
+the divisor factors, root factors, dyadic logarithms and the harmonic sum
+use a total arbitrarily small loss.
+
+Substitute \(\epsilon_0=k_0=S_0\), \(l_0=2S_0\) and \(j_0=3S_0\).
+This gives the four exponents
+\[
+\begin{array}{ll}
+1/2+3S_0=2/3-2222179/15000000,&
+2/3-9S_0+5S_0=2/3-30869/1250000,\\
+1/2+4S_0+2S_0=2/3-972179/7500000,&
+2/3-9S_0+6S_0+2S_0=2/3-S_0.
+\end{array}
+\AutoTag{eq:old:5_9}
+\]
+This proves \eqref{eq:old:5_3}.
+\end{proof}

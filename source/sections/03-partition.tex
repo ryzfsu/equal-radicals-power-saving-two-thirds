@@ -1,0 +1,84 @@
+\section{The first-match partition}\label{sec:partition}
+
+Each predicate below is tested only after every earlier row has failed.
+Here \(s=\min(u,t)\) in the chart selected by \eqref{eq:old:2_3}.
+\[
+\begin{array}{c|l}
+\text{row}&\text{predicate}\\ \hline
+O_R&R\le Y^{5/3-\epsilon_0}\\
+O_M&M\le Y^{2/3-\epsilon_0}\\
+O_{\operatorname{rad}M}&\operatorname{rad}(M)\le Y^{2/3-k_0}\\
+Q0&K_{\rm res}>Y^{\Delta_{\rm exp}}\\
+Q1&L<Y^{1/3-l_0}\\
+Q2u&u\le t,\ \min(A,D)<Y^{1/3-j_0}\\
+Q2t&t<u,\ \min(B,C)<Y^{1/3-j_0}\\
+3u&u\le t,\ u\le Y^{a_0}\\
+3t&t<u,\ t\le Y^{a_0}\\
+4E&Y^{a_0}<s<Y^{b_0},\ \min(v,w)\le Y^{p_0}\\
+4H&Y^{a_0}<s<Y^{b_0},\ v,w>Y^{p_0},\ \Pi\le Y^{p_0}\\
+4P&Y^{a_0}<s<Y^{b_0},\ v,w>Y^{p_0},\ \Pi>Y^{p_0}\\
+5W&\text{the remaining source.}
+\end{array}\AutoTag{eq:old:3_1}
+\]
+
+\begin{theorem}[Exact partition]\label{thm:partition}
+The thirteen first-match sets in \eqref{eq:old:3_1} are pairwise disjoint and have union
+\(\Omega_Y\). On \(5W\),
+\[
+s\ge Y^{b_0},\qquad K_{\rm res}\le Y^{\Delta_{\rm exp}},\qquad
+L\ge Y^{1/3-l_0},\qquad J,K\ge Y^{1/3-j_0}.
+\AutoTag{eq:old:3_2}
+\]
+\end{theorem}
+
+\begin{proof}
+The quantities in \eqref{eq:old:3_1} are deterministic functions of the canonical
+source. Each of the first twelve rows is intersected with the complements of
+the preceding predicates. So these rows are disjoint. Their complement is
+exactly the last row, which proves exhaustiveness. Failure of \(Q0\) gives
+\(K_{\rm res}\le Y^{\Delta_{\rm exp}}\). Failure of \(Q1\) gives
+\(L\ge Y^{1/3-l_0}\). On the complement of both chart-specific \(Q2\)
+tests, the selected corners satisfy \(J,K\ge Y^{1/3-j_0}\).
+Failure of the \(3u\) and \(3t\) tests gives \(s>Y^{a_0}\).
+If \(s<Y^{b_0}\), trichotomy gives exactly one of the \(4E,4H,4P\)
+predicates. Therefore their complement has \(s\ge Y^{b_0}\).
+\end{proof}
+
+The following boundary conventions apply after all earlier rows have
+failed. The first three rows use non-strict upper cuts. Equality at
+\(K_{\rm res}=Y^{\Delta_{\rm exp}}\),
+\(L=Y^{1/3-l_0}\), and \(\min(J,K)=Y^{1/3-j_0}\) survives the
+corresponding strict test. The chart equality \(u=t\) selects the
+\(u\)-chart. The full first-match order determines its row. The
+\(3u,3t\) tests include \(s=Y^{a_0}\), while \(5W\) contains
+\(s=Y^{b_0}\). In the open middle interval, \(4E\) contains the boundary
+\(\min(v,w)=Y^{p_0}\). Also \(4H\) contains \(\Pi=Y^{p_0}\) when
+\(v,w>Y^{p_0}\).
+
+\begin{remark}[Counting populations]
+The estimates below count the following populations:
+\begin{enumerate}
+\item For \(O_R\), fix \(n\) first. Then apply the
+      support-fibre lemma in \cite{Paper1} to the partners \(m\).
+\item \(O_M,O_{\operatorname{rad}M},Q0\) use the complete fixed-\(M\)
+      quadratic fibre, including all ordered factorizations
+      \(M=(ab)(cd)\). \(Q1\) instead fixes \((P,L)\), with
+      \(P=ab\) and \(Q_{\rm prod}=cd=P+L\).
+\item \(Q2u,Q2t\) are disjoint chart populations. Their two analytic
+      contributions apiece are additive bounds for each population.
+\item \(3u,3t,4E,4H,4P\) retain the corresponding earlier-failure
+      predicates and the canonical inverse filters. The \(4P\) estimate is
+      not applied to the \(5W\) complement.
+\item \(5W\) is exactly the remaining first-match set in \eqref{eq:old:3_1}.
+\end{enumerate}
+\end{remark}
+
+Fix the ordered residual factors \((a,b,c,d)\), both shifts \((u,t)\),
+the selected chart and its conic coordinates. Then the inverse identities
+\eqref{eq:old:2_2} reconstruct the remaining two corners. This is the
+full canonical label used for inverse reconstruction. The outer-row
+divisor bound includes ordered residual factorizations. The joint-row sums
+include their coefficient factorizations. The later estimates retain the
+stated divisor or factor multiplicities. A larger set used to estimate one
+row may intersect the set used for another row. The first-match partition
+makes the original populations disjoint. Each row is bounded separately.

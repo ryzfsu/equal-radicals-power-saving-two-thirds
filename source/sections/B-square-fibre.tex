@@ -1,0 +1,151 @@
+\section{A uniform square-fibre bound}\label{app:fibre}
+
+Tao's Lemma~2.10 \cite[Lemma~2.10]{Tao} gives a related square-fibre
+bound. Appendix~\ref{app:sources} states its hypotheses. The self-contained
+theorem below gives the
+fixed-\(\varepsilon\), fixed-polynomial-height version used here. It assumes
+no uniform Pell-orbit or regulator bound.
+
+\begin{theorem}[Uniform square fibres]\label{thm:fibre}
+Fix \(A\ge1\). For every \(\varepsilon>0\) there is a constant
+\(C_{A,\varepsilon}\) such that, for \(x\ge2\), positive integers
+\(a,b\le x^A\), and a nonzero integer \(h\) with \(|h|\le x^A\),
+\[
+ \#\{(n,m)\in\mathbb Z_{>0}^2:
+       an^2+h=bm^2,\ n\le x\}
+ \le C_{A,\varepsilon}x^\varepsilon.
+\AutoTag{eq:old:B_1}
+\]
+The constant is independent of \(a,b,h\). The exponent \(A\) is fixed.
+\end{theorem}
+
+\begin{lemma}[Divisor bound]\label{lem:tau}
+For every \(\delta>0\), \(\tauDiv(N)\ll_\delta N^\delta\) for \(N\ge1\).
+\end{lemma}
+\begin{proof}
+For primes \(p\ge2^{1/\delta}\), \(j+1\le2^j\le p^{\delta j}\).
+There are finitely many smaller primes. For each of them
+\(\sup_{j\ge0}(j+1)p^{-\delta j}<\infty\). Multiply over the
+prime factorization.
+\end{proof}
+
+\begin{lemma}[Roots of a quadratic congruence]\label{lem:qroots}
+If \(D\ge2\) is squarefree and \(M\ge1\), then
+\[
+\#\{r\bmod M:r^2\equiv D\pmod M\}\le4\cdot2^{\omega(M)}.
+\AutoTag{eq:old:B_2}
+\]
+For \(M=1\) there is one residue class.
+\end{lemma}
+\begin{proof}
+It suffices to count roots modulo prime powers. For an odd prime \(p\mid D\),
+there is one root modulo \(p\) and none modulo \(p^e\), \(e\ge2\). Here
+a root would have valuation at least one. Its square would then have
+valuation at least two. If \(p\nmid D\), a root \(r_0\) is a unit. For any other
+root \(r\), \(p^e\mid(r-r_0)(r+r_0)\). The two factors are not both
+divisible by \(p\). So \(r\equiv r_0\) or \(-r_0\pmod{p^e}\).
+There are at most two roots.
+
+Let \(p=2\). If \(D\) is even, squarefreeness gives \(D\equiv2\pmod4\).
+Then there are no roots modulo \(2^e\) for \(e\ge2\), and at most one modulo
+2. Let \(D\) be odd and let \(r_0\) be one root. Multiplication by
+\(r_0^{-1}\) injects the roots into solutions of \(z^2\equiv1\pmod{2^e}\).
+For \(e=1,2\) there are at most two. Let \(e\ge3\). Then \(z\) is odd, and
+exactly one of \(z-1,z+1\) is divisible by \(2\) but not \(4\).
+Their product is divisible by \(2^e\). So the other is divisible by
+\(2^{e-1}\). Hence \(z\equiv1\) or \(-1\pmod{2^{e-1}}\). This gives at most
+four classes modulo \(2^e\). The Chinese remainder theorem multiplies
+these local bounds, and \eqref{eq:old:B_2} follows.
+\end{proof}
+
+\begin{lemma}[Spacing in one norm class]\label{lem:normspacing}
+Let \(D\ge2\) be squarefree, \(N\in\mathbb Z\setminus\{0\}\), and \(H\ge1\). The number of
+positive integral solutions of
+\[
+ X^2-DY^2=N,\qquad X+Y\sqrt D\le H
+\]
+is at most
+\[
+ 4\tauDiv(|N|)^2
+ \left(1+\frac{\log H}{\log(2+\sqrt3)}\right).
+\AutoTag{eq:old:B_3}
+\]
+\end{lemma}
+\begin{proof}
+Put \(g=\gcd(X,Y)\). Then \(g^2\mid N\). For each of at most
+\(\tauDiv(|N|)\) choices of \(g\), set \(U=X/g\), \(V=Y/g\),
+and \(N_0=N/g^2\). The pair \((U,V)\) is primitive. Also
+\(\gcd(V,|N_0|)=1\). Otherwise, by the norm equation, a common prime
+would divide \(U^2\), hence \(U\). This contradicts primitivity. Thus
+\(r=UV^{-1}\pmod{|N_0|}\) is defined and satisfies \(r^2\equiv D\).
+For modulus one use its unique class. By \eqref{eq:old:B_2}, there are at most
+\(4\tauDiv(|N|)\) such classes.
+
+Take two solutions in one class. Write
+\(\alpha_i=U_i+V_i\sqrt D>1\). Direct multiplication gives
+\[
+ \frac{\alpha_1}{\alpha_2}=s+t\sqrt D,\quad
+ s=\frac{U_1U_2-DV_1V_2}{N_0},\quad
+ t=\frac{V_1U_2-U_1V_2}{N_0}.
+\AutoTag{eq:old:B_4}
+\]
+Here \(s,t\) are the integer coefficients of this norm-one quotient.
+This local \(t\) is unrelated to either source shift.
+Both numerators are divisible by \(N_0\). To see this, work modulo \(|N_0|\) and use
+\(U_i\equiv rV_i\) and \(r^2\equiv D\). Hence \(s,t\) are integers
+even when \(N_0<0\). The quotient has norm one. Let
+\(\alpha_1/\alpha_2>1\). Its conjugate is the positive reciprocal. Thus
+\(s=(\alpha_1/\alpha_2+\alpha_2/\alpha_1)/2>1\). Since \(s\) is an
+integer, \(s\ge2\), and
+\[
+ \frac{\alpha_1}{\alpha_2}=s+\sqrt{s^2-1}\ge2+\sqrt3.
+\]
+Distinct pairs have distinct \(\alpha_i\), as \(\sqrt D\) is irrational.
+Hence each class contains at most
+\(1+\log H/\log(2+\sqrt3)\) solutions. Multiply by the choices of
+\(g\) and of the residue class to get \eqref{eq:old:B_3}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:fibre}]
+Write \(ab=Dc^2\) with \(D\) squarefree and put
+\[
+ X=bm,\qquad Y_0=cn,\qquad N=bh.
+\]
+Then
+\[
+ X^2-DY_0^2=b^2m^2-abn^2=bh=N\ne0.
+\AutoTag{eq:old:B_5}
+\]
+This map is injective. From the original equation and \(n\le x\),
+\[
+ bm\le\sqrt{abx^2+b|h|}\le\sqrt2\,x^{A+1},\qquad
+ cn\sqrt D=\sqrt{ab}\,n\le x^{A+1}.
+\]
+Thus \(X+Y_0\sqrt D\le3x^{A+1}\) and \(|N|\le x^{2A}\).
+
+If \(D\ge2\), apply Lemma~\ref{lem:normspacing}. Then Lemma~\ref{lem:tau}
+absorbs the two divisor factors and the logarithm into \(x^\varepsilon\). Its
+exponent is chosen in terms of \(A,\varepsilon\). If \(D=1\), \eqref{eq:old:B_5} factors
+as \((X-Y_0)(X+Y_0)=N\). Each positive divisor \(X+Y_0\) of
+\(|N|\) fixes the signed factor \(X-Y_0=N/(X+Y_0)\). So it gives at
+most one pair. The divisor bound then proves \eqref{eq:old:B_1} in this case too.
+\end{proof}
+
+\begin{remark}
+Every use has positive coefficients and a nonzero shift. The
+coefficients and the shift have fixed polynomial height. One variable is
+bounded, and the equation then bounds the other. No
+discriminant-dependent constant or fundamental-unit estimate occurs.
+\end{remark}
+
+In the conic uses of Sections~\ref{sec:intermediate} and~\ref{sec:long},
+put $(a,b,h,n,m)=(f,g,s,J,K)$. The source bounds give
+$1\le f,g,s\le (Y+1)^2$ and $J,K\le Y+1$. Take $x=2Y$ and the fixed
+height exponent $A_{\rm ht}=2$, with theorem parameter $A=A_{\rm ht}$. All
+height hypotheses hold, since $(Y+1)^2\le(2Y)^2$ and $Y+1\le2Y$.
+The coefficients are positive and the selected shift satisfies $s>0$.
+Suppose the factorization does not fix the shift. Then we first fix
+the ordered residual factors, which determine $L$. Next we enumerate $s\mid L$.
+As $L\le(Y+1)^2$, this costs at most $\tauDiv(L)\ll_\delta Y^\delta$.
+Thus the theorem is applied once per fixed nonzero shift, with its uniform
+constant. The shift divisor count is part of the allocated loss.

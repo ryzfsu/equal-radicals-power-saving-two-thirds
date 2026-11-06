@@ -1,0 +1,80 @@
+\section{Boundary rules for the first-match partition}\label{app:equality}
+\begin{samepage}
+All cuts in the partition apply to the original pair. The table gives
+the first-match row for each equality, after all earlier rows are tested.
+The notation is that of Section~\ref{sec:partition}.
+\end{samepage}
+\[
+\begin{array}{c|c}
+\text{boundary}&\text{first-match row}\\ \hline
+R=Y^{5/3-\epsilon_0}&O_R\\
+M=Y^{2/3-\epsilon_0}&O_M\\
+\rad(M)=Y^{2/3-k_0}&O_{\rad M}\\
+K_{\rm res}=Y^{\Delta_{\rm exp}}&\text{fails }Q0;\text{ continue testing}\\
+L=Y^{1/3-l_0}&\text{fails }Q1;\text{ continue testing}\\
+\min(J,K)=Y^{1/3-j_0}&\text{fails strict }Q2;\text{ test later rows}\\
+u=t&u\text{-chart}\\
+s=Y^{a_0}&3u\text{ or }3t,\text{ as selected}\\
+s=Y^{b_0}&5W\\
+\min(v,w)=Y^{p_0}&4E\\
+\Pi=Y^{p_0},\quad v,w>Y^{p_0}&4H\\
+\Pi>Y^{p_0},\quad v,w>Y^{p_0}&4P\\
+\end{array}
+\AutoTag{eq:old:A_1}
+\]
+The rows for \(4E,4H,4P\) require that all earlier predicates fail and
+that \(Y^{a_0}<s<Y^{b_0}\). Equality at the lower-corner boundary fails the
+strict \(Q2\) cut. It then goes to the first later row whose predicate
+holds. The weak lower-corner inequalities describe the complements of the
+strict \(Q2\) cuts.
+
+The row predicates are Boolean functions of the original pair. A
+counting argument may round an interval endpoint outward to an integer.
+This only enlarges the counted set. No real rounding enters the
+definition of a source row. Take the explicit inverse in
+\eqref{eq:old:2_2}. Then test positivity, integrality, the gcd, the shell
+and the mask. Each accepted reconstructed tuple then gives at most one
+original pair.
+
+Fix the ordered residual tuple that determines \(L\). Then the
+identity \(ut=L\) determines the opposite shift. Hence a sum over \(u\) or
+over \(t\) is a sum over one source coordinate. It is not a product
+of independent shift ranges. In the \(4H\) and \(4P\) rows this identity
+forces the opposite shift. In \(5W\) both shifts stay in the
+original-cell source. Its geometric envelope adds no new shift sum.
+
+The four $Q2$ count contributions fall into two populations:
+\[
+\begin{array}{c|c|c}
+\text{population}&\text{contributions}&\text{selected chart}\\ \hline
+Q2u&Q2u_{\rm int}+Q2u_{\rm harm}&u\le t\\
+Q2t&Q2t_{\rm int}+Q2t_{\rm harm}&t<u
+\end{array}
+\]
+Section~\ref{sec:ledger} computes their savings. The two terms on a
+line are added to bound one chart population. They are not separate rows.
+Their exponents and savings are
+\[
+\begin{array}{c|c|c|c}
+\text{term}&\text{chart contribution}&\text{exponent}&\text{saving}\\ \hline
+Q2t_{\rm int}&\text{interval term in }Q2t&1/2+6S_0&1/6-6S_0=972179/7500000\\
+Q2t_{\rm harm}&\text{harmonic term in }Q2t&2/3-S_0&S_0\\
+Q2u_{\rm int}&\text{interval term in }Q2u&1/2+3S_0&1/6-3S_0=2222179/15000000\\
+Q2u_{\rm harm}&\text{harmonic term in }Q2u&2/3-4S_0&4S_0=30869/1250000
+\end{array}
+\AutoTag{eq:old:A_2}
+\]
+In each chart the larger exponent controls the sum. This is the smaller
+saving. No term is an additional source population.
+
+The partition is disjoint and exhaustive. Hence
+\begin{align}
+\#\Omega_Y={}&\#O_R+\#O_M+\#O_{\rad M}+\#Q0+\#Q1
+ +\#Q2u+\#Q2t \notag\\
+ &+\#3u+\#3t+\#4E+\#4H+\#4P+\#5W.
+\AutoTag{eq:old:A_3}
+\end{align}
+The first-match convention is essential. A relaxed set that bounds one
+row may overlap another relaxed counting set. Still, every original pair
+goes to exactly one row. So the populations satisfy the exact
+identity \eqref{eq:old:A_3}.

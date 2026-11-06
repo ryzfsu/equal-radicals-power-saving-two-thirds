@@ -1,0 +1,391 @@
+\section{Exact exponents and finite optimization}
+\label{app:arithmetic}
+
+All numbers in this appendix are exact rationals. Set
+\[
+\begin{gathered}
+S_0=\epsilon_0=k_0=\frac{30869}{5000000},\qquad
+l_0=2S_0=\frac{30869}{2500000},\qquad
+j_0=p_0=3S_0=\frac{92607}{5000000},\\
+a_0=\frac6{125},\qquad b_0=\frac{4166537}{30000000},\qquad
+\Delta_{\rm exp}=3S_0=\frac{92607}{5000000},\\
+\mu_{\rm HP}=\frac{16}{25},\qquad \nu=\frac1{64},\qquad
+\xi=\frac1{10000}.
+\end{gathered}
+\AutoTag{eq:old:D_1}
+\]
+The target saving and reserve are
+\[
+S_{\rm target}=\frac1{165},\qquad
+g_0=S_0-S_{\rm target}=\frac{18677}{165000000}.
+\AutoTag{eq:old:D_2}
+\]
+
+The table gives every source-count contribution. The margin is
+the displayed saving minus $S_0$. A zero margin marks a binding contribution.
+Two chart terms of one population are both listed, since their counts
+add. The smaller saving controls their sum. The three
+displayed $5W$ savings are additive contributions to the complete
+count. Their minimum controls the exponent of the sum. The chart and
+assigned-corner routes are selected in each source box as in
+Section~\ref{sec:long}.
+\small
+\unnumtable
+\newcommand{\fivewdecimal}[1]{\text{\scriptsize (#1)}}
+\begin{longtable}{@{}p{0.25\textwidth}p{0.36\textwidth}p{0.32\textwidth}@{}}
+\toprule
+Contribution & Saving & Margin above $S_0$\\
+\midrule
+\endhead
+$O_R$ & $30869/5000000$ & $0$\\
+$O_M$ & $30869/5000000$ & $0$\\
+$O_{\operatorname{rad}M}$ & $30869/5000000$ & $0$\\
+$Q0$ & $2/3$ & $9907393/15000000$\\
+$Q1$ & $30869/5000000$ & $0$\\
+$Q2t_{\rm int}$ & $972179/7500000$ & $1851751/15000000$\\
+$Q2t_{\rm harm}$ & $30869/5000000$ & $0$\\
+$Q2u_{\rm int}$ & $2222179/15000000$ & $532393/3750000$\\
+$Q2u_{\rm harm}$ & $30869/1250000$ & $92607/5000000$\\
+$3u_{\rm sqrt}$ & $5102312049347/600000000000000$ & $1398032049347/600000000000000$\\
+$3u_{\rm int}$ & $23206592049347/300000000000000$ & $21354452049347/300000000000000$\\
+$3u_{\rm core}$ & $2473/12000$ & $2998643/15000000$\\
+$3u_{\rm small,1}$ & $1619393/6000000$ & $7911751/30000000$\\
+$3u_{\rm small,2}$ & $8003/500000$ & $49161/5000000$\\
+$3t_{\rm sqrt}$ & $388751/60000000$ & $18323/60000000$\\
+$3t_{\rm int}$ & $2199179/30000000$ & $402793/6000000$\\
+$3t_{\rm axes}$ & $2726537/15000000$ & $263393/1500000$\\
+$4E$ & $30869/5000000$ & $0$\\
+$4H$ & $140441/5000000$ & $27393/1250000$\\
+$4P_{\rm graph}$ & $30869/5000000$ & $0$\\
+$4P_{\rm HD}$ & $107393/15000000$ & $7393/7500000$\\
+$4P_{\rm cover}$ & $2/75$ & $307393/15000000$\\
+$4P_{\rm axes}$ & $4166537/30000000$ & $3981323/30000000$\\
+$5W_{\rm geom}$ &
+$\begin{gathered}\dfrac{1203113}{90000000}\\[-2pt]\fivewdecimal{0.013368}\end{gathered}$ &
+$\begin{gathered}\dfrac{647471}{90000000}\\[-2pt]\fivewdecimal{0.007194}\end{gathered}$\\
+$5W_{\rm int}$ &
+$\begin{gathered}\dfrac{235120131355662893}{9520800917171070000}\\[-2pt]\fivewdecimal{0.024695}\end{gathered}$ &
+$\begin{gathered}\dfrac{88170305326616070517}{4760400458585535000000}\\[-2pt]\fivewdecimal{0.018522}\end{gathered}$\\
+$5W_{\rm HD}$ &
+$\begin{gathered}\dfrac{29390272487700347267}{4760400458585535000000}\\[-2pt]\fivewdecimal{0.006174}\end{gathered}$ &
+$\rule{0pt}{3.2ex}\begin{gathered}\dfrac{128034121242821}{1190100114646383750000}\\[-2pt]\text{\scriptsize (1.076\ensuremath{\times10^{-7}})}\end{gathered}$\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+Decimals in parentheses are rounded annotations. All comparisons
+and margins use the exact rational entries.
+
+Thus the seven binding source contributions are
+\[
+O_R,\ O_M,\ O_{\operatorname{rad}M},\ Q1,\ Q2t_{\rm harm},\ 4E,\ 4P\text{ graph},
+\]
+each with saving exactly $S_0$. The high-degree term limits the $3u$
+aggregate. The high-degree term also limits the $3t$ aggregate.
+The graph term limits the $4P$ aggregate. For $5W$, the minimum
+saving among the geometric, interval and high-degree contributions controls
+the combined count in \eqref{eq:old:7_25}.
+
+\subsection*{The limiting linear program}
+
+Let $x_0,\ldots,x_7$ be the base-$Y$ logarithms of the eight assigned
+corner factors, in the order
+\[
+(a_A,a_B,b_C,b_D,c_A,c_C,d_B,d_D).
+\]
+Put
+\[
+\begin{gathered}
+\alpha=x_0+x_1+x_2+x_3,\quad
+\gamma=x_4+x_5+x_6+x_7,\quad q=\alpha+\gamma,\\
+c_1=x_0+x_1+x_4+x_5,\quad c_2=x_0+x_1+x_6+x_7,\\
+P=x_0+x_4,\quad Q=x_3+x_7,\quad R_{\rm LP}=x_1+x_6,\quad T=x_2+x_5.
+\end{gathered}
+\AutoTag{eq:old:D_3}
+\]
+The other variables are $W,z_u,z_t,\mu\ge0$. Here $W$ is a
+candidate saving, $z_u=\log_Yu$, $z_t=\log_Yt$, and
+$\mu=\log_Ym$. Every branch uses the limiting source constraints below.
+They are not finite-source identities. Section~\ref{sec:long} records the
+finite relations and their collars.
+\[
+\begin{gathered}
+\frac{2407393}{7500000}\le\alpha\le\frac{5092607}{15000000},\qquad
+\frac{9907393}{30000000}\le\gamma\le\frac{2092607}{6000000},\\
+\frac{9907393}{15000000}\le q\le\frac{5092607}{7500000},\qquad
+\frac{2407393}{7500000}\le z_u+z_t\le\gamma,\\
+\mu+\frac{\gamma-\alpha}{2}=1,\qquad
+\mu\le1,\qquad \mu\ge\frac{9907393}{15000000}+\frac q2,\\
+z_u,z_t\ge b_0,\qquad z_u+z_t\le\frac{5092607}{7500000}.
+\end{gathered}
+\AutoTag{eq:old:D_4}
+\]
+The four assigned-corner capacity inequalities are
+\begin{align}
+\frac32x_0+\frac12x_1+\frac32x_4+\frac12x_5
+ -\frac12z_u-\frac12\mu&\le\frac{92607}{5000000},\label{eq:old:D_capA}\\
+\frac12x_2+\frac32x_3+\frac12x_6+\frac32x_7
+ -\frac12z_u-\frac12\mu&\le\frac{92607}{5000000},\label{eq:old:D_capD}\\
+\frac12x_0+\frac32x_1-\frac12x_4-\frac12x_5+x_6
+ +\frac12z_u-\frac12\mu&\le\frac{92607}{5000000},\label{eq:old:D_capB}\\
+-\frac12x_0-\frac12x_1+x_2+\frac12x_4+\frac32x_5
+ +\frac12z_u+\frac12\mu&\le\frac{5092607}{5000000}.\label{eq:old:D_capC}
+\end{align}
+The selected-chart condition is $z_u\le z_t$ in chart 1 and
+$z_t\le z_u$ in chart 2. In chart 1 also impose
+\[
+\mu+z_u-c_1\ge\frac{4722179}{7500000},\qquad
+\mu+z_u-(x_2+x_3+x_6+x_7)\ge\frac{4722179}{7500000};
+\AutoTag{eq:old:D_5}
+\]
+in chart 2 impose
+\[
+x_0+x_1-x_4-x_5+z_u-\mu\le-\frac{4722179}{7500000},\qquad
+-x_0-x_1+x_4+x_5+z_u+\mu\le\frac{10277821}{7500000}.
+\AutoTag{eq:old:D_6}
+\]
+
+The four assigned-corner route scores are the $G_A,G_D,G_B,G_C$ in
+\eqref{eq:old:7_20}. A branch also imposes $W\ge0$ and
+$W\ge G_A,G_D,G_B,G_C$. For $i,j\in\{0,1,2,3,4,5\}$ impose
+$W\ge C_{1,i}$ and $W\ge C_{2,j}$. The six values in each chart are
+defined by
+{\small
+\[
+\begin{array}{c|l|c|l}
+i&C_{1,i}&j&C_{2,j}\\ \hline
+0&2/3-c_1&0&2/3-c_2\\
+1&2/3-q+c_1&1&2/3-q+c_2\\
+2&9722179/15000000-x_1-x_2-x_5-x_6&2&9722179/15000000-x_0-x_3-x_4-x_7\\
+3&9722179/15000000-x_1-x_3-x_5-x_7&3&9722179/15000000-x_0-x_2-x_5-x_7\\
+4&9722179/15000000-x_0-x_2-x_4-x_6&4&9722179/15000000-x_1-x_3-x_4-x_6\\
+5&9722179/15000000-x_0-x_3-x_4-x_7&5&9722179/15000000-x_1-x_2-x_5-x_6
+\end{array}
+\AutoTag{eq:old:D_7}
+\]
+}
+\subsection*{Derivation of the 22 limiting source rows}
+The source rows are R1--R6 and R9--R24 in the certificate order
+below. The LP linear forms \(P,Q\) are those of \eqref{eq:old:D_3}. For the
+source products write \(P_{\rm src}=ab\) and \(Q_{\rm src}=cd\), and
+write \(L=Q_{\rm src}-P_{\rm src}\). Set
+\(\ell_{\rm src}=\log_Y L\),
+\(\alpha_{\rm src}=\log_Y P_{\rm src}\),
+\(\gamma_{\rm src}=\log_Y Q_{\rm src}\), and
+\(q_{\rm src}=\alpha_{\rm src}+\gamma_{\rm src}=\log_Y M\).
+Write \(\ell=z_u+z_t\) for the limiting LP coordinate. The finite logarithmic collars come from
+\(\kappa_Y=1+Y^{-1}\), from factors of two and from the endpoint terms in
+\(Z^2M=m(m+1)n(n+1)\). They are included in
+\eqref{eq:old:7_23b}--\eqref{eq:old:7_23c}. The LP rows are their
+limiting affine inequalities. The table writes them in limiting LP
+endpoint coordinates \(q,\ell,z_u,z_t\), distinct from the finite source
+logarithms with subscript \({\rm src}\). The limiting coordinates are
+denoted by \(q\) and \(\ell\); \(z_u,z_t\)
+are the LP variables corresponding to the finite logarithms
+\(\log_Yu,\log_Yt\). The subscript \({\rm src}\) marks source quantities
+before taking limits. Labels R1--R28 refer throughout to the certificate
+row numbering below.
+\small
+\unnumtable
+\begin{longtable}{@{}p{0.09\textwidth}p{0.84\textwidth}@{}}
+\toprule
+Limiting LP row & Source derivation \\
+\midrule
+\endhead
+R1 & If \(P_{\rm src}\le L\), then \(P_{\rm src}\le L<\kappa_YY^{1/3+S_0}\).
+If \(P_{\rm src}>L\), then \(P_{\rm src}<\sqrt M<\kappa_YY^{q_{\max}/2}\).
+Since \(q_{\max}/2=1/3+S_0\), these give the displayed limiting upper bound. \\
+R2 & If \(P_{\rm src}\le L\), then \(Q_{\rm src}\le2L\), so
+\(P_{\rm src}=M/Q_{\rm src}>Y^{q_{\min}}/(2\kappa_YY^{1/3+S_0})\),
+whose limiting exponent is \(1/3-2S_0\). If \(P_{\rm src}>L\), then
+\(Q_{\rm src}<2P_{\rm src}\) and \(M<2P_{\rm src}^2\), giving the
+stronger limiting lower exponent \(q_{\min}/2=1/3-S_0/2\). \\
+R3 & If \(P_{\rm src}\le L\), then \(Q_{\rm src}\le2L\); otherwise
+\(Q_{\rm src}<2P_{\rm src}<2\sqrt M\). Thus the source gives
+\(\gamma_{\rm src}\le1/3+S_0+\log_Y(2\kappa_Y)\); for sufficiently large \(Y\)
+this implies the weaker \(\gamma_{\rm src}\le1/3+5S_0/2\). \\
+R4 & Since \(P_{\rm src}<Q_{\rm src}\), we have
+\(\alpha_{\rm src}<\gamma_{\rm src}\); with
+\(q_{\rm src}=\alpha_{\rm src}+\gamma_{\rm src}\ge q_{\min}\), this gives
+\(\gamma_{\rm src}\ge q_{\min}/2\). \\
+R5 & The failed \(O_R\) cut gives \(M<\kappa_Y^2Y^{q_{\max}}\), hence
+\(q_{\rm src}\le q_{\max}+2\lambda\), where \(\lambda=\log_Y\kappa_Y\);
+the LP uses the limiting bound \(q\le q_{\max}\). \\
+R6 & The failed \(O_M\) cut gives \(M>Y^{q_{\min}}\), hence
+\(q_{\rm src}\ge q_{\min}\). \\
+R9 & Failure of \(Q1\) gives \(L\ge Y^{1/3-l_0}\), so
+\(\ell_{\rm src}\ge1/3-l_0\). \\
+R10 & Since \(L=Q_{\rm src}-P_{\rm src}<Q_{\rm src}\), taking logarithms gives
+\(\ell_{\rm src}\le\gamma_{\rm src}\). \\
+R11 & The mask gives \(a_Ac_A\le A K_{\rm res}\). Taking logarithms
+and replacing the finite \(\log_Y A\) by its lower-corner reference
+\(\mathsf A=(\mu+z_u-c_1)/2\) from \eqref{eq:old:7_23a}--\eqref{eq:old:7_23b}
+gives \(x_0+x_4-\mathsf A\le\Delta_{\rm exp}\), which is
+\eqref{eq:old:D_capA}. \\
+R12 & The mask gives \(b_Dd_D\le D K_{\rm res}\). Replacing the finite
+\(\log_YD\) by its lower-corner reference
+\(\mathsf D=(\mu+z_u-q+c_1)/2\) from \eqref{eq:old:7_23a}--\eqref{eq:old:7_23b}
+gives \(x_3+x_7-\mathsf D\le\Delta_{\rm exp}\), which is
+\eqref{eq:old:D_capD}. \\
+R13 & The source B-corner capacity is \(a_Bd_B\le B K_{\rm res}\).
+Taking logarithms and using the limiting corner form
+\(\mathsf B=1/2-z_u/2+q/4-c_2/2\), where
+\(R_{\rm LP}=x_1+x_6\) and \(c_2=x_0+x_1+x_6+x_7\), gives
+the limiting inequality below. Here \(q\) denotes the LP coordinate
+corresponding to the source exponent \(q_{\rm src}\) defined above; its
+finite endpoint error is included in the source collar:
+\[
+R_{\rm LP}+z_u/2-q/4+c_2/2\le1/2+\Delta_{\rm exp}.
+\]
+Use \(1/2=\mu/2+(\gamma-\alpha)/4\), from the
+limiting source equality, and expand. This gives row R13, namely
+\eqref{eq:old:D_capB}. \\
+R14 & The source C-corner capacity is \(b_Cc_C\le C K_{\rm res}\), so
+\(T+z_u/2+q/4-c_2/2\le1/2+\Delta_{\rm exp}\), where
+\(T=x_2+x_5\). Using the limiting equality first rewrites this as
+\[
+T+z_u/2+\alpha/2-c_2/2-\mu/2\le\Delta_{\rm exp}.
+\]
+Now eliminate \(\alpha=\gamma+2\mu-2\) and expand.
+This gives row R14, namely \eqref{eq:old:D_capC} with right side
+\(1+\Delta_{\rm exp}=5092607/5000000\); its finite endpoint error is
+included in the source collar. Using \eqref{eq:old:7_23a}, after the
+\(h_m-h_n\) terms cancel, the finite right sides in rows R13 and R14
+are respectively
+\[
+ \Delta_{\rm exp}+\frac{H-\nu_n}{2},\qquad
+ 1+\Delta_{\rm exp}+\frac{H+\nu_n-2}{2}.
+\]
+After removing the limiting row constants, each endpoint residual is at
+most \(d_2/2\) before lower-corner binning; that binning is included in
+\(\rho_Y\). \\
+R15--R16 & Put \(\nu_n=\log_Yn\) and
+\(h_r=\log_Y(1+1/r)\). The exact source identity is
+\[
+\mu+(\gamma_{\rm src}-\alpha_{\rm src})/2
+=\nu_n+(h_n-h_m)/2,
+\]
+obtained by taking logarithms of
+\(Q_{\rm src}m(m+1)=P_{\rm src}n(n+1)\). Since \(Y/2<n\le Y\),
+\(-d_2<\nu_n-1\le0\), and \(|h_n-h_m|\le\ell_{\rm end}\).
+The finite discrepancy is absorbed in the source collar. In the limiting
+LP, row R15 is
+\(\mu+(\gamma-\alpha)/2\le1\), and row R16 is
+the reverse inequality
+\(\mu+(\gamma-\alpha)/2\ge1\). \\
+R17 & The source has \(m<n\le Y\), hence \(\mu\le1\). \\
+R18 & Since \(m+1\le2m\), \(n+1\le2Y\), and
+\(Z>Y^{5/3-S_0}\), the identity
+\(Z^2M=m(m+1)n(n+1)\) gives
+\(Y^{10/3-2S_0+q_{\rm src}}<4m^2Y^2\), hence the finite bound
+\(\mu>q_{\min}+q_{\rm src}/2-d_2\), where \(d_2=\log_Y2\). The LP uses the
+limiting weak inequality \(\mu\ge q_{\min}+q/2\); the finite \(d_2\)
+loss is included in the source collar \(\rho_Y\). \\
+R19--R20 & The 5W predicate has \(u,t\ge Y^{b_0}\), hence
+\(z_u,z_t\ge b_0\). \\
+R21 & The source has \(L<\kappa_YY^{1/3+S_0}\), so its limiting
+bound is \(\ell_{\rm src}\le1/3+S_0\). The displayed LP bound
+\(\ell\le q_{\max}\)
+is a redundant, weaker relaxation; it only enlarges the feasible set and
+can lower the LP minimum. \\
+R22 & The selected-chart rule \eqref{eq:old:2_3} gives \(z_u\le z_t\) in
+chart 1 and \(z_t\le z_u\) in chart 2. \\
+R23--R24 & The strict \(Q2\) cuts have failed. In chart 1, the complement
+is the lower-corner inequality \eqref{eq:old:D_5}; in chart 2, it is
+\eqref{eq:old:D_6}. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+Rows R11--R14 are the four limiting logarithmic capacity inequalities.
+They come from the two-sided assignment of each residual prime to its
+unique eligible corner. Rows R13--R14 use equality rows R15--R16.
+Rows R3 and R21 weaken stronger source bounds. So the
+relaxed feasible set only grows. The six counting rows R7, R8 and
+R25--R28 come from the chart costs \eqref{eq:old:7_19}, the route scores
+\eqref{eq:old:7_20}, the endpoint patterns
+\eqref{eq:old:6_18a}, \eqref{eq:old:7_16}, and the route-score and
+endpoint bounds \eqref{eq:old:7_23a}--\eqref{eq:old:7_23c}. They are not
+extra source premises.
+
+Fix an actual source. Keep its selected chart. Then choose a
+minimizing form for each of the two counting orientations. Its endpoint
+data then place it in one of the $2\cdot6\cdot6=72$ cases.
+Dropping the inequalities that enforce the minimizing choices enlarges
+that case. Hence a lower bound on every displayed relaxation applies to
+the original source.
+
+The certificates number the inequalities as follows.
+\begin{itemize}
+\item R1--R6: the upper and lower bounds for $\alpha$, then for
+$\gamma$, then for $q$.
+\item R7--R8: $W\ge C_{1,i}$ and $W\ge C_{2,j}$.
+\item R9--R10: the lower bound for $z_u+z_t$ and its upper bound by $\gamma$.
+\item R11--R14: the four capacity inequalities as displayed.
+\item R15--R16: the two directions of the equality in \eqref{eq:old:D_4}.
+\item R17--R18: the upper and lower bounds for $\mu$.
+\item R19--R20: the lower bounds for $z_u,z_t$.
+\item R21: the upper bound for $z_u+z_t$.
+\item R22: the selected-chart inequality.
+\item R23--R24: the two core inequalities for that chart.
+\item R25--R28: $W\ge G_A,G_D,G_B,G_C$, in this order.
+\end{itemize}
+The six counting rows are R7, R8, and R25--R28.
+
+Each branch has 28 inequalities. These are the displayed source bounds,
+the two selected chart score rows from \eqref{eq:old:D_7} and the four
+assigned-corner rows. The table below gives their exact
+dual certificates. Write the rows as
+$a_r\cdot x\le b_r$. The listed nonnegative multipliers satisfy
+$\sum_r\lambda_r a_r\ge-e_W$ coordinatewise,
+$\sum_{r\in\mathcal C}\lambda_r=1$ over the six counting rows, and
+$-\sum_r\lambda_r b_r=W_{\sigma i j}$. As $x\ge0$, these relations
+give $-W\le\sum_r\lambda_r a_r\cdot x\le\sum_r\lambda_r b_r$.
+Thus every branch satisfies
+\[
+W\ge L_{5W},\qquad L_{5W}=\frac{1203113}{90000000}.
+\AutoTag{eq:old:D_8}
+\]
+The value is attained in the relaxed branch $(1,2,5)$ by
+\[
+\begin{aligned}
+&(x_0,\ldots,x_7,W,z_u,z_t,\mu)=\\
+&\left(0,\frac{24907393}{90000000},\frac{5648249}{90000000},
+0,0,\frac{2092607}{9000000},\right.\\
+&\left.\frac{5648249}{90000000},\frac{3981323}{90000000},
+\frac{1203113}{90000000},\frac{4166537}{30000000},
+\frac{6018677}{30000000},1\right).
+\end{aligned}
+\AutoTag{eq:old:D_9}
+\]
+Exchange the two corner pairs. This gives a feasible point of the
+chart-swapped branch $(2,5,2)$ with the same value. In
+the coordinate order of \eqref{eq:old:D_3}, the permutation is
+\[
+(x_0,\ldots,x_7,z_u,z_t)\longmapsto
+(x_1,x_0,x_3,x_2,x_6,x_7,x_4,x_5,z_t,z_u),
+\]
+with \(W\) and \(\mu\) fixed.
+Consequently the exact optimization margin is
+\[
+\frac{1203113}{90000000}-S_0=\frac{647471}{90000000}>0.
+\AutoTag{eq:old:D_10}
+\]
+
+The common-loss reserve is
+\[
+S_0-\frac{g_0}{16}-\frac{g_0}{4}
+=\frac1{165}+\frac{11g_0}{16}>\frac1{165}.
+\]
+The threshold in Section~\ref{sec:epsilon} bounds each of the
+$5W$ geometric, interval, and high-degree corrections by $g_0/4$.
+The assembly charges their maximum, not their sum. The exact fractions and the certificate table give
+the finite optimization explicitly.
+\subsection*{Table of branch certificates}\label{app:branchcert}
+In the table, $W_{\sigma,i,j}$ is the lower bound for branch
+$(\sigma;i,j)$ in the lower-bound column. An entry $r:c$ means
+$\lambda_r=c$ for the inequality row numbered above. Omitted
+multipliers are zero.
+A multiplier list may wrap onto continuation lines with blank branch
+and lower-bound columns; all such lines belong to the same certificate.
+\input{sections/D-branch-certificates}

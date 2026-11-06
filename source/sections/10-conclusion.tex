@@ -1,0 +1,23 @@
+\section{Dyadic shells}\label{sec:conclusion}
+
+For \(Y=2^i\), the shells \(2^{i-1}<n\le2^i\) are disjoint. By
+Proposition~\ref{prop:commonloss}, for every \(i\) with \(2^i\ge
+Y_{\rm final}\),
+\[
+\#\Omega_{2^i}\ll_\varepsilon 2^{i(109/165+\varepsilon)}.
+\AutoTag{eq:old:10_1}
+\]
+Let \(I\) be the least integer with \(X\le2^I\). Then \(2^I<2X\) and
+\[
+\sum_{i\le I}2^{i(109/165+\varepsilon)}
+\ll_\varepsilon (2X)^{109/165+\varepsilon}.
+\AutoTag{eq:old:10_2}
+\]
+The finitely many shells below \(Y_{\rm final}\) are absorbed by
+\[
+\#\Omega_Y\le \frac{Y(Y-1)}2
+\le\frac12\max(1,Y_{\rm final}^{2-\alpha})Y^\alpha,
+\qquad \alpha=109/165+\varepsilon.
+\]
+Each pair counted by \(F(X)\) lies in exactly one shell. This proves
+Theorem~\ref{thm:main}.
