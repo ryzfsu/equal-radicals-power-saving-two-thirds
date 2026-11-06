@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A power saving below two-thirds for equal radicals of consecutive products"
+authors:
+  - family-names: Zhang
+    given-names: Ruiyi
+    affiliation: Independent Researcher
+doi: 10.5281/zenodo.24021501
+url: "https://doi.org/10.5281/zenodo.24021501"
+date-released: 2026-11-06
+preferred-citation:
+  type: article
+  title: "A power saving below two-thirds for equal radicals of consecutive products"
+  authors:
+    - family-names: Zhang
+      given-names: Ruiyi
+      affiliation: Independent Researcher
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: 10.5281/zenodo.24021501
+  url: "https://doi.org/10.5281/zenodo.24021501"
