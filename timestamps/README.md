@@ -1,7 +1,8 @@
 # Timestamps
 
 [OpenTimestamps](https://opentimestamps.org) proofs for the assets of release `v1`.
-Each proof commits to the SHA-256 of the file below.
+Each proof commits to the SHA-256 of the file below and is anchored in Bitcoin block
+974855 (2026-11-06 20:42:28 UTC).
 
 | file | SHA-256 |
 |---|---|
